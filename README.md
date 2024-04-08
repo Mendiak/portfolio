@@ -25,7 +25,7 @@ Mikel's Portfolio is a collection of web projects developed by Mikel Aramendia, 
 
 1. Clone the repository:
 
-    `git clone https://github.com/tu-usuario/tu-repositorio.git`
+    `git clone https://github.com/tu-usuario/tu-repositorio.git)`
 
 
 2. Open `index.html` in your web browser to view the portfolio.
