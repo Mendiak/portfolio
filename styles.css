@@ -17,9 +17,8 @@
 
 body {        
     background-color: var(--light-grey);
-    font-family: Inter, sans-serif;
-    height: 100vh; 
-    }
+    font-family: Inter, sans-serif;  
+}
 
 a {
     color: var(--dark-green);
@@ -33,31 +32,55 @@ p {
     color: var(--dark-green)
  }
 
-.hero {
-    margin-left: 15%;
-    margin-top: 100px;
-    opacity: 0; /* Inicialmente oculto */
-    transition: opacity 2s ease; /* Transición suave */
+ .divider {
+    border: none; /* Elimina el borde predeterminado */
+    height: 3px; /* Establece la altura de la línea */
+    background-color: var(--dark-grey); /* Establece el color de la línea */
+    margin: 20px 0; /* Agrega margen superior e inferior para separarla de otros elementos */
+}
+
+
+.hero {    
+    height: 400px;
+    background-image: url('./assets/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0; 
+    transition: opacity 2s ease; 
+    display: flex; /* Activar el modelo de caja flexible */
+    flex-direction: column; /* Alinear los elementos en una columna */
+    justify-content: center; 
+    border-radius: 0px 0px 20px 20px;
     }
 
 .hero.fade-in {
-    opacity: 1; /* Mostrar gradualmente */
+    opacity: 1; 
     }
 
 .hero h1 {
     font-weight: 300;
-    font-size: 4em;
-    color: var(--light-green);
+    font-size: 5em;
+    color: var(--light-grey);
+    margin-left: 15%;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+       
 }
 
 .hero h3 {
-    font-size: 1.5em;
-    color: var(--light-green);
+    font-size: 2.0em;
+    color: var(--light-grey);
     font-weight: 300;
+    margin-left: 15%;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+    }
+
+.hero-highlight {
+    color: var(--light-grey); 
+    font-weight: 800;
 }
 
 .highlight {
-    color: var(--dark-green); /* Cambia el color al que desees */
+    color: var(--dark-green); 
     font-weight: 800;
 }
 
@@ -190,21 +213,24 @@ footer {
     padding-top: 40px;
   }
 
-.hero,
 #about,
 #technologies,
 #contact {
     max-width: 720px;
-}
+   }
 
 
 @media screen and (max-width: 768px) {
-    .hero,
+    .hero h1,
+    .hero h3,
     #about,
     #technologies,
     #contact
      {
         margin-left: 10%;
         margin-right: 10%;
+    }
+    body {
+        background-image: none;
     }
 }
