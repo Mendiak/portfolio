@@ -40,19 +40,29 @@ p {
 }
 
 nav {
-    padding: 10px
+    background-color: var(--light-grey);
 }
 
 nav ul {
+    margin-right: 10%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: right;
+    align-items: center;
+    gap: 20px;
     list-style-type: none;
     }
 
 header nav ul li a {
     text-decoration: none;
-    }    
+    color: var(--dark-green)
+    }
+
+header nav ul li:hover {
+    cursor: pointer;   
+    text-decoration: underline;
+    text-decoration-color: var(--dark-green);
+    }       
     
 
 .hero {     
@@ -90,6 +100,7 @@ header nav ul li a {
     }
 
 .hero-text {
+    max-width: 400px;
     margin-left: 15%;
     
 }    
@@ -156,6 +167,11 @@ header nav ul li a {
     margin-bottom: 20px;
 }
 
+#projects {
+    margin-left: 15%;
+    color: var(--dark-green);
+    }
+
 input {    
     margin-bottom: 15px;
     height: 30px;
@@ -184,10 +200,9 @@ input:focus, textarea:focus {
 
 #submit-button,
 #read-more {
-    width: 150px;
+    width: fit-content ;
     min-height: 40px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 15px;
     border-radius: 5px;
     margin-top: 10px;
     border: none;
@@ -240,6 +255,7 @@ footer {
 .divider,
 #about,
 #technologies,
+#projects,
 #contact {
     max-width: 720px;
    }
@@ -250,6 +266,7 @@ footer {
     .hero-text,
     #about,
     #technologies,
+    #projects,
     #contact
      {
         margin-left: 10%;
@@ -257,3 +274,44 @@ footer {
     }
     
 }
+
+
+
+/* Hamburguer menu */
+
+.ham {
+    height: 40px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+  .hamRotate180.active {
+    transform: rotate(180deg);
+  }
+  .line {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: var(--dark-green);
+    stroke-width:5.5;
+    stroke-linecap:round;
+  }
+
+.ham4 .top {
+    stroke-dasharray: 40 121;
+  }
+  .ham4 .bottom {
+    stroke-dasharray: 40 121;
+  }
+  .ham4.active .top {
+    stroke-dashoffset: -68px;
+  }
+  .ham4.active .bottom {
+    stroke-dashoffset: -68px;
+  }

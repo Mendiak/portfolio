@@ -13,11 +13,24 @@
 <body>
 
     <header>
+
         <nav>
             <ul>
-                <li><a href="#about">SOBRE MI</a></li>
-                <li><a href="#technologies">TECNOLOGIAS</a></li>
-                <li><a href="#contact">CONTACTO</a></li>
+                <li><a onclick="scrollToSection('about')">SOBRE MI</a></li>
+                <li><a onclick="scrollToSection('technologies')">TECNOLOGIAS</a></li>
+                <li><a onclick="scrollToSection('projects')">PROYECTOS</a></li>
+                <li><a onclick="scrollToSection('contact')">CONTACTO</a></li>
+                <svg class="ham hamRotate ham4" viewBox="0 0 100 100" onclick="this.classList.toggle('active')">
+                    <path
+                          class="line top"
+                          d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                    <path
+                          class="line middle"
+                          d="m 70,50 h -40" />
+                    <path
+                          class="line bottom"
+                          d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+                  </svg>
             </ul>
         </nav>
     </header>
@@ -27,14 +40,14 @@
     <section class="hero">
         <div class="hero-text">
         <h1>Hola, soy <span class="hero-highlight">Mikel</span></h1>
-        <h3>Desarrollando sitios web accesibles y funcionales</h3>
-        <button onclick="scrollToSection('about')" id="read-more">Lee más sobre mi</button>
+        <h3>Desarrollo sitios web accesibles y funcionales</h3>
+        <button onclick="scrollToSection('about')" id="read-more">Saber más...</button>
         </div>
     </section>
 
     <section id="about">
         <img src="./assets/images/svg/responsive.png">
-        <h3>Sobre mi</h3>
+        <h3>./ Sobre mi</h3>
         <p>Desde pequeño, me ha fascinado el mundo de la tecnología y cómo moldea nuestras interacciones en el entorno digital.</p>
 
         <p>Mi filosofía de desarrollo gira en torno a los principios de <span class="highlight">usabilidad, simplicidad y claridad</span>. Creo firmemente que menos es más cuando se trata de crear experiencias digitales. Mi objetivo es diseñar y construir proyectos web que no solo sean visualmente atractivos, sino también intuitivos y amigables para todos los usuarios.</p>
@@ -49,14 +62,14 @@
 
     <section id="technologies">
         <img src="./assets/images/svg/tools.png">
-        <h3>Las tecnologías que empleo</h3>
+        <h3>./ Las tecnologías que empleo</h3>
         <p>En mis proyectos de desarrollo web, aprovecho el poder de varias tecnologías para crear experiencias online atractivas. Esto incluye <span class="highlight">HTML5</span>, que proporciona la estructura de las páginas web, y <span class="highlight">CSS</span> para el estilo y la apariencia. <span class="highlight">JavaScript</span> añade interactividad y funcionalidad dinámica, mientras que <span class="highlight">React</span> me permite construir interfaces de usuario amigables de manera eficiente.</p>
     
         <p>No obstante, mi repertorio va más allá. Utilizo <span class="highlight">Bootstrap</span> como una herramienta clave para agilizar el diseño y la estructura de mis proyectos, lo que me permite crear interfaces de usuario más eficientes y consistentes. Además, hago uso de <span class="highlight">Sass</span>, una potente herramienta que mejora la capacidad de CSS mediante funciones avanzadas como variables y mixins. Este enfoque meticuloso y proactivo se traduce en hojas de estilo bien organizadas y de fácil mantenimiento, lo que contribuye a la coherencia y el rendimiento del diseño de mis sitios web.</p>
     
         <p>Al combinar estas tecnologías con un enfoque profesional y centrado en las necesidades del cliente, soy capaz de crear sitios web modernos y funcionales que cumplen con los estándares más exigentes de la industria y satisfacen las diversas necesidades de los usuarios finales.</p>
     
-        <p>Además, tengo experiencia en la gestión de proyectos en <span class="highlight">GitHub</span>.</p>
+        <p>Además, tengo experiencia en la gestión de versiones con <span class="highlight">GitHub</span>.</p>
 
         <div id="tech-icons">
             <img class="tech-icons" src="./assets/images/svg/html-svgrepo-com.svg">
@@ -71,10 +84,15 @@
     </section>
 
     <hr class="divider">
+
+    <section id="projects">
+    <h3>./ Proyectos</h3>
+    </section>    
     
+    <hr class="divider">
 
     <section id="contact">     
-        <h3>Contacto</h3>   
+        <h3>./ Contacto</h3>   
         <p>Gracias por visitar mi portafolio. Espero tener la oportunidad de colaborar contigo y crear experiencias digitales únicas en el futuro. Escríbeme a través de este formulario y... ¡Empecemos!</p>
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="41398cfd-0efd-45fa-859e-50b9e66d6f31">

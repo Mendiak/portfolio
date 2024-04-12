@@ -9,4 +9,3 @@ function scrollToSection(sectionId) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  
