@@ -3,16 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mikel's portfolio</title>
+<title>Mikel · Web Developer</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
 </head>
 <body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">SOBRE MI</a></li>
+                <li><a href="#technologies">TECNOLOGIAS</a></li>
+                <li><a href="#contact">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
     <section class="hero">
+        <div class="hero-text">
         <h1>Hola, soy <span class="hero-highlight">Mikel</span></h1>
-        <h3>Desarrollando webs desde Barcelona</h3>
+        <h3>Desarrollando sitios web accesibles y funcionales</h3>
+        <button onclick="scrollToSection('about')" id="read-more">Lee más sobre mi</button>
+        </div>
     </section>
 
     <section id="about">
@@ -52,6 +69,8 @@
             <img class="tech-icons" src="./assets/images/svg/wordpress-svgrepo-com.svg">
         </div>
     </section>
+
+    <hr class="divider">
     
 
     <section id="contact">     
@@ -72,7 +91,7 @@
     <footer>
     <div>
         Diseñado por Mikel Aramendia · 2024 · <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank">Haz tu fork de este portfolio</a> · 
-       <a href="https://www.flaticon.es/iconos-gratis/diseno-adaptativo" title="diseño adaptativo iconos">Diseño adaptativo iconos creados por Vectorslab - Flaticon</a> 
+       <a href="https://www.flaticon.es/iconos-gratis/diseno-adaptativo" target="_blank" title="diseño adaptativo iconos">Iconos creados por Vectorslab @ Flaticon</a> 
     </footer>    
     </div>
 
