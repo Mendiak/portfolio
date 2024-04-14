@@ -32,7 +32,7 @@ p {
     color: var(--dark-green)
  }
 
- .divider {
+.divider {
     border: none; 
     height: 3px; 
     background-color: var(--dark-grey); 
@@ -41,30 +41,32 @@ p {
 
 nav {
     background-color: var(--light-grey);
+    overflow: hidden;
 }
 
 nav ul {
-    margin-right: 10%;
+    margin-right: 5%;
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     list-style-type: none;
     }
 
-header nav ul li a {
+nav ul li a {
     text-decoration: none;
-    color: var(--dark-green)
+    color: var(--dark-green);
+    padding: 10px 15px;
+    display: block;
     }
 
-header nav ul li:hover {
+nav ul li:hover {
     cursor: pointer;   
     text-decoration: underline;
-    text-decoration-color: var(--dark-green);
-    }       
-    
-
+    text-decoration-color: var(--light-green);
+    }      
+     
 .hero {     
     height: 600px;   
     opacity: 0; 
@@ -76,8 +78,7 @@ header nav ul li:hover {
     flex-direction: column;
     justify-content: center;  
     gap: 55px;
-}
-  
+}  
 
 .hero.fade-in {
     opacity: 1; 
@@ -261,22 +262,6 @@ footer {
    }
 
 
-@media screen and (max-width: 768px) {
-    .divider,
-    .hero-text,
-    #about,
-    #technologies,
-    #projects,
-    #contact
-     {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-    
-}
-
-
-
 /* Hamburguer menu */
 
 .ham {
@@ -288,14 +273,19 @@ footer {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    display: none;    
+    cursor: pointer;
   }
+
   .hamRotate.active {
     transform: rotate(45deg);
   }
-  .hamRotate180.active {
+  
+.hamRotate180.active {
     transform: rotate(180deg);
   }
-  .line {
+
+.line {
     fill:none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
     stroke: var(--dark-green);
@@ -315,3 +305,27 @@ footer {
   .ham4.active .bottom {
     stroke-dashoffset: -68px;
   }
+
+
+@media screen and (max-width: 768px) {
+    .divider,
+    .hero-text,
+    #about,
+    #technologies,
+    #projects,
+    #contact {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    #nav-list {
+        display: none; 
+    }
+    nav {
+        display: flex;
+        justify-content: right;
+        margin-right: 10px;
+    }  
+    .ham {
+        display: block; 
+    }
+}

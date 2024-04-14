@@ -9,3 +9,14 @@ function scrollToSection(sectionId) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+
+  function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleMenu() {
+    var navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
+}
