@@ -1,22 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var hero = document.querySelector('.hero');
+    const hero = document.querySelector('.hero');
     hero.classList.add('fade-in');
 });
 
 function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
+  let section = document.getElementById(sectionId);
+  if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-    }
   }
-
-
-  function scrollToSection(sectionId) {
-    var section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
 }
 
-function toggleMenu() {
-    var navbar = document.getElementById("navbar");
-    navbar.classList.toggle("active");
+function toggleMobileMenu() {
+  let menu = document.getElementById("mobile-menu");
+  menu.classList.toggle("active");
 }

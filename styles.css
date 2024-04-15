@@ -1,9 +1,7 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-
 :root {
-    --dark-green: #627254;
+    --dark-green: #3F4C39;
     --light-green: #76885B;
-    --light-grey: #EEEEEE;
+    --light-grey: #E6E6E6;
     --dark-grey: #DDDDDD;
 }
 
@@ -39,9 +37,14 @@ p {
     margin-left: 15%;
 }
 
-nav {
+nav {    
     background-color: var(--light-grey);
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 nav ul {
@@ -65,13 +68,75 @@ nav ul li:hover {
     cursor: pointer;   
     text-decoration: underline;
     text-decoration-color: var(--light-green);
-    }      
+    }
+    
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    z-index: 999;
+}   
+
+
+/* Estilos para el menú desplegable */
+#mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#mobile-menu.active ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Opcional: alinea los elementos al centro verticalmente */
+}
+
+
+#mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#mobile-menu ul li {
+    margin-bottom: 20px;
+}
+
+#mobile-menu ul li a {
+    color: var(--light-grey);
+    text-decoration: none;
+    font-size: 24px;
+}
+
+#mobile-menu button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dark-green);
+    color: var(--dark-grey);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#mobile-menu button:hover {
+    background-color: var(--light-green);
+}
+
+
      
 .hero {     
     height: 600px;   
     opacity: 0; 
     transition: opacity 2s ease; 
-    background-image: url(./assets/images/banner.jpg);   
+    background-image: url(./assets/images/banner.webp);   
     background-size: cover;
     background-position: center;  
     display: flex;
@@ -92,7 +157,7 @@ nav ul li:hover {
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
     }
 
-.hero h3 {
+.hero h2 {
     margin-bottom: 15px;
     font-size: 2.0em;
     color: var(--light-grey);
