@@ -23,7 +23,7 @@ a {
     }
     
 a:visited {
-    color: var(--light-green);
+    color: var(--light-grey);
     }
 
 p {
@@ -84,11 +84,7 @@ nav ul li:hover {
     }   
 
 .mobile-menu.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+    c
     position: fixed;
     top: 0;
     right: 0;
@@ -233,6 +229,7 @@ textarea {
     background-color: #DDDDDD;
     color: #627254;
     border: none;
+    font-family: Inter, sans-serif;
     }
 
 input:focus, textarea:focus {
@@ -373,4 +370,59 @@ footer {
     .ham {
         display: block; 
     }
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card h4 {
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--light-green);
+}
+
+.card-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--dark-green);
+    color: var(--light-grey);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 300;
+}
+       
+
+.card-link:hover {
+    background-color: var(--light-green);
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
