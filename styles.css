@@ -1,3 +1,4 @@
+/* Custom Properties (CSS Variables) */
 :root {
     --dark-green: #3F4C39;
     --light-green: #76885B;
@@ -5,45 +6,43 @@
     --dark-grey: #DDDDDD;
 }
 
-
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+/* Body Styles */
 body {        
     background-color: var(--light-grey);
     font-family: Inter, sans-serif;  
 }
 
-a {
-    color: var(--dark-green);
-    }
-    
-a:visited {
-    color: var(--light-grey);
-    }
-
+/* Typography Styles */
 p {
     color: var(--dark-green);
     margin-bottom: 30px;
-    margin-right: 5%
- }
-
-.divider {
-    border: none; 
-    height: 3px; 
-    background-color: var(--dark-grey); 
-    margin-left: 15%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-right: 5%;
 }
 
+a {
+    color: var(--dark-green);
+}
+   
+a:visited {
+    color: var(--light-grey);
+}
+
+.highlight {
+    color: var(--dark-green);
+    font-weight: 800;
+}
+
+/* Navigation Styles */
 nav {
-    background-color: rgba(238, 238, 238, 0.5); /* Color de fondo semitransparente */
-    backdrop-filter: blur(10px); /* Aplicar filtro de desenfoque */
+    background-color: rgba(238, 238, 238, 0.5);
+    backdrop-filter: blur(10px);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: fixed;
@@ -53,7 +52,6 @@ nav {
     z-index: 999;
 }
 
-
 nav ul {
     margin-right: 5%;
     display: flex;
@@ -62,46 +60,60 @@ nav ul {
     align-items: center;
     gap: 10px;
     list-style-type: none;
-    
-    }
+}
 
 nav ul li a {
     text-decoration: none;
     color: var(--dark-green);
     padding: 10px 15px;
     display: block;
-    }
+}
 
 nav ul li:hover {
-    cursor: pointer;   
+    cursor: pointer;  
     background-color: var(--dark-grey);
-    }
-    
-/* Estilos para el menú desplegable */
-    
+}
+
+/* Mobile Menu Styles */
 .mobile-menu {
     display: none;
-    }   
+    position: fixed;
+    top: 40px; /* Ajusta según la altura de tu barra de navegación */
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
 .mobile-menu.active {
-    c
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80%;
-    max-width: 300px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
-    z-index: 999;
+    display: block;
+}
+
+.mobile-menu ul {
+    padding: 0px;
+    list-style-type: none;
+}
+
+.mobile-menu ul li {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.mobile-menu ul li a {
+    color: var(--light-grey);
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
 }
 
 .mobile-menu.active ul {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-}
-
-.mobile-menu.active ul {
+    align-items: center;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -117,12 +129,13 @@ nav ul li:hover {
     text-decoration: none;
     font-size: 24px;
 }
-     
-.hero {     
-    height: 600px;   
-    opacity: 0; 
-    transition: opacity 2s ease; 
-    background-image: url(./assets/images/banner.webp);   
+
+/* Hero Section Styles */
+.hero {    
+    height: 600px;  
+    opacity: 0;
+    transition: opacity 2s ease;
+    background-image: url(./assets/images/banner.webp);  
     background-size: cover;
     background-position: center;  
     display: flex;
@@ -132,8 +145,8 @@ nav ul li:hover {
 }  
 
 .hero.fade-in {
-    opacity: 1; 
-    }
+    opacity: 1;
+}
 
 .hero h1 {
     margin-bottom: 15px;
@@ -141,7 +154,7 @@ nav ul li:hover {
     font-size: 5em;
     color: var(--light-grey);
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
-    }
+}
 
 .hero h2 {
     margin-bottom: 15px;
@@ -149,73 +162,62 @@ nav ul li:hover {
     color: var(--light-grey);
     font-weight: 300;
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
-    }
+}
 
 .hero-text {
     max-width: 400px;
     margin-left: 15%;
-    
 }    
 
 .hero-highlight {
-    color: var(--light-grey); 
+    color: var(--light-grey);
     font-weight: 800;
 }
 
-.highlight {
-    color: var(--dark-green); 
-    font-weight: 800;
+/* Section Styles */
+#about, #technologies, #projects, #contact {
+    margin-left: 15%;
+    max-width: 720px;
 }
 
 #about {
     margin-top: 150px;
-    margin-left: 15%
 }
 
-#about h3 {
+#about h3, #technologies h3 {
     margin-top: 10px;
     margin-bottom: 20px;
     color: var(--dark-green);
     font-weight: 600;
-    }
+}
 
+/* Social Icons */
 .linkedin, .github {
     font-size: 40px;
     color: var(--dark-green);
     margin-right: 10px;
-} 
+}
 
 .linkedin:hover, .github:hover {
     cursor: pointer;
     color: var(--light-green);
-    
-} 
+}
 
-#technologies {
-    margin-left: 15%;
-    }
-
-#technologies h3 {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: var(--dark-green);
-    font-weight: 600;
-    }
-
+/* Technology Icons */
 .tech-icons {    
     height: 40px;
     margin-right: 15px;
     margin-bottom: 20px;
 }
 
+/* Projects Section */
 #projects {
-    margin-left: 15%;
     color: var(--dark-green);
-    }
+}
 
-input {    
+/* Form Styles */
+input, textarea {
     margin-bottom: 15px;
-    height: 30px;
     border: none;
     background-color: #DDDDDD;
     color: #627254;
@@ -223,26 +225,22 @@ input {
     padding: 5px;
 }
 
+input {    
+    height: 30px;
+}
+
 textarea {
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #DDDDDD;
-    color: #627254;
-    border: none;
     font-family: Inter, sans-serif;
-    }
+}
 
 input:focus, textarea:focus {
     outline: none;
-    }
-    
-input:focus, textarea:focus {
     border: 2px solid --dark-green;
-    }
+}
 
 #submit-button,
 #read-more {
-    width: fit-content ;
+    width: fit-content;
     min-height: 40px;
     padding: 15px;
     border-radius: 5px;
@@ -256,10 +254,11 @@ input:focus, textarea:focus {
 }
 
 #submit-button:hover,
-#read-more:hover{
+#read-more:hover {
     background-color: var(--light-green);
 }
 
+/* Contact Section */
 #contact h3 {
     color: var(--dark-green);
     margin-bottom: 20px;
@@ -273,37 +272,40 @@ input:focus, textarea:focus {
 }
 
 #contact {    
-    margin-left: 15%;
     margin-bottom: 50px;
     margin-top: 50px;
-    }
+}
 
+/* Footer Styles */
 footer {
     font-size: 0.8em;
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-items: center;
     color: var(--dark-green);
     height: 50px;
-    margin-top: 100px;   
+    margin-top: 100px;  
     background-color: var(--dark-grey);
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 40px;
-    padding-top: 40px;
-  }
+    padding: 40px 10%;
+}
 
-.divider,
-#about,
-#technologies,
-#projects,
-#contact {
+/* Divider */
+.divider {
+    border: none;
+    height: 3px;
+    background-color: var(--dark-grey);
+    margin-left: 15%;
+    margin-top: 100px;
+    margin-bottom: 100px;
     max-width: 720px;
-   }
+}
 
-
-/* Hamburguer menu */
+/* Hamburger Menu */
+#hamurguer-btn {
+   position: relative;
+   z-index: 1000;
+}
 
 .ham {
     height: 40px;
@@ -315,39 +317,35 @@ footer {
     -ms-user-select: none;
     user-select: none;
     display: none;    
-    cursor: pointer;
-  }
+}
 
-  .hamRotate.active {
+.hamRotate.active {
     transform: rotate(45deg);
-  }
-  
+}
+ 
 .hamRotate180.active {
     transform: rotate(180deg);
-  }
+}
 
 .line {
-    fill:none;
+    fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
     stroke: var(--dark-green);
-    stroke-width:5.5;
-    stroke-linecap:round;
-  }
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
 
-.ham4 .top {
+.ham4 .top,
+.ham4 .bottom {
     stroke-dasharray: 40 121;
-  }
-  .ham4 .bottom {
-    stroke-dasharray: 40 121;
-  }
-  .ham4.active .top {
-    stroke-dashoffset: -68px;
-  }
-  .ham4.active .bottom {
-    stroke-dashoffset: -68px;
-  }
+}
 
+.ham4.active .top,
+.ham4.active .bottom {
+    stroke-dashoffset: -68px;
+}
 
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
     .divider,
     .hero-text,
@@ -359,7 +357,7 @@ footer {
         margin-right: 10%;
     }
     #nav-list {
-        display: none; 
+        display: none;
     }
     nav {
         display: flex;
@@ -368,11 +366,11 @@ footer {
         margin-right: 10px;
     }  
     .ham {
-        display: block; 
+        display: block;
     }
 }
 
-
+/* Card Styles */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -418,7 +416,6 @@ footer {
     font-size: 15px;
     font-weight: 300;
 }
-       
 
 .card-link:hover {
     background-color: var(--light-green);
