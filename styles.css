@@ -175,7 +175,7 @@ nav ul li:hover {
 }
 
 /* Section Styles */
-#about, #technologies, #projects, #contact {
+#about, #technologies, #projects, #contact, #ux-studies {
     margin-left: 15%;
     max-width: 720px;
 }
@@ -184,7 +184,7 @@ nav ul li:hover {
     margin-top: 150px;
 }
 
-#about h3, #technologies h3 {
+#about h3, #technologies h3, #projects h3, #ux-studies h3, #contact h3 {
     margin-top: 10px;
     margin-bottom: 20px;
     color: var(--dark-green);
@@ -259,11 +259,6 @@ input:focus, textarea:focus {
 }
 
 /* Contact Section */
-#contact h3 {
-    color: var(--dark-green);
-    margin-bottom: 20px;
-}
-
 #contact-form {
     max-width: 500px;
     display: flex;
@@ -288,6 +283,15 @@ footer {
     background-color: var(--dark-grey);
     width: 100%;
     padding: 40px 10%;
+}
+
+footer a, footer a:visited {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--light-green);
 }
 
 /* Divider */
@@ -352,7 +356,8 @@ footer {
     #about,
     #technologies,
     #projects,
-    #contact {
+    #contact,
+    #ux-studies {
         margin-left: 10%;
         margin-right: 10%;
     }
@@ -382,12 +387,14 @@ footer {
     background-color: #f8f9fa;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 30%;
+    width: 48%; /* Increased width for better text flow */
     min-width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s ease-in-out;
-    text-align: center;
+    text-align: left; /* Align text to the left for readability */
     padding: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card img {
@@ -404,6 +411,8 @@ footer {
 .card p {
     font-size: 0.9rem;
     color: var(--light-green);
+    margin-bottom: 15px; /* Adjust margin for better spacing */
+    flex-grow: 1; /* Allow paragraph to grow, pushing button to the bottom */
 }
 
 .card-link {
@@ -415,6 +424,8 @@ footer {
     border-radius: 5px;
     font-size: 15px;
     font-weight: 300;
+    margin-top: auto; /* Push button to the bottom of the card */
+    align-self: flex-start; /* Align button with the left-aligned text */
 }
 
 .card-link:hover {
@@ -423,4 +434,11 @@ footer {
 
 .card:hover {
     transform: scale(1.05);
+}
+
+/* Make cards full-width on smaller screens */
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
 }

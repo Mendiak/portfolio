@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="¡Bienvenido al portafolio de Mikel! Como desarrollador web, combino HTML, CSS, Bootstrap, JavaScript y React para crear experiencias digitales únicas y funcionales. Explora mis proyectos y contáctame para iniciar tu próximo proyecto digital.">
+<meta name="description" content="Welcome to Mikel's portfolio! As a web developer, I combine HTML, CSS, Bootstrap, JavaScript, and React to create unique and functional digital experiences. Explore my projects and contact me to start your next digital project.">
 <title>Mikel · Web Developer</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,23 +18,23 @@
 
         <nav>
             <ul class="desktop-menu" id="nav-list">
-                <li><a onclick="scrollToSection('about')" title="Scroll a sección Sobre mi ">SOBRE MI</a></li>
-                <li><a onclick="scrollToSection('technologies')" title="Scroll a sección Tecnologias que empleo ">TECNOLOGIAS</a></li>
-                <li><a onclick="scrollToSection('projects')" title="Scroll a sección Proyectos">PROYECTOS</a></li>
-                <li><a onclick="scrollToSection('contact')" title="Scroll a sección Contacto ">CONTACTO</a></li>
+                <li><a href="#about" title="Scroll to About Me section">ABOUT ME</a></li>
+                <li><a href="#technologies" title="Scroll to Technologies section">TECHNOLOGIES</a></li>
+                <li><a href="#projects" title="Scroll to Projects section">PROJECTS</a></li>
+                <li><a href="#contact" title="Scroll to Contact section">CONTACT</a></li>
             </ul>
             
             <div class="mobile-menu" id="mobile-menu">
                 <ul class="mobile-menu-items">
-                  <li><a onclick="scrollToSection('about')">SOBRE MI</a></li>
-                  <li><a onclick="scrollToSection('technologies')">TECNOLOGIAS</a></li>
-                  <li><a onclick="scrollToSection('projects')">PROYECTOS</a></li>
-                  <li><a onclick="scrollToSection('contact')">CONTACTO</a></li>
+                  <li><a href="#about">ABOUT ME</a></li>
+                  <li><a href="#technologies">TECHNOLOGIES</a></li>
+                  <li><a href="#projects">PROJECTS</a></li>
+                  <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </div>        
         
-            <div id="hamburger-btn" onclick="toggleMobileMenu()">
-                <svg class="ham hamRotate ham4" viewBox="0 0 100 100" onclick="this.classList.toggle('active')">
+            <div id="hamburger-btn">
+                <svg class="ham hamRotate ham4" viewBox="0 0 100 100">
                     <path
                           class="line top"
                           d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
@@ -53,103 +53,153 @@
 
     <section class="hero">
         <div class="hero-text">
-        <h1>Hola, soy <span class="hero-highlight">Mikel</span></h1>
-        <h2>Desarrollo sitios web accesibles y funcionales</h2>
-        <button onclick="scrollToSection('about')" id="read-more">Saber más...</button>
+        <h1>Hello, I'm <span class="hero-highlight">Mikel</span></h1>
+        <h2>I build accessible and functional websites</h2>
+        <a href="#about" id="read-more" class="button">Learn more...</a>
         </div>
     </section>
 
     <section id="about">
-        <img src="./assets/images/svg/responsive.png" height="100" alt="Icono de un ordenador y un móvil">
-        <h3>./Sobre mi</h3>
-        <p>Desde pequeño, me ha fascinado el mundo de la tecnología y cómo moldea nuestras interacciones en el entorno digital.</p>
+        <img src="./assets/images/svg/responsive.png" height="100" alt="Icon of a computer and a mobile phone">
+        <h3>./About me</h3>
+        <p>Since I was young, I have been fascinated by the world of technology and how it shapes our interactions in the digital environment.</p>
 
-        <p>Mi filosofía de desarrollo gira en torno a los principios de <span class="highlight">usabilidad, simplicidad y claridad</span>. Creo firmemente que menos es más cuando se trata de crear experiencias digitales. Mi objetivo es diseñar y construir proyectos web que no solo sean visualmente atractivos, sino también intuitivos y amigables para todos los usuarios.</p>
+        <p>My development philosophy revolves around the principles of <span class="highlight">usability, simplicity, and clarity</span>. I firmly believe that less is more when it comes to creating digital experiences. My goal is to design and build web projects that are not only visually appealing but also intuitive and user-friendly for everyone.</p>
 
-        <p>Disfruto enfrentando desafíos complejos y creando soluciones elegantes que mantienen la complejidad bajo control. Me dedico a aprovechar el poder de la tecnología para simplificar nuestras vidas y mejorar nuestras interacciones digitales. Con cada proyecto que emprendo, me esfuerzo por incorporar las últimas tendencias y tecnologías para garantizar que mis creaciones sean innovadoras y ofrezcan una experiencia de usuario moderna y atractiva.</p>
+        <p>I enjoy tackling complex challenges and creating elegant solutions that keep complexity under control. I am dedicated to leveraging the power of technology to simplify our lives and enhance our digital interactions. With every project I undertake, I strive to incorporate the latest trends and technologies to ensure my creations are innovative and offer a modern and engaging user experience.</p>
 
-        <a href="https://github.com/Mendiak" title="Mi perfil de Github" target="_blank"><i class="bi bi-linkedin linkedin"></i></a> 
-        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="Mi perfil de LinkedIn" target="_blank"></a><i class="bi bi-github github"></i></a>
+        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" target="_blank"><i class="bi bi-linkedin linkedin"></i></a> 
+        <a href="https://github.com/Mendiak" title="My Github profile" target="_blank"><i class="bi bi-github github"></i></a>
     </section>  
 
     <hr class="divider">
 
     <section id="technologies">
-        <img src="./assets/images/svg/tools.png" height="100" alt="Icono con un símbolo de código">
-        <h3>./Las tecnologías que empleo</h3>
-        <p>En mis proyectos de desarrollo web, aprovecho el poder de varias tecnologías para crear experiencias online atractivas. Esto incluye <span class="highlight">HTML5</span>, que proporciona la estructura de las páginas web, y <span class="highlight">CSS</span> para el estilo y la apariencia. <span class="highlight">JavaScript</span> añade interactividad y funcionalidad dinámica, mientras que <span class="highlight">React</span> me permite construir interfaces de usuario amigables de manera eficiente.</p>
+        <img src="./assets/images/svg/tools.png" height="100" alt="Icon with a code symbol">
+        <h3>./The technologies I use</h3>
+        <p>In my web development projects, I leverage the power of various technologies to create engaging online experiences. This includes <span class="highlight">HTML5</span>, which provides the structure for web pages, and <span class="highlight">CSS</span> for styling and appearance. <span class="highlight">JavaScript</span> adds interactivity and dynamic functionality, while <span class="highlight">React</span> allows me to build user-friendly interfaces efficiently.</p>
     
-        <p>No obstante, mi repertorio va más allá. Utilizo <span class="highlight">Bootstrap</span> como una herramienta clave para agilizar el diseño y la estructura de mis proyectos, lo que me permite crear interfaces de usuario más eficientes y consistentes. Además, hago uso de <span class="highlight">Sass</span>, una potente herramienta que mejora la capacidad de CSS mediante funciones avanzadas como variables y mixins. Este enfoque meticuloso y proactivo se traduce en hojas de estilo bien organizadas y de fácil mantenimiento, lo que contribuye a la coherencia y el rendimiento del diseño de mis sitios web. También cuento con experiencia en la gestión de versiones con <span class="highlight">GitHub</span>.</p>
+        <p>However, my repertoire goes beyond that. I use <span class="highlight">Bootstrap</span> as a key tool to streamline the design and structure of my projects, allowing me to create more efficient and consistent user interfaces. Additionally, I use <span class="highlight">Sass</span>, a powerful tool that enhances CSS capabilities with advanced features like variables and mixins. This meticulous and proactive approach results in well-organized and easily maintainable stylesheets, contributing to the consistency and performance of my website designs. I also have experience with version control using <span class="highlight">GitHub</span>.</p>
     
-        <p>Al combinar estas tecnologías con un enfoque profesional y centrado en las necesidades del cliente, soy capaz de crear sitios web modernos y funcionales que cumplen con los estándares más exigentes de la industria y satisfacen las diversas necesidades de los usuarios finales.</p>
+        <p>By combining these technologies with a professional and client-focused approach, I am able to create modern and functional websites that meet the most demanding industry standards and satisfy the diverse needs of end-users.</p>
 
-        <p>Además, dispongo del <span class="highlight">Google UX Design Certificate</span>, una formación que me ha proporcionado un profundo conocimiento en el diseño centrado en el usuario y en metodologías como el Design Thinking. A través de este curso, he perfeccionado técnicas como la investigación de usuarios, la creación de wireframes y prototipos, y el diseño accesible. Este certificado complementa mis habilidades técnicas, permitiéndome abordar cada proyecto con una visión integral que garantiza experiencias de usuario intuitivas y efectivas.</p>
+        <p>Furthermore, I hold the <span class="highlight">Google UX Design Certificate</span>, a training that has provided me with a deep understanding of user-centered design and methodologies like Design Thinking. Through this course, I have honed techniques such as user research, wireframing, prototyping, and accessible design. This certificate complements my technical skills, allowing me to approach each project with a comprehensive vision that ensures intuitive and effective user experiences.</p>
 
         <div id="tech-icons">
-            <img class="tech-icons" src="./assets/images/svg/html-svgrepo-com.svg" alt="Icono de HTML5">
-            <img class="tech-icons" src="./assets/images/svg/css-svgrepo-com.svg" alt="Icono de CSS">
-            <img class="tech-icons" src="./assets/images/svg/javascript-svgrepo-com.svg" alt="Icono de JavaScript">
-            <img class="tech-icons" src="./assets/images/svg/react-logo-programming-svgrepo-com.svg" alt="Icono de React">
-            <img class="tech-icons" src="./assets/images/svg/github-svgrepo-com.svg" alt="Icono de Github">
-            <img class="tech-icons" src="./assets/images/svg/sass-svgrepo-com.svg" alt="Icono de Sass">
-            <img class="tech-icons" src="./assets/images/svg/bootstrap-svgrepo-com.svg" alt="Icono de Bootstrap">
-            <img class="tech-icons" src="./assets/images/svg/wordpress-svgrepo-com.svg" alt="Icono de Wordpress">
+            <img class="tech-icons" src="./assets/images/svg/html-svgrepo-com.svg" alt="HTML5 Icon">
+            <img class="tech-icons" src="./assets/images/svg/css-svgrepo-com.svg" alt="CSS Icon">
+            <img class="tech-icons" src="./assets/images/svg/javascript-svgrepo-com.svg" alt="JavaScript Icon">
+            <img class="tech-icons" src="./assets/images/svg/react-logo-programming-svgrepo-com.svg" alt="React Icon">
+            <img class="tech-icons" src="./assets/images/svg/github-svgrepo-com.svg" alt="Github Icon">
+            <img class="tech-icons" src="./assets/images/svg/sass-svgrepo-com.svg" alt="Sass Icon">
+            <img class="tech-icons" src="./assets/images/svg/bootstrap-svgrepo-com.svg" alt="Bootstrap Icon">
+            <img class="tech-icons" src="./assets/images/svg/wordpress-svgrepo-com.svg" alt="Wordpress Icon">
         </div>
     </section>
 
     <hr class="divider">
 
     <section id="projects">
-    <h3>./Proyectos</h3>
-    <br>
-    <div class="card-container">
-        <div class="card">
-            <img src="./assets/images/marsconnect.jpg" alt="Estudio de Diseño UX 1">
-            <h4>Caso de estudio UX: MarsConnect</h4>
-            <p class="cardtext">Este proyecto se centra en el diseño de una app de onboarding para futuros colonos de Marte, con el objetivo de guiar a los usuarios a través de los procedimientos esenciales para adaptarse a su nueva vida en el planeta. La app también ofrece recomendaciones personalizadas y eventos que fomentan la integración en la primera colonia marciana.</p>
-            <a href="https://docs.google.com/presentation/d/12UOfbEr6N2_4kM4snO4fYbaOnsqSgTK3/edit?usp=sharing&ouid=113552910971866545750&rtpof=true&sd=true" class="card-link" target="_blank">Ver más</a>
-        </div>
-        
-        <div class="card">
-            <img src="./assets/images/designforwardsummit.jpg" alt="Estudio de Diseño UX 2">
-            <h4>Caso de estudio UX: Design Forward Summit</h4>
-            <p>Este proyecto consiste en el diseño de una plataforma web para facilitar el proceso de nominación en una conferencia de diseño, haciéndolo más intuitivo y accesible. El objetivo fue simplificar la navegación, mejorar las confirmaciones de envío y garantizar una experiencia fluida para los usuarios.</p>
-            <a href="https://docs.google.com/presentation/d/1gFegfqNyxWkfqWVlagLPFGDMsQjepAyLkdd2viOiLVc/edit?usp=sharing" class="card-link" target="_blank">Ver más</a>
-        </div>
-        
-        <div class="card">
-            <img src="./assets/images/guardianesdelturon.jpg" alt="Estudio de Diseño UX 3">
-            <h4>Caso de estudio UX: Guardianes Del Turón</h4>
-            <p>El proyecto 'Guardianes del Turón' es una plataforma interactiva diseñada para aumentar la conciencia sobre la conservación del turón europeo. A través de una aplicación móvil y una web responsiva, permite a los usuarios reportar avistamientos, participar en eventos de voluntariado y adoptar simbólicamente a esta especie en peligro.</p>
-            <a href="https://docs.google.com/presentation/d/1NguajI3vGbqC4zX9fLyJg7aCDmrQUzg0LKqSPVjJUo4/edit?usp=sharing" class="card-link" target="_blank">Ver más</a>
-        </div>
-    </div>
+        <h3>./Projects</h3>
+        <p>Here are some of the personal and academic projects I've worked on. Feel free to explore them.</p>
+        <div class="card-container">
+            <div class="card">
+                <img src="/assets/images/projects/confessio.png" alt="Project Confessio">
+                <h4>Confessio: AI Digital Sanctuary</h4>
+                <p class="cardtext">An anonymous sanctuary for reflection, built with Next.js, React, and TypeScript. Users can share their thoughts and receive spiritual guidance generated by an AI (Google Gemini). It features a multilingual UI, smart content categorization, and an interactive "Wall of Intentions" powered by Firebase, all styled with Tailwind CSS & Shadcn/ui.</p>
+                <a href="https://confessio-ai.vercel.app/es" class="card-link" target="_blank">View Project</a>
+            </div>
+            
+            <div class="card">
+                <img src="/assets/images/projects/partyinvitations.png" alt="Project Party Invitations">
+                <h4>Party Invitations</h4>
+                <p>A responsive invitation generator built with vanilla JavaScript, HTML5, and CSS3. Features live customization, background search via the Unsplash API, and multiple export options including PNG, shareable links, QR codes, and .ICS calendar files.</p>
+                <a href="https://party-invitations.vercel.app/" class="card-link" target="_blank">View Project</a>
+            </div>
+            
+            <div class="card">
+                <img src="/assets/images/projects/whenlambo.png" alt="Project When Lambo">
+                <h4>When Lambo</h4>
+                <p class="cardtext">"When Lambo?" is an interactive web application that allows users to determine their Lamborghini-buying potential based on their Bitcoin holdings. The app features real-time price data via the CoinDesk API, supports multiple fiat currencies, and is designed with a humorous, engaging tone for the crypto audience.</p>
+                <a href="https://whenlambo.biz/" class="card-link" target="_blank">View Project</a>
+            </div>
 
+            <div class="card">
+                <img src="/assets/images/projects/pulseroots.png" alt="Project PulseRoots">
+                <h4>PulseRoots: Interactive Electronic Music Genre Explorer</h4>
+                <p class="cardtext">PulseRoots is an interactive, single‑page web app that visualizes the landscape of electronic music genres. Built with D3.js for dynamic tree/treemap structures, it lets users explore major families (like Ambient, Techno, House) and their subgenres. Featuring responsive HTML/CSS design, detailed genre info panels, and embedded Spotify previews, PulseRoots offers both an educational and immersive musical journey.
+Technologies used: modern JavaScript (ES6+), D3.js for visualization, Spotify Web Embed, responsive layout.</p>
+                <a href="https://mendiak.github.io/pulse.roots/" class="card-link" target="_blank">View Project</a>
+            </div>
+
+            <div class="card">
+                <img src="/assets/images/projects/newcontemporaryphotography.png" alt="Project New Contemporary Photography">
+                <h4>New Contemporary Photography</h4>
+                <p class="cardtext">A single-page application that connects to the Flickr API to display random photos from a photography group. Built with vanilla JavaScript, it features a fully responsive layout, smooth CSS animations, and a dark mode toggle.</p>
+                <a href="https://new-contemporary-photography.vercel.app/" class="card-link" target="_blank">View Project</a>
+            </div>
+
+            <div class="card">
+                <img src="/assets/images/projects/drake.png" alt="Project Drake Equation">
+                <h4>Drake Equation Visualizer</h4>
+                <p>An interactive single-page web app that illustrates the famous Drake Equation, which estimates the number of communicative extraterrestrial civilizations in our galaxy. Built with HTML, CSS, and JavaScript, the site lets users adjust parameters and instantly see how each factor influences the final result, combining science outreach with a clean, responsive design.</p>
+                <a href="https://new-contemporary-photography.vercel.app/" class="card-link" target="_blank">View Project</a>
+            </div>
+        </div>
     </section>    
-    
+
+    <hr class="divider">
+
+    <section id="ux-studies">
+        <h3>./UX Case Studies</h3>
+        <div class="card-container">
+            <div class="card">
+                <img src="./assets/images/marsconnect.jpg" alt="UX Design Study 1">
+                <h4>UX Case Study: MarsConnect</h4>
+                <p class="cardtext">This project focuses on designing an onboarding app for future Mars colonists, aiming to guide users through essential procedures to adapt to their new life on the planet. The app also offers personalized recommendations and events to foster integration into the first Martian colony.</p>
+                <a href="https://docs.google.com/presentation/d/12UOfbEr6N2_4kM4snO4fYbaOnsqSgTK3/edit?usp=sharing&ouid=113552910971866545750&rtpof=true&sd=true" class="card-link" target="_blank">View More</a>
+            </div>
+            
+            <div class="card">
+                <img src="./assets/images/designforwardsummit.jpg" alt="UX Design Study 2">
+                <h4>UX Case Study: Design Forward Summit</h4>
+                <p>This project involves designing a web platform to facilitate the nomination process for a design conference, making it more intuitive and accessible. The goal was to simplify navigation, improve submission confirmations, and ensure a smooth user experience.</p>
+                <a href="https://docs.google.com/presentation/d/1gFegfqNyxWkfqWVlagLPFGDMsQjepAyLkdd2viOiLVc/edit?usp=sharing" class="card-link" target="_blank">View More</a>
+            </div>
+            
+            <div class="card">
+                <img src="./assets/images/guardianesdelturon.jpg" alt="UX Design Study 3">
+                <h4>UX Case Study: Guardians of the Polecat</h4>
+                <p>The 'Guardians of the Polecat' project is an interactive platform designed to raise awareness about the conservation of the European polecat. Through a mobile app and a responsive website, it allows users to report sightings, participate in volunteer events, and symbolically adopt this endangered species.</p>
+                <a href="https://docs.google.com/presentation/d/1NguajI3vGbqC4zX9fLyJg7aCDmrQUzg0LKqSPVjJUo4/edit?usp=sharing" class="card-link" target="_blank">View More</a>
+            </div>
+        </div>
+    </section>
+
     <hr class="divider">
 
     <section id="contact">     
-        <h3>./Contacto</h3>   
-        <p>Gracias por visitar mi portafolio. Espero tener la oportunidad de colaborar contigo y crear experiencias digitales únicas en el futuro. Escríbeme a través de este formulario y... ¡Empecemos!</p>
+        <h3>./Contact</h3>   
+        <p>Thank you for visiting my portfolio. I look forward to the opportunity to collaborate with you and create unique digital experiences in the future. Write to me through this form and... Let's get started!</p>
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="41398cfd-0efd-45fa-859e-50b9e66d6f31">
-        <input type="text" placeholder="Tu nombre" name="name" required>
-        <input type="email" placeholder="Tu email" name="email" required></input>
-        <textarea name="message" rows="6" cols="50" placeholder="Tu mensaje" required></textarea>
-        <input type="hidden" name="redirect" value="https://web3forms.com/success">
-        <button type="submit" id="submit-button">Enviar formulario</button>
+            <input type="hidden" name="access_key" value="41398cfd-0efd-45fa-859e-50b9e66d6f31">
+            <label for="name" class="sr-only">Name</label>
+            <input type="text" id="name" placeholder="Your name" name="name" required>
+            <label for="email" class="sr-only">Email</label>
+            <input type="email" id="email" placeholder="Your email" name="email" required>
+            <label for="message" class="sr-only">Message</label>
+            <textarea id="message" name="message" rows="6" cols="50" placeholder="Your message" required></textarea>
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <button type="submit" id="submit-button">Send Message</button>
         </form>
     </section>    
 
     
 
     <footer>
-    <div>
-        Diseñado por Mikel Aramendia · 2024 · <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank">Haz tu fork de este portfolio</a> · 
-       <a href="https://www.flaticon.es/autores/vectorslab" target="_blank" title="diseño adaptativo iconos">Iconos creados por Vectorslab @ Flaticon</a> 
-    </footer>    
-    </div>
+        Designed by Mikel Aramendia · 2024 · <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank">Fork this portfolio</a> · 
+       <a href="https://www.flaticon.es/autores/vectorslab" target="_blank" title="diseño adaptativo iconos">Icons created by Vectorslab @ Flaticon</a> 
+    </footer>
 
     <script src="./script.js">
        
