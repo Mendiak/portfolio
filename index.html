@@ -183,11 +183,11 @@ Technologies used: modern JavaScript (ES6+), D3.js for visualization, Spotify We
         <p>Thank you for visiting my portfolio. I look forward to the opportunity to collaborate with you and create unique digital experiences in the future. Write to me through this form and... Let's get started!</p>
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="41398cfd-0efd-45fa-859e-50b9e66d6f31">
-            <label for="name" class="sr-only">Name</label>
+            <label for="name">Name</label>
             <input type="text" id="name" placeholder="Your name" name="name" required>
-            <label for="email" class="sr-only">Email</label>
+            <label for="email">Email</label>
             <input type="email" id="email" placeholder="Your email" name="email" required>
-            <label for="message" class="sr-only">Message</label>
+            <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" cols="50" placeholder="Your message" required></textarea>
             <input type="hidden" name="redirect" value="https://web3forms.com/success">
             <button type="submit" id="submit-button">Send Message</button>
@@ -198,16 +198,20 @@ Technologies used: modern JavaScript (ES6+), D3.js for visualization, Spotify We
 
     <footer>
         <div class="footer-left">
-            <p>&copy; 2025 Mikel Aramendia</p>
+            <p>&copy; <span id="copyright-year">2025</span> Mikel Aramendia</p>
             <p class="attributions">
-                <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank">Fork this portfolio · </a> 
+                <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank" class="attribution-link">Fork this portfolio</a>
                 <a href="https://www.flaticon.com/authors/vectorslab" target="_blank" title="Icons created by Vectorslab @ Flaticon">Icon credits</a>
             </p>
         </div>
-        <div class="footer-right">
-            <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" target="_blank"><i class="bi bi-linkedin"></i></a> 
-            <a href="https://github.com/Mendiak" title="My Github profile" target="_blank"><i class="bi bi-github"></i></a>
-        </div>
+        <ul class="footer-socials">
+            <li>
+                <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="My LinkedIn profile" target="_blank"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="https://github.com/Mendiak" aria-label="My Github profile" target="_blank"><i class="bi bi-github" aria-hidden="true"></i></a>
+            </li>
+        </ul>
     </footer>
 
     <script src="./script.js">

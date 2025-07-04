@@ -4,6 +4,8 @@
     --light-green: #76885B;
     --light-grey: #E6E6E6;
     --dark-grey: #DDDDDD;
+    --radius-std: 5px;
+    --radius-card: 8px;
 }
 
 /* Global Reset */
@@ -225,22 +227,31 @@ input, textarea {
     margin-bottom: 15px;
     border: none;
     background-color: #DDDDDD;
-    color: #627254;
-    border-radius: 5px;
-    padding: 5px;
+    color: var(--dark-green);
+    border-radius: var(--radius-std);
+    padding: 12px; /* Aumentamos el padding para más espacio */
+    border: 2px solid transparent; /* Borde inicial para evitar saltos en el focus */
+    transition: border-color 0.3s ease-in-out; /* Transición suave */
 }
 
 input {    
-    height: 30px;
+    /* La altura se controlará con el padding, eliminamos height fijo */
 }
 
 textarea {
     font-family: Inter, sans-serif;
+    resize: vertical; /* Permitir solo redimensionamiento vertical */
 }
 
 input:focus, textarea:focus {
     outline: none;
-    border: 2px solid --dark-green;
+    border-color: var(--dark-green); /* Corregido: usar var() */
+}
+
+/* Estilo para los placeholders para mejorar la legibilidad */
+::placeholder {
+    color: #6c757d; /* Un gris más suave que el texto principal */
+    opacity: 1; /* Firefox usa una opacidad por defecto */
 }
 
 #submit-button,
@@ -248,7 +259,7 @@ input:focus, textarea:focus {
     width: fit-content;
     min-height: 40px;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: var(--radius-std);
     margin-top: 10px;
     border: none;
     background-color: var(--dark-green);
@@ -301,23 +312,33 @@ footer p {
     margin-top: 5px;
 }
 
-.footer-right {
-    display: flex;
-    gap: 20px;
+.attribution-link::after {
+    content: " · ";
+    pointer-events: none; /* Evita que el separador sea interactivo */
+    text-decoration: none;
 }
 
-.footer-right a i {
+.footer-socials {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-socials a i {
     font-size: 28px;
     transition: color 0.2s ease-in-out;
 }
 
 footer a, footer a:visited {
     color: var(--dark-green);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 footer a:hover {
     color: var(--light-green);
+    text-decoration: underline;
 }
 
 /* Divider */
@@ -417,12 +438,12 @@ footer a:hover {
 .card {
     background-color: #f8f9fa;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 48%; /* Increased width for better text flow */
+    border-radius: var(--radius-card);
+    width: 48%; 
     min-width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease-in-out;
-    text-align: left; /* Align text to the left for readability */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left; 
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -431,7 +452,7 @@ footer a:hover {
 .card img {
     width: 100%;
     height: auto;
-    border-radius: 4px;
+    border-radius: var(--radius-std);
 }
 
 .card h4 {
@@ -442,8 +463,8 @@ footer a:hover {
 .card p {
     font-size: 0.9rem;
     color: var(--light-green);
-    margin-bottom: 15px; /* Adjust margin for better spacing */
-    flex-grow: 1; /* Allow paragraph to grow, pushing button to the bottom */
+    margin-bottom: 15px; 
+    flex-grow: 1; 
 }
 
 .card-link {
@@ -452,11 +473,11 @@ footer a:hover {
     background-color: var(--dark-green);
     color: var(--light-grey);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: var(--radius-std);
     font-size: 15px;
     font-weight: 300;
-    margin-top: auto; /* Push button to the bottom of the card */
-    align-self: flex-start; /* Align button with the left-aligned text */
+    margin-top: auto; 
+    align-self: flex-start; 
 }
 
 .card-link:hover {
@@ -464,7 +485,8 @@ footer a:hover {
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 /* Make cards full-width on smaller screens */
