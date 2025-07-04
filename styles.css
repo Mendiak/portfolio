@@ -353,7 +353,7 @@ footer a:hover {
 }
 
 /* Hamburger Menu */
-#hamurguer-btn {
+#hamburger-btn {
    position: relative;
    z-index: 1000;
 }
