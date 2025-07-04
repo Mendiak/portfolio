@@ -69,6 +69,11 @@ nav ul li a {
     display: block;
 }
 
+/* Ensure visited links in the nav bar remain visible */
+nav ul li a:visited {
+    color: var(--dark-green);
+}
+
 nav ul li:hover {
     cursor: pointer;  
     background-color: var(--dark-grey);
@@ -157,7 +162,7 @@ nav ul li:hover {
 }
 
 .hero h2 {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     font-size: 2.0em;
     color: var(--light-grey);
     font-weight: 300;
@@ -251,6 +256,7 @@ input:focus, textarea:focus {
     font-size: 15px;
     font-weight: 500;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 }
 
 #submit-button:hover,
@@ -273,16 +279,36 @@ input:focus, textarea:focus {
 
 /* Footer Styles */
 footer {
-    font-size: 0.8em;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     color: var(--dark-green);
-    height: 50px;
     margin-top: 100px;  
     background-color: var(--dark-grey);
     width: 100%;
-    padding: 40px 10%;
+    padding: 25px 10%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.footer-left .attributions {
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.footer-right {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-right a i {
+    font-size: 28px;
+    transition: color 0.2s ease-in-out;
 }
 
 footer a, footer a:visited {
@@ -372,6 +398,11 @@ footer a:hover {
     }  
     .ham {
         display: block;
+    }
+    footer {
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
     }
 }
 
