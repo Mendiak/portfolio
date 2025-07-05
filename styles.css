@@ -127,7 +127,7 @@ nav ul li:hover {
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(2) {
@@ -135,7 +135,7 @@ nav ul li:hover {
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Mobile Menu Styles */
@@ -492,7 +492,7 @@ footer a:hover {
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(2) {
@@ -500,7 +500,7 @@ footer a:hover {
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Responsive Styles */
@@ -604,4 +604,15 @@ footer a:hover {
     .card {
         width: 100%;
     }
+}
+
+.profile-pic {
+    display: block;
+    margin: 18px 0 28px 0;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--dark-grey);
+    box-shadow: 0 2px 8px rgba(63,76,57,0.08);
 }
