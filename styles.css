@@ -95,7 +95,6 @@ nav ul li:hover {
 /* Mobile Menu Styles */
 /* Modern Minimalist Hamburger Menu */
 .mobile-menu {
-    display: none;
     position: fixed;
     top: 60px; /* Ajusta según la altura de tu nav */
     right: 5vw;
@@ -117,69 +116,6 @@ nav ul li:hover {
 }
 
 .mobile-menu.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-}
-
-.mobile-menu ul {
-    padding: 24px 0 14px 0;    /* Padding vertical para separar del borde */
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;   /* <-- Asegura disposición vertical */
-    width: 100%;              /* <-- Ocupa todo el ancho del menú */
-}
-
-.mobile-menu ul li {
-    margin: 0;
-    text-align: center;
-    width: 100%;              /* <-- Ocupa todo el ancho */
-}
-
-.mobile-menu ul li:not(:last-child) {
-    border-bottom: 1px solid var(--dark-grey);
-}
-
-.mobile-menu ul li a {
-    color: var(--dark-green);
-    text-decoration: none;
-    font-size: 1.15rem;
-    font-weight: var(--fw-medium);
-    display: block;
-    padding: 18px 0 18px 0;   /* Más padding para mejor toque */
-    border-radius: 0;
-    transition: background 0.18s, color 0.18s;
-    letter-spacing: 0.02em;
-    position: relative;
-    width: 100%;              /* <-- Ocupa todo el ancho */
-}
-
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 60px;
-    right: 5vw;
-    left: auto;
-    width: 260px;
-    min-width: 180px;
-    max-width: 320px;
-    background: rgba(255,255,255,0.97);
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(63,76,57,0.18), 0 1.5px 8px rgba(63,76,57,0.08);
-    z-index: 2000; /* o un valor alto */
-    padding: 0;                /* Quita padding aquí, lo damos al ul */
-    box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(-20px) scale(0.98);
-    pointer-events: none;
-    transition: opacity 0.25s cubic-bezier(.4,0,.2,1), transform 0.25s cubic-bezier(.4,0,.2,1);
-    overflow: hidden;          /* <-- Evita que el fondo se corte */
-}
-
-.mobile-menu.active {
-    display: block;
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
