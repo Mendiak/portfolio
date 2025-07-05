@@ -105,12 +105,15 @@ nav ul li:hover {
     align-items: center;
     width: 44px;
     height: 44px;
-    background: none;
-    border: none;
+    background: none;        /* Sin fondo */
+    border: none;            /* Sin borde */
+    border-radius: 0;        /* Sin esquinas redondeadas */
+    box-shadow: none;        /* Sin sombra */
+    padding: 0;              /* Sin padding extra */
+    margin: 0 10px 0 auto;   /* Empuja a la derecha en móvil */
     cursor: pointer;
     z-index: 3001;
     position: relative;
-    margin-left: auto; /* Empuja el botón a la derecha */
 }
 
 .hamburger-bar {
@@ -120,6 +123,7 @@ nav ul li:hover {
     margin: 4px 0;
     border-radius: 2px;
     transition: all 0.3s;
+    display: block;
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(1) {
@@ -466,12 +470,15 @@ footer a:hover {
     align-items: center;
     width: 44px;
     height: 44px;
-    background: none;
-    border: none;
+    background: none;        /* Sin fondo */
+    border: none;            /* Sin borde */
+    border-radius: 0;        /* Sin esquinas redondeadas */
+    box-shadow: none;        /* Sin sombra */
+    padding: 0;              /* Sin padding extra */
+    margin: 0 10px 0 auto;   /* Empuja a la derecha en móvil */
     cursor: pointer;
     z-index: 3001;
     position: relative;
-    margin-left: auto; /* Empuja el botón a la derecha */
 }
 
 .hamburger-bar {
@@ -481,6 +488,7 @@ footer a:hover {
     margin: 4px 0;
     border-radius: 2px;
     transition: all 0.3s;
+    display: block;
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(1) {
