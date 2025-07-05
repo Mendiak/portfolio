@@ -617,14 +617,26 @@ footer a:hover {
 .profile-pic {
     display: block;
     margin: 18px 0 28px 0;
-    width: 90px !important;
-    height: 90px !important;
-    min-width: 90px !important;
-    min-height: 90px !important;
-    max-width: 90px !important;
-    max-height: 90px !important;
+    width: 90px;
+    height: 90px;
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 90px;
+    max-height: 90px;
     object-fit: cover;
-    border-radius: 50% !important;
+    border-radius: 50%;
     border: 3px solid var(--dark-grey);
     box-shadow: 0 2px 8px rgba(63,76,57,0.08);
+}
+
+@media screen and (max-width: 600px) {
+    .profile-pic {
+        width: 70px;
+        height: 70px;
+        min-width: 50px;
+        min-height: 50px;
+        max-width: 70px;
+        max-height: 70px;
+        border-radius: 50%;
+    }
 }
