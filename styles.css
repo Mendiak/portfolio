@@ -106,7 +106,7 @@ nav ul li:hover {
     background: rgba(255,255,255,0.97);
     border-radius: 18px;
     box-shadow: 0 8px 32px rgba(63,76,57,0.18), 0 1.5px 8px rgba(63,76,57,0.08);
-    z-index: 1000;
+    z-index: 2000; /* o un valor alto */
     padding: 0;                /* Quita padding aquí, lo damos al ul */
     box-sizing: border-box;
     opacity: 0;
@@ -168,7 +168,7 @@ nav ul li:hover {
     background: rgba(255,255,255,0.97);
     border-radius: 18px;
     box-shadow: 0 8px 32px rgba(63,76,57,0.18), 0 1.5px 8px rgba(63,76,57,0.08);
-    z-index: 1000;
+    z-index: 2000; /* o un valor alto */
     padding: 0;                /* Quita padding aquí, lo damos al ul */
     box-sizing: border-box;
     opacity: 0;
@@ -502,6 +502,7 @@ footer a:hover {
     -ms-user-select: none;
     user-select: none;
     display: none;    
+    pointer-events: auto;
 }
 
 .hamRotate.active {

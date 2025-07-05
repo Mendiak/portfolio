@@ -4,16 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hamburger menu logic
     const hamburgerBtn = document.getElementById('hamburger-btn');
-    const hamSvg = hamburgerBtn.querySelector('.ham');
-    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamSvg = hamburgerBtn.querySelector('svg.ham'); // <-- Asegura que seleccionas el SVG
+    const mobileMenu = document.getElementById('mobile-menu'); // <-- Usa el id directamente
 
     function toggleMobileMenu() {
         mobileMenu.classList.toggle('active');
         hamSvg.classList.toggle('active');
     }
 
-    // Click on hamburger button toggles menu
-    hamburgerBtn.addEventListener('click', toggleMobileMenu);
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation(); // <-- Evita que el click se propague y cierre el menú inmediatamente
+        toggleMobileMenu();
+    });
 
     // Close menu when clicking a mobile menu link
     document.querySelectorAll('.mobile-menu a').forEach(link => {
