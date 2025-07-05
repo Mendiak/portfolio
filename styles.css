@@ -6,6 +6,16 @@
     --dark-grey: #DDDDDD;
     --radius-std: 5px;
     --radius-card: 8px;
+
+    /* Typographic Scale & Weights */
+    --fs-base: 1rem; /* 16px */
+    --fs-sm: 0.9rem;
+    --fs-lg: 1.1rem;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 800;
 }
 
 /* Global Reset */
@@ -19,6 +29,7 @@
 body {        
     background-color: var(--light-grey);
     font-family: Inter, sans-serif;  
+    font-size: var(--fs-base);
 }
 
 /* Typography Styles */
@@ -38,7 +49,7 @@ a:visited {
 
 .highlight {
     color: var(--dark-green);
-    font-weight: 800;
+    font-weight: var(--fw-bold);
 }
 
 /* Navigation Styles */
@@ -82,59 +93,152 @@ nav ul li:hover {
 }
 
 /* Mobile Menu Styles */
+/* Modern Minimalist Hamburger Menu */
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 40px; /* Ajusta según la altura de tu barra de navegación */
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    top: 60px; /* Ajusta según la altura de tu nav */
+    right: 5vw;
+    left: auto;
+    width: 260px;
+    min-width: 180px;
+    max-width: 320px;
+    background: rgba(255,255,255,0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(63,76,57,0.18), 0 1.5px 8px rgba(63,76,57,0.08);
     z-index: 1000;
-    padding: 20px;
+    padding: 0;                /* Quita padding aquí, lo damos al ul */
     box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(.4,0,.2,1), transform 0.25s cubic-bezier(.4,0,.2,1);
+    overflow: hidden;          /* <-- Evita que el fondo se corte */
 }
 
 .mobile-menu.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
 }
 
 .mobile-menu ul {
-    padding: 0px;
+    padding: 24px 0 14px 0;    /* Padding vertical para separar del borde */
+    margin: 0;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;   /* <-- Asegura disposición vertical */
+    width: 100%;              /* <-- Ocupa todo el ancho del menú */
 }
 
 .mobile-menu ul li {
-    margin-bottom: 15px;
+    margin: 0;
     text-align: center;
+    width: 100%;              /* <-- Ocupa todo el ancho */
+}
+
+.mobile-menu ul li:not(:last-child) {
+    border-bottom: 1px solid var(--dark-grey);
 }
 
 .mobile-menu ul li a {
-    color: var(--light-grey);
+    color: var(--dark-green);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.15rem;
+    font-weight: var(--fw-medium);
     display: block;
-    padding: 10px;
+    padding: 18px 0 18px 0;   /* Más padding para mejor toque */
+    border-radius: 0;
+    transition: background 0.18s, color 0.18s;
+    letter-spacing: 0.02em;
+    position: relative;
+    width: 100%;              /* <-- Ocupa todo el ancho */
 }
 
-.mobile-menu.active ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 5vw;
+    left: auto;
+    width: 260px;
+    min-width: 180px;
+    max-width: 320px;
+    background: rgba(255,255,255,0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(63,76,57,0.18), 0 1.5px 8px rgba(63,76,57,0.08);
+    z-index: 1000;
+    padding: 0;                /* Quita padding aquí, lo damos al ul */
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(.4,0,.2,1), transform 0.25s cubic-bezier(.4,0,.2,1);
+    overflow: hidden;          /* <-- Evita que el fondo se corte */
+}
+
+.mobile-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.mobile-menu ul {
+    padding: 24px 0 14px 0;    /* Padding vertical para separar del borde */
+    margin: 0;
     list-style-type: none;
-    padding: 0;
+    display: flex;
+    flex-direction: column;   /* <-- Asegura disposición vertical */
+    width: 100%;              /* <-- Ocupa todo el ancho del menú */
+}
+
+.mobile-menu ul li {
     margin: 0;
     text-align: center;
+    width: 100%;              /* <-- Ocupa todo el ancho */
 }
 
-.mobile-menu.active ul li {
-    margin-bottom: 20px;
+.mobile-menu ul li:not(:last-child) {
+    border-bottom: 1px solid var(--dark-grey);
 }
 
-.mobile-menu.active ul li a {
-    color: var(--light-grey);
+.mobile-menu ul li a {
+    color: var(--dark-green);
     text-decoration: none;
-    font-size: 24px;
+    font-size: 1.15rem;
+    font-weight: var(--fw-medium);
+    display: block;
+    padding: 18px 0 18px 0;   /* Más padding para mejor toque */
+    border-radius: 0;
+    transition: background 0.18s, color 0.18s;
+    letter-spacing: 0.02em;
+    position: relative;
+    width: 100%;              /* <-- Ocupa todo el ancho */
+}
+
+.mobile-menu ul li a:hover,
+.mobile-menu ul li a:focus {
+    background: var(--light-grey);
+    color: var(--light-green);
+    outline: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu {
+        right: 5vw;
+        left: auto;
+        width: 85vw;
+        min-width: 180px;
+        max-width: 320px;
+        top: 60px;
+        padding: 22px 0 12px 0;
+    }
+    .mobile-menu ul li a {
+        font-size: 1.1rem;
+        padding: 14px 0;
+    }
 }
 
 /* Hero Section Styles */
@@ -157,7 +261,7 @@ nav ul li:hover {
 
 .hero h1 {
     margin-bottom: 15px;
-    font-weight: 300;
+    font-weight: var(--fw-light);
     font-size: 5em;
     color: var(--light-grey);
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
@@ -167,7 +271,7 @@ nav ul li:hover {
     margin-bottom: 30px;
     font-size: 2.0em;
     color: var(--light-grey);
-    font-weight: 300;
+    font-weight: var(--fw-light);
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
 }
 
@@ -178,7 +282,7 @@ nav ul li:hover {
 
 .hero-highlight {
     color: var(--light-grey);
-    font-weight: 800;
+    font-weight: var(--fw-bold);
 }
 
 /* Section Styles */
@@ -195,7 +299,17 @@ nav ul li:hover {
     margin-top: 10px;
     margin-bottom: 20px;
     color: var(--dark-green);
-    font-weight: 600;
+    font-weight: var(--fw-semibold);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Social Icons */
@@ -215,10 +329,24 @@ nav ul li:hover {
     height: 40px;
     margin-right: 15px;
     margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tech-icons:hover {
+    transform: scale(1.15) rotate(-6deg);
+    box-shadow: 0 4px 16px rgba(118, 136, 91, 0.15);
 }
 
 /* Projects Section */
 #projects {
+    color: var(--dark-green);
+}
+
+/* Contact Form Label Styles */
+#contact-form label {
+    margin-bottom: 5px;
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    font-weight: var(--fw-medium);
     color: var(--dark-green);
 }
 
@@ -232,10 +360,8 @@ input, textarea {
     padding: 12px; /* Aumentamos el padding para más espacio */
     border: 2px solid transparent; /* Borde inicial para evitar saltos en el focus */
     transition: border-color 0.3s ease-in-out; /* Transición suave */
-}
-
-input {    
-    /* La altura se controlará con el padding, eliminamos height fijo */
+    font-family: Inter, sans-serif;
+    font-size: var(--fs-base);
 }
 
 textarea {
@@ -245,7 +371,14 @@ textarea {
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: var(--dark-green); /* Corregido: usar var() */
+    border-color: var(--dark-green);
+    background-color: #f4f7f2;
+    box-shadow: 0 2px 8px rgba(63, 76, 57, 0.07);
+}
+
+/* Estilo para campos inválidos después de la interacción del usuario */
+input:user-invalid, textarea:user-invalid {
+    border-color: #d9534f; /* Color rojo para indicar error */
 }
 
 /* Estilo para los placeholders para mejorar la legibilidad */
@@ -265,8 +398,9 @@ input:focus, textarea:focus {
     background-color: var(--dark-green);
     color: var(--light-grey);
     font-size: 15px;
-    font-weight: 500;
+    font-weight: var(--fw-medium);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     text-decoration: none;
 }
 
@@ -304,11 +438,11 @@ footer {
 
 footer p {
     margin: 0;
-    font-size: 0.9em;
+    font-size: var(--fs-sm);
 }
 
 .footer-left .attributions {
-    font-size: 0.8em;
+    font-size: calc(var(--fs-sm) * 0.9); /* 0.8em of 0.9rem */
     margin-top: 5px;
 }
 
@@ -456,12 +590,12 @@ footer a:hover {
 }
 
 .card h4 {
-    font-size: 1.1rem;
+    font-size: var(--fs-lg);
     margin: 15px 0;
 }
 
 .card p {
-    font-size: 0.9rem;
+    font-size: var(--fs-sm);
     color: var(--light-green);
     margin-bottom: 15px; 
     flex-grow: 1; 
@@ -474,8 +608,8 @@ footer a:hover {
     color: var(--light-grey);
     text-decoration: none;
     border-radius: var(--radius-std);
-    font-size: 15px;
-    font-weight: 300;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium); /* Unificado con los otros botones */
     margin-top: auto; 
     align-self: flex-start; 
 }
