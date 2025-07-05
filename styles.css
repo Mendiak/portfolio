@@ -63,6 +63,11 @@ nav {
     left: 0;
     width: 100%;
     z-index: 999;
+    height: 60px; /* Asegura altura constante */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5%;
 }
 
 nav ul {
@@ -92,39 +97,73 @@ nav ul li:hover {
     background-color: var(--dark-grey);
 }
 
+/* Hamburger button */
+#hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3001;
+    position: relative;
+    margin-left: auto; /* Empuja el botón a la derecha */
+}
+
+.hamburger-bar {
+    width: 28px;
+    height: 3px;
+    background: var(--dark-green);
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+#hamburger-btn.active .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+#hamburger-btn.active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger-btn.active .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 /* Mobile Menu Styles */
 /* Modern Minimalist Hamburger Menu */
 .mobile-menu {
     position: fixed;
     top: 60px; /* Ajusta según la altura de tu nav */
     right: 5vw;
-    left: auto;
     width: 260px;
-    min-width: 180px;
-    max-width: 320px;
+    max-width: 90vw;
     background: rgba(255,255,255,0.97);
     border-radius: 18px;
     box-shadow: 0 8px 32px rgba(63,76,57,0.18), 0 1.5px 8px rgba(63,76,57,0.08);
-    z-index: 2000; /* o un valor alto */
-    padding: 0;                /* Quita padding aquí, lo damos al ul */
-    box-sizing: border-box;
+    z-index: 3000; /* o un valor alto */
     opacity: 0;
-    transform: translateY(-20px) scale(0.98);
     pointer-events: none;
+    transform: translateY(-20px) scale(0.98);
     transition: opacity 0.25s cubic-bezier(.4,0,.2,1), transform 0.25s cubic-bezier(.4,0,.2,1);
+    padding: 0;                /* Quita padding aquí, lo damos al ul */
     overflow: hidden;          /* <-- Evita que el fondo se corte */
 }
 
 .mobile-menu.active {
     opacity: 1;
-    transform: translateY(0) scale(1);
     pointer-events: auto;
+    transform: translateY(0) scale(1);
 }
 
 .mobile-menu ul {
     padding: 24px 0 14px 0;    /* Padding vertical para separar del borde */
+    list-style: none;
     margin: 0;
-    list-style-type: none;
     display: flex;
     flex-direction: column;   /* <-- Asegura disposición vertical */
     width: 100%;              /* <-- Ocupa todo el ancho del menú */
@@ -164,10 +203,7 @@ nav ul li:hover {
 @media screen and (max-width: 768px) {
     .mobile-menu {
         right: 5vw;
-        left: auto;
         width: 85vw;
-        min-width: 180px;
-        max-width: 320px;
         top: 60px;
         padding: 22px 0 12px 0;
     }
@@ -424,47 +460,39 @@ footer a:hover {
 
 /* Hamburger Menu */
 #hamburger-btn {
-   position: relative;
-   z-index: 1000;
-}
-
-.ham {
-    height: 40px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transition: transform 400ms;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    display: none;    
-    pointer-events: auto;
+    z-index: 3001;
+    position: relative;
+    margin-left: auto; /* Empuja el botón a la derecha */
 }
 
-.hamRotate.active {
-    transform: rotate(45deg);
-}
- 
-.hamRotate180.active {
-    transform: rotate(180deg);
-}
-
-.line {
-    fill: none;
-    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: var(--dark-green);
-    stroke-width: 5.5;
-    stroke-linecap: round;
+.hamburger-bar {
+    width: 28px;
+    height: 3px;
+    background: var(--dark-green);
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
 }
 
-.ham4 .top,
-.ham4 .bottom {
-    stroke-dasharray: 40 121;
+#hamburger-btn.active .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
 }
 
-.ham4.active .top,
-.ham4.active .bottom {
-    stroke-dashoffset: -68px;
+#hamburger-btn.active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger-btn.active .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Responsive Styles */
@@ -488,6 +516,9 @@ footer a:hover {
         align-items: center;
         margin-right: 10px;
     }  
+    #hamburger-btn {
+        display: flex;
+    }
     .ham {
         display: block;
     }
