@@ -6,9 +6,7 @@
     --dark-grey: #DDDDDD;
     --radius-std: 5px;
     --radius-card: 8px;
-
-    /* Typographic Scale & Weights */
-    --fs-base: 1rem; /* 16px */
+    --fs-base: 1rem;
     --fs-sm: 0.9rem;
     --fs-lg: 1.1rem;
     --fw-light: 300;
@@ -63,7 +61,7 @@ nav {
     left: 0;
     width: 100%;
     z-index: 999;
-    height: 60px; /* Asegura altura constante */
+    height: 45px; /* Asegura altura constante */
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -409,12 +407,16 @@ footer {
     margin-top: 100px;  
     background-color: var(--dark-grey);
     width: 100%;
-    padding: 25px 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 footer p {
     margin: 0;
     font-size: var(--fs-sm);
+    line-height: 1.7; /* Mejora el interlineado */
 }
 
 .footer-left .attributions {
@@ -424,8 +426,12 @@ footer p {
 
 .attribution-link::after {
     content: " · ";
-    pointer-events: none; /* Evita que el separador sea interactivo */
+    pointer-events: none; 
     text-decoration: none;
+}
+
+.attribution-link:last-of-type::after {
+    content: "";
 }
 
 .footer-socials {
@@ -531,11 +537,10 @@ footer a:hover {
         display: block;
     }
     footer {
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
+        padding-left: 10%;
     }
 }
+
 
 /* Card Styles */
 .card-container {

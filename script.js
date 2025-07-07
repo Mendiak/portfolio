@@ -49,12 +49,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Smooth scroll for all nav links
+    // Smooth scroll for all nav links (resta altura de la barra)
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const section = document.getElementById(this.getAttribute('href').substring(1));
-            if (section) section.scrollIntoView({ behavior: 'smooth' });
+            if (section) {
+                const navHeight = 55; // Ajusta este valor a la altura real de tu nav
+                const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+            }
         });
     });
 
