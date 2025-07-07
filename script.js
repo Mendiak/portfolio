@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Smooth scroll for all nav links (resta altura de la barra)
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    // Smooth scroll for all internal links (desktop & mobile)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const section = document.getElementById(this.getAttribute('href').substring(1));
             if (section) {
-                const navHeight = 55; // Ajusta este valor a la altura real de tu nav
+                e.preventDefault();
+                const navHeight = 55; // Ajusta según la altura de tu barra
                 const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navHeight;
                 window.scrollTo({ top: sectionTop, behavior: 'smooth' });
             }
