@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hamburger menu logic
     const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu'); // <-- Usa el id directamente
+    const mobileMenu = document.getElementById('mobile-menu'); 
 
     // Toggle menu
     hamburgerBtn.addEventListener('click', function(e) {
@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Smooth scroll for all internal links (desktop & mobile)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"], .hero a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const section = document.getElementById(this.getAttribute('href').substring(1));
             if (section) {
                 e.preventDefault();
-                const navHeight = 55; // Ajusta según la altura de tu barra
+                const navHeight = 55; 
                 const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navHeight;
                 window.scrollTo({ top: sectionTop, behavior: 'smooth' });
             }
