@@ -3,14 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Welcome to Mikel's portfolio! As a web developer, I combine HTML, CSS, Bootstrap, JavaScript, and React to create unique and functional digital experiences. Explore my projects and contact me to start your next digital project.">
-<title>Mikel · Web Developer</title>
+
+<!-- SEO Meta Tags -->
+<title>Mikel Aramendia · Web Developer Portfolio</title>
+<meta name="description" content="Portfolio of Mikel Aramendia, a web developer specializing in creating unique and functional digital experiences with HTML, CSS, JavaScript, and React.">
+<link rel="canonical" href="https://mendiak.github.io/portfolio/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mendiak.github.io/portfolio/">
+<meta property="og:title" content="Mikel Aramendia · Web Developer Portfolio">
+<meta property="og:description" content="Portfolio of Mikel Aramendia, a web developer specializing in creating unique and functional digital experiences.">
+<meta property="og:image" content="https://mendiak.github.io/portfolio/assets/images/banner.webp">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mendiak.github.io/portfolio/">
+<meta property="twitter:title" content="Mikel Aramendia · Web Developer Portfolio">
+<meta property="twitter:description" content="Portfolio of Mikel Aramendia, a web developer specializing in creating unique and functional digital experiences.">
+<meta property="twitter:image" content="https://mendiak.github.io/portfolio/assets/images/banner.webp">
+
+<!-- Styles and Fonts -->
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Preload the LCP image for faster rendering -->
+<link rel="preload" fetchpriority="high" as="image" href="./assets/images/banner.webp" type="image/webp">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mikel Aramendia",
+      "url": "https://mendiak.github.io/portfolio/",
+      "image": "https://mendiak.github.io/portfolio/assets/images/profile_picture.webp",
+      "jobTitle": "Web Developer",
+      "sameAs": [
+        "https://www.linkedin.com/in/mikel-aramendia-lacalle/",
+        "https://github.com/Mendiak"
+      ],
+      "description": "Web developer specializing in creating unique and functional digital experiences with HTML, CSS, JavaScript, and React."
+    }
+</script>
 </head>
 <body>
 
@@ -39,34 +78,33 @@
         </div>        
     </header>
 
-
-
-    <section class="hero">
-        <div class="hero-text">
-        <h1>Hi, I'm <span class="hero-highlight">Mikel</span></h1>
-        <h2>I enjoy building websites for the fun and challenge of it</h2>
-        <a href="#about" id="read-more" class="button">Learn more...</a>
-        </div>
-    </section>
+<main>
+    <div class="hero">
+        <section class="hero-text">
+            <h1>Hi, I'm <span class="hero-highlight">Mikel</span></h1>
+            <h2>I enjoy building websites for the fun and challenge of it</h2>
+            <a href="#about" id="read-more" class="button">Learn more...</a>
+        </section>
+    </div>
 
     <section id="about">
-        <h3>./About me</h3>
-        <img src="./assets/images/profile_picture.jpg" alt="Profile picture" class="profile-pic">
+        <h2>./About me</h2>
+        <img src="./assets/images/profile_picture.webp" alt="Profile picture" class="profile-pic" loading="lazy" decoding="async">
         <p>Hi! I'm Mikel. I’ve always been fascinated by technology and the creative possibilities of the web. For me, building websites is both a mental exercise and a way to bring ideas to life—sometimes just for the fun of it, sometimes to see how far I can push myself to learn something new.</p>
 
         <p>I enjoy experimenting with code, design, and new tools. My approach is guided by <span class="highlight">usability, simplicity, and clarity</span>, but I also like to play and try things out, even if the result isn’t always perfect. I believe that every project, big or small, is a chance to learn and improve.</p>
 
         <p>While I’m not a full-time web developer, I take pride in crafting sites that are intuitive and enjoyable to use. This portfolio is a collection of my personal experiments and learning journeys—if you’re curious too, or just want to chat about web stuff, feel free to connect!</p>
 
-        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" target="_blank"><i class="bi bi-linkedin linkedin"></i></a> 
-        <a href="https://github.com/Mendiak" title="My Github profile" target="_blank"><i class="bi bi-github github"></i></a>
+        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn profile"><i class="bi bi-linkedin linkedin" aria-hidden="true"></i></a> 
+        <a href="https://github.com/Mendiak" title="My Github profile" target="_blank" rel="noopener noreferrer" aria-label="My Github profile"><i class="bi bi-github github" aria-hidden="true"></i></a>
     </section>  
 
     <hr class="divider">
 
     <section id="technologies">
         <img src="./assets/images/svg/tools.png" height="100" alt="Icon with a code symbol">
-        <h3>./The technologies I use</h3>
+        <h2>./The technologies I use</h2>
         <p>In my web development projects, I leverage the power of various technologies to create engaging online experiences. This includes <span class="highlight">HTML5</span>, which provides the structure for web pages, and <span class="highlight">CSS</span> for styling and appearance. <span class="highlight">JavaScript</span> adds interactivity and dynamic functionality, while <span class="highlight">React</span> allows me to build user-friendly interfaces efficiently.</p>
     
         <p>Beyond the core technologies, I also have experience with tools like <span class="highlight">Bootstrap</span>, <span class="highlight">Tailwind</span>, and <span class="highlight">Sass</span> to streamline design and styling. For version control and collaboration, I rely on <span class="highlight">GitHub</span> to manage my code efficiently and keep projects organized.</p>
@@ -90,49 +128,70 @@
     <hr class="divider">
 
     <section id="projects">
-        <h3>./Projects</h3>
+        <h2>./Projects</h2>
             <p>These are some of the web projects I've built for fun, learning, or just to see if I could. Each one taught me something new and gave me a chance to experiment with different ideas and technologies.</p>        <div class="card-container">
             <div class="card">
-                <img src="./assets/images/projects/confessio.png" alt="Project Confessio">
+                <a href="https://confessio-ai.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/confessio.webp" alt="Project Confessio" loading="lazy" decoding="async">
+                </a>
                 <h4>Confessio: AI Digital Sanctuary</h4>
                 <p class="cardtext">An anonymous sanctuary for reflection, built with Next.js, React, and TypeScript. Users can share their thoughts and receive spiritual guidance generated by an AI (Google Gemini). It features a multilingual UI, smart content categorization, and an interactive "Wall of Intentions" powered by Firebase, all styled with Tailwind CSS & Shadcn/ui.</p>
-                <a href="https://confessio-ai.vercel.app/" class="card-link" target="_blank">View Project</a>
+                <a href="https://confessio-ai.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
             
             <div class="card">
-                <img src="./assets/images/projects/partyinvitations.png" alt="Project Party Invitations">
+                <a href="https://party-invitations.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/partyinvitations.webp" alt="Project Party Invitations" loading="lazy" decoding="async">
+                </a>
                 <h4>Party Invitations</h4>
                 <p>A responsive invitation generator built with vanilla JavaScript, HTML5, and CSS3. Features live customization, background search via the Unsplash API, and multiple export options including PNG, shareable links, QR codes, and .ICS calendar files.</p>
-                <a href="https://party-invitations.vercel.app/" class="card-link" target="_blank">View Project</a>
+                <a href="https://party-invitations.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
             
             <div class="card">
-                <img src="./assets/images/projects/whenlambo.png" alt="Project When Lambo">
+                <a href="https://whenlambo.biz/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/whenlambo.webp" alt="Project When Lambo" loading="lazy" decoding="async">
+                </a>
                 <h4>When Lambo</h4>
                 <p class="cardtext">"When Lambo?" is an interactive web application that allows users to determine their Lamborghini-buying potential based on their Bitcoin holdings. The app features real-time price data via the CoinDesk API, supports multiple fiat currencies, and is designed with a humorous, engaging tone for the crypto audience.</p>
-                <a href="https://whenlambo.biz/" class="card-link" target="_blank">View Project</a>
+                <a href="https://whenlambo.biz/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
 
             <div class="card">
-                <img src="./assets/images/projects/pulseroots.png" alt="Project PulseRoots">
+                <a href="https://mendiak.github.io/pulse.roots/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/pulseroots.webp" alt="Project PulseRoots" loading="lazy" decoding="async">
+                </a>
                 <h4>PulseRoots: Interactive Electronic Music Genre Explorer</h4>
                 <p class="cardtext">PulseRoots is an interactive, single‑page web app that visualizes the landscape of electronic music genres. Built with D3.js for dynamic tree/treemap structures, it lets users explore major families (like Ambient, Techno, House) and their subgenres. Featuring responsive HTML/CSS design, detailed genre info panels, and embedded Spotify previews, PulseRoots offers both an educational and immersive musical journey.
 Technologies used: modern JavaScript (ES6+), D3.js for visualization, Spotify Web Embed, responsive layout.</p>
-                <a href="https://mendiak.github.io/pulse.roots/" class="card-link" target="_blank">View Project</a>
+                <a href="https://mendiak.github.io/pulse.roots/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
 
             <div class="card">
-                <img src="./assets/images/projects/newcontemporaryphotography.png" alt="Project New Contemporary Photography">
+                <a href="https://new-contemporary-photography.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/newcontemporaryphotography.webp" alt="Project New Contemporary Photography" loading="lazy" decoding="async">
+                </a>
                 <h4>New Contemporary Photography</h4>
                 <p class="cardtext">A single-page application that connects to the Flickr API to display random photos from a photography group. Built with vanilla JavaScript, it features a fully responsive layout, smooth CSS animations, and a dark mode toggle.</p>
-                <a href="https://new-contemporary-photography.vercel.app/" class="card-link" target="_blank">View Project</a>
+                <a href="https://new-contemporary-photography.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
 
             <div class="card">
-                <img src="./assets/images/projects/drake.png" alt="Project Drake Equation">
+                <a href="https://mendiak.github.io/drake.equation/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/drake.webp" alt="Project Drake Equation" loading="lazy" decoding="async">
+                </a>
                 <h4>Drake Equation Visualizer</h4>
                 <p>An interactive single-page web app that illustrates the famous Drake Equation, which estimates the number of communicative extraterrestrial civilizations in our galaxy. Built with HTML, CSS, and JavaScript, the site lets users adjust parameters and instantly see how each factor influences the final result, combining science outreach with a clean, responsive design.</p>
-                <a href="https://mendiak.github.io/drake.equation/" class="card-link" target="_blank">View Project</a>
+                <a href="https://mendiak.github.io/drake.equation/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+
+            <div class="card">
+                <a href="https://pormishuevismo.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/pormishuevismo.webp" alt="Porsmishuevismo" loading="lazy" decoding="async">
+                </a>
+                <h4>Pormishuevismo</h4>
+                <p>This is a full-stack, interactive map application built to document and explore architectural projects across Spain. The frontend, crafted with vanilla JavaScript and Leaflet.js, provides a highly responsive user experience with dynamic filtering, sorting, and debounced search. The backend leverages Vercel Serverless Functions (Node.js), which act as a secure proxy to the Airtable API and server-side render (SSR) individual project pages. This architecture ensures credentials are secure while delivering excellent performance, deep-linking capabilities, and optimal SEO.</p>
+                <a href="https://pormishuevismo.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
         </div>
     </section>    
@@ -140,35 +199,41 @@ Technologies used: modern JavaScript (ES6+), D3.js for visualization, Spotify We
     <hr class="divider">
 
     <section id="ux-studies">
-        <h3>./UX Case Studies</h3>
+        <h2>./UX Case Studies</h2>
         <div class="card-container">
             <div class="card">
-                <img src="./assets/images/marsconnect.jpg" alt="UX Design Study 1">
+                <a href="https://docs.google.com/presentation/d/12UOfbEr6N2_4kM4snO4fYbaOnsqSgTK3/edit?usp=sharing&ouid=113552910971866545750&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/marsconnect.webp" alt="UX Design Study 1" loading="lazy" decoding="async">
+                </a>
                 <h4>UX Case Study: MarsConnect</h4>
                 <p class="cardtext">This project focuses on designing an onboarding app for future Mars colonists, aiming to guide users through essential procedures to adapt to their new life on the planet. The app also offers personalized recommendations and events to foster integration into the first Martian colony.</p>
-                <a href="https://docs.google.com/presentation/d/12UOfbEr6N2_4kM4snO4fYbaOnsqSgTK3/edit?usp=sharing&ouid=113552910971866545750&rtpof=true&sd=true" class="card-link" target="_blank">View More</a>
+                <a href="https://docs.google.com/presentation/d/12UOfbEr6N2_4kM4snO4fYbaOnsqSgTK3/edit?usp=sharing&ouid=113552910971866545750&rtpof=true&sd=true" class="card-link" target="_blank" rel="noopener noreferrer">View More</a>
             </div>
             
             <div class="card">
-                <img src="./assets/images/designforwardsummit.jpg" alt="UX Design Study 2">
+                <a href="https://docs.google.com/presentation/d/1gFegfqNyxWkfqWVlagLPFGDMsQjepAyLkdd2viOiLVc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/designforwardsummit.webp" alt="UX Design Study 2" loading="lazy" decoding="async">
+                </a>
                 <h4>UX Case Study: Design Forward Summit</h4>
                 <p>This project involves designing a web platform to facilitate the nomination process for a design conference, making it more intuitive and accessible. The goal was to simplify navigation, improve submission confirmations, and ensure a smooth user experience.</p>
-                <a href="https://docs.google.com/presentation/d/1gFegfqNyxWkfqWVlagLPFGDMsQjepAyLkdd2viOiLVc/edit?usp=sharing" class="card-link" target="_blank">View More</a>
+                <a href="https://docs.google.com/presentation/d/1gFegfqNyxWkfqWVlagLPFGDMsQjepAyLkdd2viOiLVc/edit?usp=sharing" class="card-link" target="_blank" rel="noopener noreferrer">View More</a>
             </div>
             
             <div class="card">
-                <img src="./assets/images/guardianesdelturon.jpg" alt="UX Design Study 3">
+                <a href="https://docs.google.com/presentation/d/1NguajI3vGbqC4zX9fLyJg7aCDmrQUzg0LKqSPVjJUo4/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/projects/guardianesdelturon.webp" alt="UX Design Study 3" loading="lazy" decoding="async">
+                </a>
                 <h4>UX Case Study: Guardians of the Polecat</h4>
                 <p>The 'Guardians of the Polecat' project is an interactive platform designed to raise awareness about the conservation of the European polecat. Through a mobile app and a responsive website, it allows users to report sightings, participate in volunteer events, and symbolically adopt this endangered species.</p>
-                <a href="https://docs.google.com/presentation/d/1NguajI3vGbqC4zX9fLyJg7aCDmrQUzg0LKqSPVjJUo4/edit?usp=sharing" class="card-link" target="_blank">View More</a>
+                <a href="https://docs.google.com/presentation/d/1NguajI3vGbqC4zX9fLyJg7aCDmrQUzg0LKqSPVjJUo4/edit?usp=sharing" class="card-link" target="_blank" rel="noopener noreferrer">View More</a>
             </div>
         </div>
     </section>
 
     <hr class="divider">
 
-    <section id="contact">     
-        <h3>./Contact</h3>   
+    <section id="contact">
+        <h2>./Contact</h2>   
         <p>Thank you for visiting my portfolio. I look forward to the opportunity to collaborate with you and create unique digital experiences in the future. Write to me through this form and... Let's get started!</p>
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="41398cfd-0efd-45fa-859e-50b9e66d6f31">
@@ -182,26 +247,25 @@ Technologies used: modern JavaScript (ES6+), D3.js for visualization, Spotify We
             <button type="submit" id="submit-button">Send Message</button>
         </form>
     </section>    
-
-    
+</main>
 
     <footer>
     <div class="footer-content">
         <div class="footer-info">
-            <p>&copy; <span id="copyright-year">2025</span> Mikel Aramendia</p>
+            <p>&copy; <span id="copyright-year"></span> Mikel Aramendia</p>
             <p class="footer-note">
                 This portfolio is a personal space for learning, experimenting, and sharing what I enjoy about the web.<br>
-                <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank" class="attribution-link">View source on GitHub</a>
-                <a href="https://www.flaticon.com/authors/vectorslab" target="_blank" title="Icons created by Vectorslab @ Flaticon" class="attribution-link">Icon credits</a>
-                <a href="https://unsplash.com/@shioyang" target="_blank" title="Images by Shio Yang on Unsplash" class="attribution-link">Image credits</a>
+                <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank" rel="noopener noreferrer" class="attribution-link">View source on GitHub</a>
+                <a href="https://www.flaticon.com/authors/vectorslab" target="_blank" rel="noopener noreferrer" title="Icons created by Vectorslab @ Flaticon" class="attribution-link">Icon credits</a>
+                <a href="https://unsplash.com/@shioyang" target="_blank" rel="noopener noreferrer" title="Images by Shio Yang on Unsplash" class="attribution-link">Image credits</a>
             </p>
         </div>
         <ul class="footer-socials">
             <li>
-                <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="My LinkedIn profile" target="_blank"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="My LinkedIn profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
             </li>
             <li>
-                <a href="https://github.com/Mendiak" aria-label="My Github profile" target="_blank"><i class="bi bi-github" aria-hidden="true"></i></a>
+                <a href="https://github.com/Mendiak" aria-label="My Github profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
             </li>
         </ul>
     </div>

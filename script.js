@@ -63,5 +63,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Copyright year
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    const yearSpan = document.getElementById('copyright-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // --- Active nav link on scroll ---
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"]');
+
+    const observerOptions = {
+        root: null, // Observes intersections relative to the viewport
+        rootMargin: '-55px 0px -50% 0px', // Adjusts the intersection box. -55px top for the nav bar, -50% bottom to switch earlier.
+        threshold: 0 // Trigger as soon as a pixel is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const correspondingLinks = document.querySelectorAll(`a[href="#${id}"]`);
+
+            if (entry.isIntersecting) {
+                // Remove 'active' from all navigation links
+                navLinks.forEach(link => link.classList.remove('active'));
+                // Add 'active' to the links corresponding to the visible section
+                correspondingLinks.forEach(link => link.classList.add('active'));
+            }
+        });
+    }, observerOptions);
+
+    // Observe each section
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });

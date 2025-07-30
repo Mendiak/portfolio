@@ -23,6 +23,11 @@
     box-sizing: border-box;
 }
 
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body Styles */
 body {        
     background-color: var(--light-grey);
@@ -34,15 +39,16 @@ body {
 p {
     color: var(--dark-green);
     margin-bottom: 30px;
+    line-height: 1.6; /* Improves readability */
     margin-right: 5%;
 }
 
 a {
     color: var(--dark-green);
 }
-   
+
 a:visited {
-    color: var(--light-grey);
+    color: var(--light-green); /* Make visited links visible */
 }
 
 .highlight {
@@ -83,6 +89,12 @@ nav ul li a {
     color: var(--dark-green);
     padding: 10px 15px;
     display: block;
+}
+
+/* Style for the active navigation link */
+nav ul li a.active {
+    font-weight: var(--fw-bold);
+    color: var(--light-green);
 }
 
 /* Ensure visited links in the nav bar remain visible */
@@ -202,6 +214,12 @@ nav ul li:hover {
     outline: none;
 }
 
+/* Style for the active mobile navigation link */
+.mobile-menu ul li a.active {
+    background: var(--light-grey);
+    color: var(--light-green);
+}
+
 @media screen and (max-width: 768px) {
     .mobile-menu {
         right: 5vw;
@@ -269,7 +287,8 @@ nav ul li:hover {
     margin-top: 150px;
 }
 
-#about h3, #technologies h3, #projects h3, #ux-studies h3, #contact h3 {
+/* Styles for all main section titles */
+section[id] > h2 {
     margin-top: 10px;
     margin-bottom: 20px;
     color: var(--dark-green);
@@ -419,11 +438,6 @@ footer p {
     line-height: 1.7; /* Mejora el interlineado */
 }
 
-.footer-left .attributions {
-    font-size: calc(var(--fs-sm) * 0.9); /* 0.8em of 0.9rem */
-    margin-top: 5px;
-}
-
 .attribution-link::after {
     content: " · ";
     pointer-events: none; 
@@ -468,47 +482,6 @@ footer a:hover {
     max-width: 720px;
 }
 
-/* Hamburger Menu */
-#hamburger-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    background: none;        /* Sin fondo */
-    border: none;            /* Sin borde */
-    border-radius: 0;        /* Sin esquinas redondeadas */
-    box-shadow: none;        /* Sin sombra */
-    padding: 0;              /* Sin padding extra */
-    margin: 0 10px 0 auto;   /* Empuja a la derecha en móvil */
-    cursor: pointer;
-    z-index: 3001;
-    position: relative;
-}
-
-.hamburger-bar {
-    width: 28px;
-    height: 3px;
-    background: var(--dark-green);
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: all 0.3s;
-    display: block;
-}
-
-#hamburger-btn.active .hamburger-bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-#hamburger-btn.active .hamburger-bar:nth-child(2) {
-    opacity: 0;
-}
-
-#hamburger-btn.active .hamburger-bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .divider,
@@ -532,9 +505,6 @@ footer a:hover {
     }  
     #hamburger-btn {
         display: flex;
-    }
-    .ham {
-        display: block;
     }
     footer {
         padding-left: 10%;
@@ -610,12 +580,12 @@ footer a:hover {
         width: 100%;
     }
     .profile-pic {
-        width: 80px !important;
-        height: 80px !important;
-        min-width: 80px !important;
-        min-height: 80px !important;
-        max-width: 80px !important;
-        max-height: 80px !important;
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        min-height: 80px;
+        max-width: 80px;
+        max-height: 80px;
     }
 }
 
