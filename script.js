@@ -1,77 +1,77 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // --- Cache DOM elements for performance and clarity ---
     const hero = document.querySelector('.hero');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const yearSpan = document.getElementById('copyright-year');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"]');
+
+    // --- Hero Fade-in Effect ---
     hero.classList.add('fade-in');
 
-    // Hamburger menu logic
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu'); 
+    // --- Sophisticated Menu Handling ---
+    // Centralized function to toggle the menu state.
+    // It can be called to toggle, or with `true` to force it closed.
+    const toggleMenu = (forceClose = false) => {
+        const isActive = mobileMenu.classList.contains('active');
+        const shouldBeActive = forceClose ? false : !isActive;
 
-    // Toggle menu
-    hamburgerBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const isActive = mobileMenu.classList.toggle('active');
-        hamburgerBtn.classList.toggle('active', isActive);
-        hamburgerBtn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-        mobileMenu.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        mobileMenu.classList.toggle('active', shouldBeActive);
+        hamburgerBtn.classList.toggle('active', shouldBeActive);
+        hamburgerBtn.setAttribute('aria-expanded', shouldBeActive);
+        mobileMenu.setAttribute('aria-hidden', !shouldBeActive);
+    };
+
+    // 1. Toggle menu on button click
+    hamburgerBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevents the document click listener from firing immediately
+        toggleMenu();
     });
 
-    // Close menu when clicking a link
+    // 2. Close menu when a link inside it is clicked
     mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function () {
-            mobileMenu.classList.remove('active');
-            hamburgerBtn.classList.remove('active');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-        });
+        link.addEventListener('click', () => toggleMenu(true));
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (
-            mobileMenu.classList.contains('active') &&
-            !mobileMenu.contains(e.target) &&
-            !hamburgerBtn.contains(e.target)
-        ) {
-            mobileMenu.classList.remove('active');
-            hamburgerBtn.classList.remove('active');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
+    // 3. Close menu when clicking outside of it
+    document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+            toggleMenu(true);
         }
     });
 
-    // Optional: Close menu on scroll
-    window.addEventListener('scroll', function() {
+    // 4. Close menu on scroll for a better user experience
+    window.addEventListener('scroll', () => {
         if (mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            hamburgerBtn.classList.remove('active');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
+            toggleMenu(true);
         }
     });
 
-    // Smooth scroll for all internal links (desktop & mobile)
-    document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"], .hero a[href^="#"]').forEach(anchor => {
+    // --- Smooth Scroll with Offset ---
+    // A more generic selector catches all anchor links on the page.
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            const section = document.getElementById(this.getAttribute('href').substring(1));
-            if (section) {
-                e.preventDefault();
-                const navHeight = 55; 
-                const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+            const href = this.getAttribute('href');
+            if (href.length > 1) { // Ensure it's not just "#"
+                const section = document.getElementById(href.substring(1));
+                if (section) {
+                    e.preventDefault();
+                    const navHeight = 55; 
+                    const sectionTop = section.getBoundingClientRect().top + window.scrollY - navHeight;
+                    window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+                }
             }
         });
     });
 
-    // Copyright year
-    const yearSpan = document.getElementById('copyright-year');
+    // --- Dynamic Copyright Year ---
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
     // --- Active nav link on scroll ---
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"]');
-
+    // Your IntersectionObserver implementation is already excellent!
     const observerOptions = {
         root: null, // Observes intersections relative to the viewport
         rootMargin: '-55px 0px -50% 0px', // Adjusts the intersection box. -55px top for the nav bar, -50% bottom to switch earlier.
@@ -80,14 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            const correspondingLinks = document.querySelectorAll(`a[href="#${id}"]`);
-
             if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
                 // Remove 'active' from all navigation links
                 navLinks.forEach(link => link.classList.remove('active'));
                 // Add 'active' to the links corresponding to the visible section
-                correspondingLinks.forEach(link => link.classList.add('active'));
+                document.querySelectorAll(`a[href="#${id}"]`).forEach(link => link.classList.add('active'));
             }
         });
     }, observerOptions);

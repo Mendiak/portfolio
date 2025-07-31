@@ -40,15 +40,21 @@ p {
     color: var(--dark-green);
     margin-bottom: 30px;
     line-height: 1.6; /* Improves readability */
-    margin-right: 5%;
 }
 
 a {
     color: var(--dark-green);
 }
 
+/* Global focus styles for better accessibility. 
+   :focus-visible only shows the outline for keyboard navigators, not mouse clicks. */
+:focus-visible {
+    outline: 3px solid var(--dark-green);
+    outline-offset: 2px;
+}
+
 a:visited {
-    color: var(--light-green); /* Make visited links visible */
+    color: #5a6b46; /* Darker green for better contrast (WCAG AA compliant) */
 }
 
 .highlight {
@@ -74,7 +80,7 @@ nav {
     padding-right: 5%;
 }
 
-nav ul {
+nav .nav-list {
     margin-right: 5%;
     display: flex;
     flex-direction: row;
@@ -84,7 +90,7 @@ nav ul {
     list-style-type: none;
 }
 
-nav ul li a {
+nav .nav-list li a {
     text-decoration: none;
     color: var(--dark-green);
     padding: 10px 15px;
@@ -92,17 +98,17 @@ nav ul li a {
 }
 
 /* Style for the active navigation link */
-nav ul li a.active {
+nav .nav-list li a.active {
     font-weight: var(--fw-bold);
     color: var(--light-green);
 }
 
 /* Ensure visited links in the nav bar remain visible */
-nav ul li a:visited {
+nav .nav-list li a:visited {
     color: var(--dark-green);
 }
 
-nav ul li:hover {
+nav .nav-list li:hover {
     cursor: pointer;  
     background-color: var(--dark-grey);
 }
@@ -208,10 +214,9 @@ nav ul li:hover {
 }
 
 .mobile-menu ul li a:hover,
-.mobile-menu ul li a:focus {
+.mobile-menu ul li a:focus-visible {
     background: var(--light-grey);
     color: var(--light-green);
-    outline: none;
 }
 
 /* Style for the active mobile navigation link */
@@ -278,9 +283,15 @@ nav ul li:hover {
 }
 
 /* Section Styles */
-#about, #technologies, #projects, #contact, #ux-studies {
+#about, #technologies {
     margin-left: 15%;
     max-width: 720px;
+}
+
+/* Wider sections for multi-column layouts like projects and contact */
+#projects, #ux-studies, #contact {
+    margin-left: 15%;
+    max-width: 960px;
 }
 
 #about {
@@ -288,7 +299,7 @@ nav ul li:hover {
 }
 
 /* Styles for all main section titles */
-section[id] > h2 {
+section[id] h2 {
     margin-top: 10px;
     margin-bottom: 20px;
     color: var(--dark-green);
@@ -303,6 +314,13 @@ section[id] > h2 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Add right margin only to main content paragraphs to prevent text from hitting the edge */
+#about p,
+#technologies p,
+#projects > p { /* Direct child selector to avoid affecting paragraphs inside cards */
+    margin-right: 5%;
 }
 
 /* Social Icons */
@@ -362,8 +380,7 @@ textarea {
     resize: vertical; /* Permitir solo redimensionamiento vertical */
 }
 
-input:focus, textarea:focus {
-    outline: none;
+input:focus-visible, textarea:focus-visible {
     border-color: var(--dark-green);
     background-color: #f4f7f2;
     box-shadow: 0 2px 8px rgba(63,76,57,0.07);
@@ -380,8 +397,7 @@ input:user-invalid, textarea:user-invalid {
     opacity: 1; /* Firefox usa una opacidad por defecto */
 }
 
-#submit-button,
-#read-more {
+.btn {
     width: fit-content;
     min-height: 40px;
     padding: 15px;
@@ -397,17 +413,35 @@ input:user-invalid, textarea:user-invalid {
     text-decoration: none;
 }
 
-#submit-button:hover,
-#read-more:hover {
+.btn#submit-button {
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
     background-color: var(--light-green);
 }
 
 /* Contact Section */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal width columns for better balance */
+    gap: 40px;
+    align-items: start;
+}
+
 #contact-form {
-    max-width: 500px;
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: var(--radius-card);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+#contact-form:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 #contact {    
@@ -482,6 +516,13 @@ footer a:hover {
     max-width: 720px;
 }
 
+/* Make dividers preceding wide sections also wide for consistency */
+#technologies + .divider,
+#projects + .divider,
+#ux-studies + .divider {
+    max-width: 960px;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .divider,
@@ -509,25 +550,26 @@ footer a:hover {
     footer {
         padding-left: 10%;
     }
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* Stack columns on mobile */
+        gap: 30px;
+    }
 }
 
 
 /* Card Styles */
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 15px;
 }
 
 .card {
     background-color: #f8f9fa;
     border: 1px solid #ddd;
-    border-radius: var(--radius-card);
-    width: 48%; 
-    min-width: 200px;
+    border-radius: var(--radius-card);    
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left; 
     padding: 15px;
     display: flex;
@@ -547,7 +589,7 @@ footer a:hover {
 
 .card p {
     font-size: var(--fs-sm);
-    color: var(--light-green);
+    color: var(--dark-green);
     margin-bottom: 15px; 
     flex-grow: 1; 
 }
@@ -574,44 +616,43 @@ footer a:hover {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Make cards full-width on smaller screens */
-@media screen and (max-width: 600px) {
-    .card {
-        width: 100%;
-    }
-    .profile-pic {
-        width: 80px;
-        height: 80px;
-        min-width: 80px;
-        min-height: 80px;
-        max-width: 80px;
-        max-height: 80px;
-    }
-}
-
-.profile-pic {
-    display: block;
+/* Wrapper for the profile picture to apply a color overlay */
+.profile-pic-wrapper {
+    position: relative;
+    display: inline-block; /* Behaves like an image in the text flow */
     margin: 18px 0 28px 0;
     width: 90px;
     height: 90px;
-    min-width: 60px;
-    min-height: 60px;
-    max-width: 90px;
-    max-height: 90px;
-    object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--dark-grey);
     box-shadow: 0 2px 8px rgba(63,76,57,0.08);
+    overflow: hidden; /* Ensures the overlay respects the border-radius */
 }
 
-@media screen and (max-width: 600px) {
-    .profile-pic {
+/* The actual profile picture */
+.profile-pic-wrapper .profile-pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The greenish overlay effect */
+.profile-pic-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-green);
+    mix-blend-mode: multiply; /* Blends the green color with the B&W image */
+    opacity: 0.7; /* Adjust the intensity of the effect */
+}
+
+@media screen and (max-width: 600px) {    
+    .profile-pic-wrapper {
         width: 70px;
         height: 70px;
-        min-width: 50px;
-        min-height: 50px;
-        max-width: 70px;
-        max-height: 70px;
-        border-radius: 50%;
     }
 }
