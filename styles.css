@@ -364,6 +364,7 @@ section[id] h2 {
 /* Form Styles */
 input, textarea {
     margin-bottom: 15px;
+    width: 100%; /* Asegura que los campos se ajusten al contenedor */
     border: none;
     background-color: #DDDDDD;
     color: var(--dark-green);
@@ -535,7 +536,7 @@ footer a:hover {
         margin-left: 10%;
         margin-right: 10%;
     }
-    #nav-list {
+    nav .nav-list {
         display: none;
     }
     nav {
