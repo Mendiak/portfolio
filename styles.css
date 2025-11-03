@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap');
+
 /* Custom Properties (CSS Variables) */
 :root {
-    --dark-green: #3F4C39;
-    --light-green: #76885B;
-    --light-grey: #E6E6E6;
-    --dark-grey: #DDDDDD;
-    --radius-std: 5px;
-    --radius-card: 8px;
+    --background: #121212;
+    --surface: #1E1E1E;
+    --primary: #E0E0E0;
+    --on-background: #FFFFFF;
+    --on-surface: #FFFFFF;
+    --light-grey: #2C2C2C;
+    --dark-grey: #3C3C3C;
+    --radius-std: 0px;
+    --radius-card: 0px;
     --fs-base: 1rem;
     --fs-sm: 0.9rem;
     --fs-lg: 1.1rem;
@@ -30,41 +35,41 @@ html {
 
 /* Body Styles */
 body {        
-    background-color: var(--light-grey);
-    font-family: Inter, sans-serif;  
+    background-color: var(--background);
+    font-family: 'Geist Mono', monospace;  
     font-size: var(--fs-base);
 }
 
 /* Typography Styles */
 p {
-    color: var(--dark-green);
+    color: var(--on-background);
     margin-bottom: 30px;
     line-height: 1.6; /* Improves readability */
 }
 
 a {
-    color: var(--dark-green);
+    color: var(--primary);
 }
 
 /* Global focus styles for better accessibility. 
    :focus-visible only shows the outline for keyboard navigators, not mouse clicks. */
 :focus-visible {
-    outline: 3px solid var(--dark-green);
+    outline: 3px solid var(--primary);
     outline-offset: 2px;
 }
 
 a:visited {
-    color: #5a6b46; /* Darker green for better contrast (WCAG AA compliant) */
+    color: #BDBDBD; /* Darker grey for better contrast (WCAG AA compliant) */
 }
 
 .highlight {
-    color: var(--dark-green);
+    color: var(--primary);
     font-weight: var(--fw-bold);
 }
 
 /* Navigation Styles */
 nav {
-    background-color: rgba(238, 238, 238, 0.5);
+    background-color: rgba(30, 30, 30, 0.5);
     backdrop-filter: blur(10px);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -92,7 +97,7 @@ nav .nav-list {
 
 nav .nav-list li a {
     text-decoration: none;
-    color: var(--dark-green);
+    color: var(--on-background);
     padding: 10px 15px;
     display: block;
 }
@@ -100,12 +105,12 @@ nav .nav-list li a {
 /* Style for the active navigation link */
 nav .nav-list li a.active {
     font-weight: var(--fw-bold);
-    color: var(--light-green);
+    color: var(--primary);
 }
 
 /* Ensure visited links in the nav bar remain visible */
 nav .nav-list li a:visited {
-    color: var(--dark-green);
+    color: var(--on-background);
 }
 
 nav .nav-list li:hover {
@@ -135,9 +140,9 @@ nav .nav-list li:hover {
 .hamburger-bar {
     width: 28px;
     height: 3px;
-    background: var(--dark-green);
+    background: var(--on-background);
     margin: 4px 0;
-    border-radius: 2px;
+    border-radius: 0;
     transition: all 0.3s;
     display: block;
 }
@@ -162,9 +167,9 @@ nav .nav-list li:hover {
     right: 5vw;
     width: 260px;
     max-width: 90vw;
-    background: rgba(255,255,255,0.97);
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(63,76,57,0.18), 0 1.5px 8px rgba(63,76,57,0.08);
+    background: rgba(30, 30, 30, 0.97);
+    border-radius: 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 8px rgba(0,0,0,0.08);
     z-index: 3000; /* o un valor alto */
     opacity: 0;
     pointer-events: none;
@@ -200,7 +205,7 @@ nav .nav-list li:hover {
 }
 
 .mobile-menu ul li a {
-    color: var(--dark-green);
+    color: var(--on-surface);
     text-decoration: none;
     font-size: 1.15rem;
     font-weight: var(--fw-medium);
@@ -216,13 +221,13 @@ nav .nav-list li:hover {
 .mobile-menu ul li a:hover,
 .mobile-menu ul li a:focus-visible {
     background: var(--light-grey);
-    color: var(--light-green);
+    color: var(--primary);
 }
 
 /* Style for the active mobile navigation link */
 .mobile-menu ul li a.active {
     background: var(--light-grey);
-    color: var(--light-green);
+    color: var(--primary);
 }
 
 @media screen and (max-width: 768px) {
@@ -246,6 +251,7 @@ nav .nav-list li:hover {
     background-image: url(./assets/images/banner.webp);  
     background-size: cover;
     background-position: center;  
+    filter: grayscale(100%);
     display: flex;
     flex-direction: column;
     justify-content: center;  
@@ -260,14 +266,14 @@ nav .nav-list li:hover {
     margin-bottom: 15px;
     font-weight: var(--fw-light);
     font-size: 5em;
-    color: var(--light-grey);
+    color: var(--on-background);
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
 }
 
 .hero h2 {
     margin-bottom: 30px;
     font-size: 2.0em;
-    color: var(--light-grey);
+    color: var(--on-background);
     font-weight: var(--fw-light);
     text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
 }
@@ -278,7 +284,7 @@ nav .nav-list li:hover {
 }    
 
 .hero-highlight {
-    color: var(--light-grey);
+    color: var(--on-background);
     font-weight: var(--fw-bold);
 }
 
@@ -302,11 +308,15 @@ nav .nav-list li:hover {
 section[id] h2 {
     margin-top: 10px;
     margin-bottom: 20px;
-    color: var(--dark-green);
+    color: var(--primary);
     font-weight: var(--fw-semibold);
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s forwards;
+}
+
+#ux-studies h2 {
+    color: var(--on-background);
 }
 
 @keyframes fadeInUp {
@@ -326,13 +336,13 @@ section[id] h2 {
 /* Social Icons */
 .linkedin, .github {
     font-size: 40px;
-    color: var(--dark-green);
+    color: var(--on-background);
     margin-right: 10px;
 }
 
 .linkedin:hover, .github:hover {
     cursor: pointer;
-    color: var(--light-green);
+    color: var(--primary);
 }
 
 /* Technology Icons */
@@ -345,12 +355,12 @@ section[id] h2 {
 
 .tech-icons:hover {
     transform: scale(1.15) rotate(-6deg);
-    box-shadow: 0 4px 16px rgba(118, 136, 91, 0.15);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
 }
 
 /* Projects Section */
 #projects {
-    color: var(--dark-green);
+    color: var(--on-background);
 }
 
 /* Contact Form Label Styles */
@@ -358,7 +368,7 @@ section[id] h2 {
     margin-bottom: 5px;
     display: block; /* Asegura que la etiqueta esté en su propia línea */
     font-weight: var(--fw-medium);
-    color: var(--dark-green);
+    color: var(--on-surface);
 }
 
 /* Form Styles */
@@ -366,25 +376,25 @@ input, textarea {
     margin-bottom: 15px;
     width: 100%; /* Asegura que los campos se ajusten al contenedor */
     border: none;
-    background-color: #DDDDDD;
-    color: var(--dark-green);
+    background-color: var(--dark-grey);
+    color: var(--on-surface);
     border-radius: var(--radius-std);
     padding: 12px; /* Aumentamos el padding para más espacio */
     border: 2px solid transparent; /* Borde inicial para evitar saltos en el focus */
     transition: border-color 0.3s ease-in-out; /* Transición suave */
-    font-family: Inter, sans-serif;
+    font-family: 'Geist Mono', monospace;
     font-size: var(--fs-base);
 }
 
 textarea {
-    font-family: Inter, sans-serif;
+    font-family: 'Geist Mono', monospace;
     resize: vertical; /* Permitir solo redimensionamiento vertical */
 }
 
 input:focus-visible, textarea:focus-visible {
-    border-color: var(--dark-green);
-    background-color: #f4f7f2;
-    box-shadow: 0 2px 8px rgba(63,76,57,0.07);
+    border-color: var(--primary);
+    background-color: var(--light-grey);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.07);
 }
 
 /* Estilo para campos inválidos después de la interacción del usuario */
@@ -394,7 +404,7 @@ input:user-invalid, textarea:user-invalid {
 
 /* Estilo para los placeholders para mejorar la legibilidad */
 ::placeholder {
-    color: #6c757d; /* Un gris más suave que el texto principal */
+    color: #888; /* A lighter grey for dark theme */
     opacity: 1; /* Firefox usa una opacidad por defecto */
 }
 
@@ -405,8 +415,8 @@ input:user-invalid, textarea:user-invalid {
     border-radius: var(--radius-std);
     margin-top: 10px;
     border: none;
-    background-color: var(--dark-green);
-    color: var(--light-grey);
+    background-color: var(--primary);
+    color: var(--background);
     font-size: 15px;
     font-weight: var(--fw-medium);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -420,7 +430,7 @@ input:user-invalid, textarea:user-invalid {
 }
 
 .btn:hover {
-    background-color: var(--light-green);
+    background-color: #BDBDBD;
 }
 
 /* Contact Section */
@@ -434,7 +444,7 @@ input:user-invalid, textarea:user-invalid {
 #contact-form {
     display: flex;
     flex-direction: column;
-    background-color: #f8f9fa;
+    background-color: var(--surface);
     padding: 30px;
     border-radius: var(--radius-card);
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -457,9 +467,9 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    color: var(--dark-green);
+    color: var(--on-surface);
     margin-top: 100px;  
-    background-color: var(--dark-grey);
+    background-color: var(--surface);
     width: 100%;
     padding-left: 15%;
     padding-right: 15%;
@@ -497,12 +507,12 @@ footer p {
 }
 
 footer a, footer a:visited {
-    color: var(--dark-green);
+    color: var(--on-surface);
     text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--light-green);
+    color: var(--primary);
     text-decoration: underline;
 }
 
@@ -561,18 +571,18 @@ footer a:hover {
 /* Card Styles */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
     gap: 15px;
 }
 
 .card {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    background-color: var(--surface);
+    border: 1px solid var(--dark-grey);
     border-radius: var(--radius-card);    
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left; 
-    padding: 15px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
 }
@@ -586,11 +596,12 @@ footer a:hover {
 .card h4 {
     font-size: var(--fs-lg);
     margin: 15px 0;
+    color: var(--on-surface);
 }
 
 .card p {
     font-size: var(--fs-sm);
-    color: var(--dark-green);
+    color: var(--on-surface);
     margin-bottom: 15px; 
     flex-grow: 1; 
 }
@@ -598,8 +609,8 @@ footer a:hover {
 .card-link {
     display: inline-block;
     padding: 10px 15px;
-    background-color: var(--dark-green);
-    color: var(--light-grey);
+    background-color: var(--primary);
+    color: var(--background);
     text-decoration: none;
     border-radius: var(--radius-std);
     font-size: var(--fs-sm);
@@ -609,24 +620,23 @@ footer a:hover {
 }
 
 .card-link:hover {
-    background-color: var(--light-green);
+    background-color: #BDBDBD;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
 
-/* Wrapper for the profile picture to apply a color overlay */
 .profile-pic-wrapper {
     position: relative;
     display: inline-block; /* Behaves like an image in the text flow */
     margin: 18px 0 28px 0;
     width: 90px;
     height: 90px;
-    border-radius: 50%;
-    border: 3px solid var(--dark-grey);
-    box-shadow: 0 2px 8px rgba(63,76,57,0.08);
+    border-radius: 0;
+    border: 3px solid var(--primary);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
     overflow: hidden; /* Ensures the overlay respects the border-radius */
 }
 
@@ -638,7 +648,7 @@ footer a:hover {
     object-fit: cover;
 }
 
-/* The greenish overlay effect */
+/* The overlay effect */
 .profile-pic-wrapper::after {
     content: '';
     position: absolute;
@@ -646,9 +656,8 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--light-green);
-    mix-blend-mode: multiply; /* Blends the green color with the B&W image */
-    opacity: 0.7; /* Adjust the intensity of the effect */
+    background-color: var(--primary);
+    opacity: 0.2;
 }
 
 @media screen and (max-width: 600px) {    
