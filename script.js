@@ -7,8 +7,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"]');
 
-    // --- Hero Fade-in Effect ---
-    hero.classList.add('fade-in');
+    // --- GSAP Hero Animation ---
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    tl.from('.hero h1', { opacity: 0, y: 20, duration: 1 })
+      .from('.hero h2', { opacity: 0, y: 20, duration: 1 }, '-=0.7')
+      .from('.hero .btn', { opacity: 0, y: 20, duration: 0.8 }, '-=0.7');
+
+    // --- GSAP Scroll-Triggered Animations ---
+    gsap.registerPlugin(ScrollTrigger);
+
+    sections.forEach(section => {
+        gsap.from(section, {
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 80%', // Animation starts when the top of the section is 80% down the viewport
+                toggleActions: 'play none none none', // Plays the animation once
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out',
+        });
+    });
 
     // --- Sophisticated Menu Handling ---
     // Centralized function to toggle the menu state.

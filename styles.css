@@ -2,7 +2,7 @@
 
 /* Custom Properties (CSS Variables) */
 :root {
-    --background: #121212;
+    --background: #000000;
     --surface: #1E1E1E;
     --primary: #E0E0E0;
     --on-background: #FFFFFF;
@@ -35,7 +35,7 @@ html {
 
 /* Body Styles */
 body {        
-    background-color: var(--background);
+    background: linear-gradient(to bottom, var(--background), #3C3C3C);
     font-family: 'Geist Mono', monospace;  
     font-size: var(--fs-base);
 }
@@ -138,25 +138,40 @@ nav .nav-list li:hover {
 }
 
 .hamburger-bar {
+    position: absolute;
     width: 28px;
     height: 3px;
     background: var(--on-background);
-    margin: 4px 0;
-    border-radius: 0;
-    transition: all 0.3s;
-    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-bar:nth-child(1) {
+    transform: rotate(90deg);
+}
+
+.hamburger-bar:nth-child(2) {
+    transform: rotate(0deg);
+}
+
+#hamburger-btn.active {
+    animation: spin 0.5s ease-in-out;
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: rotate(45deg);
 }
 
 #hamburger-btn.active .hamburger-bar:nth-child(2) {
-    opacity: 0;
+    transform: rotate(-45deg);
 }
 
-#hamburger-btn.active .hamburger-bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Mobile Menu Styles */
@@ -246,8 +261,6 @@ nav .nav-list li:hover {
 /* Hero Section Styles */
 .hero {    
     height: 600px;  
-    opacity: 0;
-    transition: opacity 2s ease;
     background-image: url(./assets/images/banner.webp);  
     background-size: cover;
     background-position: center;  
@@ -258,9 +271,7 @@ nav .nav-list li:hover {
     gap: 55px;
 }  
 
-.hero.fade-in {
-    opacity: 1;
-}
+
 
 .hero h1 {
     margin-bottom: 15px;
@@ -310,21 +321,13 @@ section[id] h2 {
     margin-bottom: 20px;
     color: var(--primary);
     font-weight: var(--fw-semibold);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s forwards;
 }
 
 #ux-studies h2 {
     color: var(--on-background);
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 
 /* Add right margin only to main content paragraphs to prevent text from hitting the edge */
 #about p,
@@ -422,6 +425,10 @@ input:user-invalid, textarea:user-invalid {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     text-decoration: none;
+}
+
+.hero-text .btn {
+    margin-bottom: 50px;
 }
 
 .btn#submit-button {
