@@ -31,6 +31,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // --- Cross Field Animation ---
+    const crossGrid = document.getElementById('cross-grid');
+    const crossWidth = 30; // width of a cross in pixels
+    const gap = 10; // gap between crosses in pixels
+
+    const numRows = 5;
+    let numCols = 0;
+
+    function createGrid() {
+        crossGrid.innerHTML = '';
+        const gridWidth = crossGrid.offsetWidth;
+        numCols = Math.floor(gridWidth / (crossWidth + gap));
+        crossGrid.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
+
+        for (let i = 0; i < numRows * numCols; i++) {
+            const cross = document.createElement('div');
+            cross.classList.add('cross');
+            const bar1 = document.createElement('span');
+            bar1.classList.add('cross-bar');
+            const bar2 = document.createElement('span');
+            bar2.classList.add('cross-bar');
+            cross.appendChild(bar1);
+            cross.appendChild(bar2);
+            crossGrid.appendChild(cross);
+        }
+    }
+
+    createGrid();
+    window.addEventListener('resize', createGrid);
+
+    crossGrid.addEventListener('mouseover', (e) => {
+        if (e.target.classList.contains('cross')) {
+            const target = e.target;
+            target.classList.add('active');
+            setTimeout(() => {
+                target.classList.remove('active');
+                target.querySelectorAll('.cross-bar').forEach(bar => {
+                    bar.style.backgroundColor = 'var(--on-background)';
+                });
+            }, 1000);
+        }
+    });
+
+    crossGrid.addEventListener('touchmove', (e) => {
+        e.preventDefault(); // Prevent scrolling while dragging on the grid
+        const touch = e.touches[0];
+        const element = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (element && element.classList.contains('cross')) {
+            const target = element;
+            if (!target.classList.contains('active')) {
+                target.classList.add('active');
+                setTimeout(() => {
+                    target.classList.remove('active');
+                    target.querySelectorAll('.cross-bar').forEach(bar => {
+                        bar.style.backgroundColor = 'var(--on-background)';
+                    });
+                }, 1000);
+            }
+        }
+    }, { passive: false });
+
     // --- Sophisticated Menu Handling ---
     // Centralized function to toggle the menu state.
     // It can be called to toggle, or with `true` to force it closed.
