@@ -1,44 +1,49 @@
-# Mikel's Portfolio
+# Mikel Aramendia · Web Developer Portfolio
 
-Welcome to Mikel's Portfolio! This is a web development portfolio showcasing Mikel Aramendia's projects and skills.
+This repository contains the source code for my personal web developer portfolio. It's a curated collection of my work, showcasing my passion for creating clean, functional, and engaging digital experiences.
 
-## About
+[**View Live Demo**](https://mendiak.github.io/portfolio/)
 
-Mikel's Portfolio is a collection of web projects developed by Mikel Aramendia, a passionate web developer based in Barcelona, Spain. This portfolio demonstrates Mikel's expertise in web development and highlights his dedication to creating modern and user-friendly websites.
+---
 
-## Features
+## About This Project
 
-- View Mikel's projects and their descriptions.
-- Learn about Mikel's skills and expertise.
-- Contact Mikel for collaboration or inquiries.
+This portfolio is a static website built from the ground up using modern web technologies. It serves as a central hub for my projects, experiments, and professional background. The design philosophy is minimalist and content-focused, with subtle animations to enhance the user experience.
+
+## Key Features
+
+*   **Responsive Design:** Fully responsive layout that adapts to all screen sizes, from mobile to desktop.
+*   **Interactive UI:** Smooth animations and transitions powered by GSAP.
+*   **Project Showcase:** A clean and organized display of my web development projects.
+*   **Contact Form:** A functional contact form for inquiries and collaboration.
 
 ## Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript
-- React
-- Sass
-- WordPress
+*   **HTML5**
+*   **CSS3**
+*   **JavaScript (ES6+)**
+*   **GSAP (GreenSock Animation Platform)** for animations.
+*   **Bootstrap Icons** for iconography.
 
-## Usage
+## Getting Started
 
-1. Clone the repository:
+To run this project locally, follow these steps:
 
-    `git clone https://github.com/Mendiak/portfolio.git`
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/Mendiak/portfolio.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd portfolio
+    ```
+3.  Open the `index.html` file in your web browser.
 
-
-2. Open `index.html` in your web browser to view the portfolio.
-
-## Contributing
-
-Feel free to fork this repository and create your own version of the portfolio. All contributions are appreciated.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+---
 
 ## Contact
 
-For inquiries or collaboration opportunities, please contact Mikel Aramendia at [mikel.aramendia.lacalle@gmail.com](mailto:mikel.aramendia.lacalle@gmail.com).
+Feel free to reach out for collaboration or just to say hi.
 
+*   **Email:** [mikel.aramendia.lacalle@gmail.com](mailto:mikel.aramendia.lacalle@gmail.com)
+*   **LinkedIn:** [linkedin.com/in/mikel-aramendia-lacalle](https://www.linkedin.com/in/mikel-aramendia-lacalle/)

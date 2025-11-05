@@ -41,7 +41,7 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -66,6 +66,10 @@
 </script>
 </head>
 <body>
+    <div id="welcome-overlay">
+        <div id="welcome-message">Hi, I'm Mikel. Welcome To My Portfolio</div>
+    </div>
+
 
     <header>
 
@@ -76,38 +80,39 @@
                 <li><a href="#projects">PROJECTS</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
-            <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
-        </nav>
-        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+                    </nav>
+                <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <ul>
                 <li><a href="#about">ABOUT ME</a></li>
                 <li><a href="#technologies">TECHNOLOGIES</a></li>
                 <li><a href="#projects">PROJECTS</a></li>
                 <li><a href="#contact">CONTACT</a></li>
+                <li class="mobile-menu-socials">
+                    <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="My LinkedIn profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://github.com/Mendiak" aria-label="My Github profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
+                </li>
             </ul>
         </div>        
     </header>
 
 <main>
-    <div class="hero">
-        <section class="hero-text">
-            <h1>Hi, I'm <span class="hero-highlight">Mikel</span></h1>
-            <h2>I enjoy building websites for the fun and challenge of it</h2>
-            <a href="#about" class="btn">Tell me more...</a>
-        </section>
-    </div>
-
-    <section id="about">
+            <div class="hero">
+                        <section class="hero-text">
+                                <h1>I enjoy building websites for the fun and challenge of it</h1>
+                        </section>           
+                     </div>    
+                        
+        <section id="about">
         <h2>./About Me</h2>
         <div class="profile-pic-wrapper">
             <img src="./assets/images/profile_picture.webp" alt="Profile picture" class="profile-pic" loading="lazy" decoding="async">
         </div>
-        <p>Hi! I'm Mikel. I’ve always been fascinated by technology and the creative possibilities of the web. For me, building websites is both a mental exercise and a way to bring ideas to life—sometimes just for the fun of it, sometimes to see how far I can push myself to learn something new.</p>
+        <p>Hi! I'm Mikel. I live in El Maresme, Barcelona province. I’ve always been fascinated by technology and the creative possibilities of the web. For me, building websites is both a mental exercise and a way to bring ideas to life—sometimes just for the fun of it, sometimes to see how far I can push myself to learn something new.</p>
 
-        <p>I enjoy experimenting with code, design, and new tools. My approach is guided by <span class="highlight">usability, simplicity, and clarity</span>, but I also like to play and try things out, even if the result isn’t always perfect. I believe that every project, big or small, is a chance to learn and improve.</p>
+        <p>I enjoy experimenting with code, design, and new tools. My approach is guided by usability, simplicity, and clarity, but I also like to play and try things out, even if the result isn’t always perfect. I believe that every project, big or small, is a chance to learn and improve.</p>
 
         <p>While I’m not a full-time web developer, I take pride in crafting sites that are intuitive and enjoyable to use. This portfolio is a collection of my personal experiments and learning journeys—if you’re curious too, or just want to chat about web stuff, feel free to connect!</p>
 
@@ -119,13 +124,11 @@
 
     <section id="technologies">        
         <h2>./The Technologies I Use</h2>
-        <p>In my web development projects, I leverage the power of various technologies to create engaging online experiences. This includes <span class="highlight">HTML5</span>, which provides the structure for web pages, and <span class="highlight">CSS</span> for styling and appearance. <span class="highlight">JavaScript</span> adds interactivity and dynamic functionality, while <span class="highlight">React</span> allows me to build user-friendly interfaces efficiently.</p>
+        <p>In my web projects, I focus on crafting experiences that feel clear, engaging, and purposeful. I like designing interfaces that guide the user naturally, where form and function complement each other.</p>
     
-        <p>Beyond the core technologies, I also have experience with tools like <span class="highlight">Bootstrap</span>, <span class="highlight">Tailwind</span>, and <span class="highlight">Sass</span> to streamline design and styling. For version control and collaboration, I rely on <span class="highlight">GitHub</span> to manage my code efficiently and keep projects organized.</p>
+        <p>My process blends visual design, interaction, and usability. I enjoy exploring how subtle details —timing, rhythm, layout, or hierarchy— can shape how people perceive and use a product.</p>
     
-        <p>By combining these technologies with a professional and client-focused approach, I am able to create modern and functional websites that meet the most demanding industry standards and satisfy the diverse needs of end-users.</p>
-
-        <p>Furthermore, I hold the <span class="highlight">Google UX Design Certificate</span>, a training that has provided me with a deep understanding of user-centered design and methodologies like Design Thinking. Through this course, I have honed techniques such as user research, wireframing, prototyping, and accessible design. This certificate complements my technical skills, allowing me to approach each project with a comprehensive vision that ensures intuitive and effective user experiences.</p>
+        <p>I also hold the Google UX Design Certificate, which has deepened my understanding of user-centered methodologies and accessible design. This background allows me to approach each project from both a creative and analytical perspective, ensuring the final result feels intuitive and meaningful.</p>
     </section>
 
     <hr class="divider">
