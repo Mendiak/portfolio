@@ -1,12 +1,12 @@
 /* Custom Properties (CSS Variables) */
 :root {
-    --background: #000000;
-    --surface: #1E1E1E;
-    --primary: #E0E0E0;
-    --on-background: #FFFFFF;
-    --on-surface: #FFFFFF;
-    --light-grey: #2C2C2C;
-    --dark-grey: #3C3C3C;
+    --background: #f0f0f0;
+    --surface: #ffffff;
+    --primary: #333333;
+    --on-background: #000000;
+    --on-surface: #000000;
+    --light-grey: #e0e0e0;
+    --dark-grey: #cccccc;
     --radius-std: 0px;
     --radius-card: 0px;
     --fs-base: 1rem;
@@ -29,6 +29,29 @@
     --max-width-wide: 960px;
 }
 
+[data-theme='dark'] {
+    --background: #000000;
+    --surface: #1E1E1E;
+    --primary: #E0E0E0;
+    --on-background: #FFFFFF;
+    --on-surface: #FFFFFF;
+    --light-grey: #2C2C2C;
+    --dark-grey: #3C3C3C;
+}
+
+#theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--on-background);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#theme-toggle i {
+    font-size: 1.2rem;
+}
+
 /* Global Reset */
 * {
     margin: 0;
@@ -42,12 +65,17 @@ html {
 }
 
 /* Body Styles */
-body {        
-    background: linear-gradient(to bottom, var(--background), #3C3C3C);
+body {
+    background: linear-gradient(to bottom, var(--background), var(--dark-grey));
     font-family: 'Geist Mono', monospace;  
     font-size: var(--fs-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+[data-theme='light'] body {
+    background: var(--background);
+}
 /* Typography Styles */
 p {
     color: var(--on-background);
@@ -92,6 +120,12 @@ nav {
     justify-content: flex-end;
     padding-right: 5%;
 }
+
+[data-theme='light'] nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
 nav .nav-list {
     margin-right: 5%;
@@ -283,7 +317,7 @@ nav .nav-list li:hover {
     font-size: clamp(3rem, 8vw, 8rem); /* Smoothly scales font size */
     font-weight: var(--fw-bold);
     line-height: 1.2;
-    background: linear-gradient(90deg, #000, #fff, #ffb94f, #fff, #000);
+    background: linear-gradient(90deg, var(--background), var(--on-background), #ffb94f, var(--on-background), var(--background));
     background-size: 400% 400%;
     animation: aurora 60s ease infinite; /* Increased duration for slower animation */
     -webkit-background-clip: text;
@@ -331,6 +365,7 @@ nav .nav-list li:hover {
   This can improve performance for animations and transitions.
 */
 section[id] {
+    scroll-margin-top: 55px;
     will-change: transform, opacity;
 }
 
@@ -489,10 +524,10 @@ footer p {
     line-height: 1.7; /* Mejora el interlineado */
 }
 
-.attribution-link::after {
-    content: " · ";
-    pointer-events: none; 
-    text-decoration: none;
+.footer-attributions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .attribution-link:last-of-type::after {
@@ -660,12 +695,31 @@ footer a:hover {
 }
 
 .card-link:hover {
-    background-color: #BDBDBD;
+    background-color: var(--light-grey);
+    color: var(--background);
+}
+
+[data-theme='light'] .card-link:hover {
+    background-color: var(--dark-grey);
+    color: var(--on-surface);
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .card:hover {
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.cross.active .cross-bar {
+    animation: rainbow 1s linear infinite;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .cross.active .cross-bar {
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.3);
 }
 
 .profile-pic-wrapper {

@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = themeToggle.querySelector('i');
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    sunIcon.className = savedTheme === 'dark' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+
+        sunIcon.className = newTheme === 'dark' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
+    });
+
     const welcomeOverlay = document.getElementById('welcome-overlay');
 
     setTimeout(() => {
@@ -21,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     tl.from('.hero h1', { opacity: 0, y: 20, duration: 1 })
-      .from('.hero h2', { opacity: 0, y: 20, duration: 1 }, '-=0.7');
+
 
     // --- GSAP Scroll-Triggered Animations ---
     gsap.registerPlugin(ScrollTrigger);
@@ -140,22 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- Smooth Scroll with Offset ---
-    // A more generic selector catches all anchor links on the page.
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href.length > 1) { // Ensure it's not just "#"
-                const section = document.getElementById(href.substring(1));
-                if (section) {
-                    e.preventDefault();
-                    const navHeight = 55; 
-                    const sectionTop = section.getBoundingClientRect().top + window.scrollY - navHeight;
-                    window.scrollTo({ top: sectionTop, behavior: 'smooth' });
-                }
-            }
-        });
-    });
+
 
     // --- Dynamic Copyright Year ---
     if (yearSpan) {

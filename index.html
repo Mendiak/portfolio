@@ -28,14 +28,14 @@
 <meta property="og:url" content="https://mendiak.github.io/portfolio/">
 <meta property="og:title" content="Mikel Aramendia · Web Developer Portfolio">
 <meta property="og:description" content="Portfolio of Mikel Aramendia, a web developer specializing in creating unique and functional digital experiences.">
-<meta property="og:image" content="https://mendiak.github.io/portfolio/assets/images/banner.webp">
+<meta property="og:image" content="https://mendiak.github.io/portfolio/assets/images/og.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://mendiak.github.io/portfolio/">
 <meta property="twitter:title" content="Mikel Aramendia · Web Developer Portfolio">
 <meta property="twitter:description" content="Portfolio of Mikel Aramendia, a web developer specializing in creating unique and functional digital experiences.">
-<meta property="twitter:image" content="https://mendiak.github.io/portfolio/assets/images/banner.webp">
+<meta property="twitter:image" content="https://mendiak.github.io/portfolio/assets/images/og.png">
 
 <!-- Styles and Fonts -->
 <link rel="stylesheet" href="styles.css">
@@ -79,12 +79,18 @@
                 <li><a href="#technologies">TECHNOLOGIES</a></li>
                 <li><a href="#projects">PROJECTS</a></li>
                 <li><a href="#contact">CONTACT</a></li>
+                <li>
+                    <button id="theme-toggle" aria-label="Toggle light and dark mode">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                </li>
             </ul>
-                    </nav>
-                <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
-                </button>        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        </nav>
+        <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <ul>
                 <li><a href="#about">ABOUT ME</a></li>
                 <li><a href="#technologies">TECHNOLOGIES</a></li>
@@ -262,14 +268,15 @@
     <footer>
         <div class="footer-info">
             <p>&copy; <span id="copyright-year"></span> Mikel Aramendia</p>
-            <p class="footer-note">
-                This portfolio is a personal space for learning, experimenting, and sharing what I enjoy about the web.<br>
-                <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank" rel="noopener noreferrer" class="attribution-link">View source on GitHub</a>
-                <a href="https://www.flaticon.com/authors/vectorslab" target="_blank" rel="noopener noreferrer" title="Icons created by Vectorslab @ Flaticon" class="attribution-link">Icon credits</a>
-                <a href="https://unsplash.com/@shioyang" target="_blank" rel="noopener noreferrer" title="Images by Shio Yang on Unsplash" class="attribution-link">Image credits</a>
-            </p>
-        </div>
-        <ul class="footer-socials">
+                    <p class="footer-note">
+                        This portfolio is a personal space for learning, experimenting, and sharing what I enjoy about the web.
+                    </p>
+                    <div class="footer-attributions">
+                        <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank" rel="noopener noreferrer" class="attribution-link">View source on GitHub</a>
+                        <a href="https://www.flaticon.com/authors/vectorslab" target="_blank" rel="noopener noreferrer" title="Icons created by Vectorslab @ Flaticon" class="attribution-link">Icon credits</a>
+                        <a href="https://unsplash.com/@shioyang" target="_blank" rel="noopener noreferrer" title="Images by Shio Yang on Unsplash" class="attribution-link">Image credits</a>
+                    </div>
+                </div>        <ul class="footer-socials">
             <li>
                 <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="My LinkedIn profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
             </li>
