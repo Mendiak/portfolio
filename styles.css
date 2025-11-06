@@ -355,7 +355,7 @@ nav .nav-list li:hover {
 }
 
 #about {
-    margin-top: 150px;
+    margin-top: 120px;
 }
 
 /* Styles for all main section titles */
@@ -486,7 +486,8 @@ input:user-invalid, textarea:user-invalid {
     grid-template-columns: 1fr 1fr; /* Equal width columns for better balance */
     gap: var(--space-xl);
     align-items: start;
-    margin-left: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
     max-width: var(--max-width-wide);
 }
 
@@ -615,13 +616,14 @@ footer a:hover {
 
 @media screen and (max-width: 768px) {
     #about,
-    #technologies,
     #projects,
-    #contact,
-    #ux-studies {
-        margin-left: 10%;
-        margin-right: 10%;  
+    #technologies,
+    #ux-studies,
+    #contact {
+        margin-right: 5%; 
+        margin-left: 5%;
       }
+
 
     nav .nav-list {
         display: none;
