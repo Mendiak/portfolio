@@ -343,13 +343,13 @@ nav .nav-list li:hover {
 }
 
 /* Section Styles */
-#about, #technologies {
+#about {
     margin-left: 15%;
     max-width: var(--max-width-narrow);
 }
 
 /* Wider sections for multi-column layouts like projects and contact */
-#projects, #ux-studies, #contact {
+#projects, #ux-studies {
     margin-left: 15%;
     max-width: var(--max-width-wide);
 }
@@ -378,6 +378,10 @@ section[id] h2 {
 
 #ux-studies h2 {
     color: var(--on-background);
+}
+
+div.contact-text h2 {
+    color: var(--primary);
 }
 
 
@@ -482,6 +486,8 @@ input:user-invalid, textarea:user-invalid {
     grid-template-columns: 1fr 1fr; /* Equal width columns for better balance */
     gap: var(--space-xl);
     align-items: start;
+    margin-left: 15%;
+    max-width: var(--max-width-wide);
 }
 
 #contact-form {
@@ -557,23 +563,25 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Divider */
-.divider {
-    border: none;
-    height: 3px;
-    background-color: var(--dark-grey);
-    margin-left: 15%;
+.parallax-divider {
+    height: 200px;
+    background-image: url(./assets/images/banner.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(100%) brightness(50%); /* Darken the image for better contrast with shadows */
     margin-top: 100px;
     margin-bottom: 100px;
-    max-width: var(--max-width-narrow);
+    will-change: background-position; /* Hint for smoother parallax scrolling */
 }
 
-/* Make dividers preceding wide sections also wide for consistency */
-
-#technologies + .divider,
-#projects + .divider,
-#ux-studies + .divider {
-    max-width: var(--max-width-wide);
+/* Section Styles for shadow effect */
+#about, #technologies, #projects, #ux-studies, .contact-wrapper {
+    position: relative;
+    z-index: 2; /* Ensure sections are above the parallax divider */
+    margin-bottom: -50px; /* Negative margin to overlap the divider */
+    padding-bottom: 50px; /* Add padding to compensate for negative margin */
 }
 
 /* Responsive Aurora Text Alignment */
@@ -606,7 +614,6 @@ footer a:hover {
 }
 
 @media screen and (max-width: 768px) {
-    .divider,
     #about,
     #technologies,
     #projects,
@@ -768,6 +775,7 @@ footer a:hover {
     height: 50vh;
     overflow: hidden;
     background-color: var(--surface);
+    margin-top: var(--space-xxl);
 }
 
 #cross-grid {
@@ -839,6 +847,13 @@ footer a:hover {
     z-index: 10000;
     opacity: 1;
     transition: opacity 1s ease-in-out;
+    /* Pattern as background image */
+    background-image: 
+        linear-gradient(to bottom left, rgba(0, 0, 0, 1) 0%, transparent 70%), /* Amplified diagonal fade from top-right */
+        linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: auto, 20px 20px, 20px 20px; /* 'auto' for the gradient, 20px for the grid */
+    background-position: 0 0, 0 0, 0 0;
 }
 
 #welcome-message {

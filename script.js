@@ -42,6 +42,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- GSAP Scroll-Triggered Animations ---
     gsap.registerPlugin(ScrollTrigger);
 
+    // Parallax effect for .parallax-divider elements
+    gsap.utils.toArray(".parallax-divider").forEach(divider => {
+        gsap.to(divider, {
+            backgroundPositionY: "-20%", // Adjust this value for desired parallax strength
+            ease: "none",
+            scrollTrigger: {
+                trigger: divider,
+                start: "top bottom", // Start when the top of the divider enters the viewport
+                end: "bottom top",   // End when the bottom of the divider leaves the viewport
+                scrub: true,
+            }
+        });
+    });
+
 
     sections.forEach(section => {
         gsap.from(section, {
