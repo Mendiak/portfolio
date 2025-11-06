@@ -221,7 +221,8 @@ document.addEventListener('DOMContentLoaded', function() {
             spotlightImages.push({
                 src: image.src,
                 title: titleElement ? titleElement.textContent : image.alt, // Use h4 text as title, fallback to alt
-                description: description
+                description: description,
+                projectLink: card.querySelector('.card-link') ? card.querySelector('.card-link').href : null
             });
 
             wrapper.addEventListener('click', () => {

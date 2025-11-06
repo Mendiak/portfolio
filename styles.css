@@ -655,6 +655,11 @@ footer a:hover {
         grid-template-columns: 1fr; /* Stack columns on mobile */
         gap: var(--space-lg);
     }
+
+    .parallax-divider {
+        background-repeat: no-repeat; /* Ensure no repetition */
+        background-position: center; /* Center the image */
+    }
 }
 
 
