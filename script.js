@@ -201,4 +201,35 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    const imageWrappers = document.querySelectorAll('.image-wrapper');
+
+    const spotlightImages = [];
+    imageWrappers.forEach((wrapper, index) => {
+        const image = wrapper.querySelector('img[data-spotlight]');
+        if (image) {
+            const card = wrapper.closest('.card'); // Get the parent card element
+            const titleElement = card.querySelector('h4');
+            const descriptionElements = card.querySelectorAll('p');
+            let description = '';
+
+            // Assuming the first <p> tag after h4 is the description
+            if (descriptionElements.length > 0) {
+                description = descriptionElements[0].textContent;
+            }
+
+            spotlightImages.push({
+                src: image.src,
+                title: titleElement ? titleElement.textContent : image.alt, // Use h4 text as title, fallback to alt
+                description: description
+            });
+
+            wrapper.addEventListener('click', () => {
+                Spotlight.show(spotlightImages, {
+                    index: index + 1
+                });
+            });
+        }
+    });
+
 });

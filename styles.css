@@ -678,11 +678,65 @@ footer a:hover {
     flex-direction: column;
 }
 
+.card a[data-spotlight] {
+    cursor: pointer;
+}
+
 .card img {
     width: 100%;
     height: auto;
     border-radius: var(--radius-std);
 }
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-std); /* Inherit from card img if applicable */
+    cursor: pointer;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+.image-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Darken effect */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-wrapper .zoom-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10; /* Ensure icon is above overlay */
+}
+
+.image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.image-wrapper:hover .zoom-icon {
+    opacity: 1;
+}
+
+.image-wrapper:hover img {
+    filter: brightness(0.7); /* Slightly darken the image itself */
+}
+
 
 .card h4 {
     font-size: var(--fs-lg);
@@ -916,4 +970,12 @@ footer a:hover {
 .mobile-menu-socials a:hover {
     color: var(--primary);
     transform: scale(1.1);
+}
+
+/* Apply Geist Mono font to Spotlight.js elements */
+#spotlight, .spotlight-theme-default .spotlight-toolbar,
+.spotlight-theme-default .spotlight-description,
+.spotlight-theme-default .spotlight-caption,
+.spotlight-theme-default * {
+    font-family: 'Geist Mono', monospace !important;
 }
