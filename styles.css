@@ -7,6 +7,10 @@
     --on-surface: #000000;
     --light-grey: #e0e0e0;
     --dark-grey: #cccccc;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    --visited-link: #666666; /* WCAG AA compliant on white */
+    --grid-color: rgba(0, 0, 0, 0.05);
     --radius-std: 0px;
     --radius-card: 0px;
     --fs-base: 1rem;
@@ -29,6 +33,23 @@
     --max-width-wide: 960px;
 }
 
+/* Dark theme preferences */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #000000;
+        --surface: #1E1E1E;
+        --primary: #E0E0E0;
+        --on-background: #FFFFFF;
+        --on-surface: #FFFFFF;
+        --light-grey: #2C2C2C;
+        --dark-grey: #3C3C3C;
+        --nav-bg: rgba(30, 30, 30, 0.5);
+        --nav-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        --visited-link: #BDBDBD;
+        --grid-color: rgba(255, 255, 255, 0.15);
+    }
+}
+
 [data-theme='dark'] {
     --background: #000000;
     --surface: #1E1E1E;
@@ -37,6 +58,24 @@
     --on-surface: #FFFFFF;
     --light-grey: #2C2C2C;
     --dark-grey: #3C3C3C;
+    --nav-bg: rgba(30, 30, 30, 0.5);
+    --nav-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    --visited-link: #BDBDBD;
+    --grid-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme='light'] {
+    --background: #f0f0f0;
+    --surface: #ffffff;
+    --primary: #333333;
+    --on-background: #000000;
+    --on-surface: #000000;
+    --light-grey: #e0e0e0;
+    --dark-grey: #cccccc;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    --visited-link: #666666;
+    --grid-color: rgba(0, 0, 0, 0.05);
 }
 
 #theme-toggle {
@@ -95,7 +134,7 @@ a {
 }
 
 a:visited {
-    color: #BDBDBD; /* Darker grey for better contrast (WCAG AA compliant) */
+    color: var(--visited-link);
 }
 
 .highlight {
@@ -105,9 +144,9 @@ a:visited {
 
 /* Navigation Styles */
 nav {
-    background-color: rgba(30, 30, 30, 0.5);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(10px);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--nav-shadow);
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -120,12 +159,6 @@ nav {
     justify-content: flex-end;
     padding-right: 5%;
 }
-
-[data-theme='light'] nav {
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 
 nav .nav-list {
     margin-right: 5%;
@@ -236,11 +269,19 @@ nav .nav-list li:hover {
     justify-content: center;
     align-items: center;
     background-image:
-        linear-gradient(to bottom left, rgba(0, 0, 0, 1) 0%, transparent 70%),
-        linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+        linear-gradient(to bottom left, rgba(0, 0, 0, 0.2) 0%, transparent 70%),
+        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
     background-size: auto, 20px 20px, 20px 20px;
     background-position: 0 0, 0 0, 0 0;
+    transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .mobile-menu {
+    background-image:
+        linear-gradient(to bottom left, rgba(0, 0, 0, 1) 0%, transparent 70%),
+        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
 }
 
 .mobile-menu.active {
@@ -367,13 +408,11 @@ nav .nav-list li:hover {
 
 /* Styles for all main section titles */
 /*
-  The 'will-change' property hints to the browser about upcoming transformations,
-  allowing it to optimize rendering by moving the element to a separate layer.
-  This can improve performance for animations and transitions.
+  The 'will-change' property hints to the browser about upcoming transformations.
+  Removing it from global section selectors to prevent high memory consumption warnings.
 */
 section[id] {
     scroll-margin-top: 55px;
-    will-change: transform, opacity;
 }
 
 section[id] h2 {
@@ -574,14 +613,12 @@ footer a:hover {
 .parallax-divider {
     height: 200px;
     background-image: url(./assets/images/banner.webp);
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     filter: grayscale(100%) brightness(50%); /* Darken the image for better contrast with shadows */
     margin-top: 100px;
     margin-bottom: 100px;
-    will-change: background-position; /* Hint for smoother parallax scrolling */
 }
 
 /* Section Styles for shadow effect */
@@ -622,6 +659,25 @@ footer a:hover {
 }
 
 @media screen and (max-width: 768px) {
+    .parallax-divider {
+        height: 120px; /* More whitespace for a cleaner look */
+        background: none; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .parallax-divider::after {
+        content: "+ + +";
+        color: var(--primary);
+        font-family: 'Geist Mono', monospace;
+        font-size: 1.5rem;
+        letter-spacing: 1.5rem; /* Space out the plus symbols */
+        padding-left: 1.5rem; /* Balance the letter-spacing */
+        opacity: 0.6;
+    }
+
     #about,
     #projects,
     #technologies,
@@ -629,8 +685,10 @@ footer a:hover {
     #contact {
         margin-right: 5%; 
         margin-left: 5%;
+        margin-bottom: 40px; /* Better spacing between sections */
+        padding-bottom: 0;
+        z-index: 2;
       }
-
 
     nav .nav-list {
         display: none;
@@ -654,6 +712,24 @@ footer a:hover {
     .contact-wrapper {
         grid-template-columns: 1fr; /* Stack columns on mobile */
         gap: var(--space-lg);
+    }
+
+    #cross-field {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding: 0;
+        background-color: var(--surface);
+        overflow: hidden;
+    }
+
+    #cross-grid {
+        width: 100%;
+        display: grid;
+        justify-content: center;
     }
 
     .parallax-divider {
@@ -955,20 +1031,52 @@ footer a:hover {
     }
 }
 
-/* Mobile Menu Social Icons */
+/* Mobile Menu Controls (Theme & Socials) */
+.mobile-menu-theme-toggle,
 .mobile-menu-socials {
-    margin-top: 2rem;
+    margin-top: 1.5rem; /* Balanced vertical rhythm */
+    padding-left: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: flex-start;
-    gap: 2rem;
-    max-width: 80%;
-    margin: 2rem auto 0 auto;
-    padding-left: 20px;
+    align-items: center;
+}
+
+.mobile-menu-socials {
+    margin-top: 1.5rem; /* Equal spacing to match theme toggle above */
+    gap: 2.5rem; /* Increased gap for better touch targets on mobile */
+}
+
+#theme-toggle-mobile {
+    background: transparent;
+    border: none;
+    color: var(--on-surface);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#theme-toggle-mobile:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+#theme-toggle-mobile i,
+.mobile-menu-socials a {
+    font-size: 2.5rem; /* Unified size for all icons */
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-menu-socials a {
-    font-size: 2.5rem; /* Match the icon font size */
     color: var(--on-surface);
+    text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 

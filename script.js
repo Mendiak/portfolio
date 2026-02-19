@@ -1,19 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
     const sunIcon = themeToggle.querySelector('i');
+    const sunIconMobile = themeToggleMobile.querySelector('i');
 
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    sunIcon.className = savedTheme === 'dark' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
+    const updateThemeIcons = (theme) => {
+        const iconClass = theme === 'dark' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
+        sunIcon.className = iconClass;
+        sunIconMobile.className = iconClass;
+    };
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const getPreferredTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) return savedTheme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const currentTheme = getPreferredTheme();
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcons(currentTheme);
+
+    const toggleTheme = () => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        updateThemeIcons(newTheme);
+    };
 
-        sunIcon.className = newTheme === 'dark' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
-    });
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggleMobile.addEventListener('click', toggleTheme);
 
     const welcomeOverlay = document.getElementById('welcome-overlay');
 
@@ -42,20 +58,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- GSAP Scroll-Triggered Animations ---
     gsap.registerPlugin(ScrollTrigger);
 
-    // Parallax effect for .parallax-divider elements
-    gsap.utils.toArray(".parallax-divider").forEach(divider => {
-        gsap.to(divider, {
-            backgroundPositionY: "-20%", // Adjust this value for desired parallax strength
-            ease: "none",
-            scrollTrigger: {
-                trigger: divider,
-                start: "top bottom", // Start when the top of the divider enters the viewport
-                end: "bottom top",   // End when the bottom of the divider leaves the viewport
-                scrub: true,
-            }
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+        // Parallax effect for .parallax-divider elements only on desktop
+        gsap.utils.toArray(".parallax-divider").forEach(divider => {
+            gsap.to(divider, {
+                backgroundPositionY: "-20%", // Adjust this value for desired parallax strength
+                ease: "none",
+                scrollTrigger: {
+                    trigger: divider,
+                    start: "top bottom", // Start when the top of the divider enters the viewport
+                    end: "bottom top",   // End when the bottom of the divider leaves the viewport
+                    scrub: true,
+                }
+            });
         });
     });
-
 
     sections.forEach(section => {
         gsap.from(section, {
@@ -99,7 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     createGrid();
-    window.addEventListener('resize', createGrid);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(createGrid, 250);
+    });
 
     crossGrid.addEventListener('mouseover', (e) => {
         if (e.target.classList.contains('cross')) {
