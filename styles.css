@@ -252,8 +252,7 @@ nav .nav-list li:hover {
     }
 }
 
-/* Mobile Menu Styles */
-/* Fullscreen Overlay Menu */
+/* Mobile Menu Redesign */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -264,8 +263,9 @@ nav .nav-list li:hover {
     z-index: 3000;
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.95);
+    transform: scale(1.05); /* Zoom-out effect on open */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image:
@@ -274,14 +274,7 @@ nav .nav-list li:hover {
         linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
     background-size: auto, 20px 20px, 20px 20px;
     background-position: 0 0, 0 0, 0 0;
-    transition: all 0.3s ease;
-}
-
-[data-theme='dark'] .mobile-menu {
-    background-image:
-        linear-gradient(to bottom left, rgba(0, 0, 0, 1) 0%, transparent 70%),
-        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu.active {
@@ -290,52 +283,89 @@ nav .nav-list li:hover {
     transform: scale(1);
 }
 
-.mobile-menu ul {
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+    width: 100%; /* Full width to avoid wrapping */
+    padding-left: 5%; /* Closer to the left edge as requested */
+}
+
+.mobile-nav-links {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
+    margin: auto 0;
     text-align: left;
-    max-width: 80%;
-    padding-left: 20px;
 }
 
-.mobile-menu ul li {
-    margin: 0;
-    padding: 0;
+.mobile-nav-links li {
+    margin-bottom: 2rem;
 }
 
-.mobile-menu ul li:not(:last-child) {
-    border-bottom: none;
-}
-
-.mobile-menu ul li a {
+.mobile-nav-links a {
     color: var(--on-surface);
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 9vw, 2.8rem); /* Slightly adjusted for better fit */
     font-weight: var(--fw-bold);
-    display: block;
-    padding: 1rem 0;
-    transition: color 0.2s ease, transform 0.2s ease;
+    letter-spacing: -1px;
+    display: inline-block;
+    white-space: nowrap; /* Forces text to stay in one line */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.mobile-menu ul li a:hover,
-.mobile-menu ul li a:focus-visible {
+/* Numbered prefix for links */
+.mobile-nav-links a::before {
+    content: attr(data-index) " / ";
+    font-size: 0.9rem; /* Slightly smaller for hierarchy */
+    font-weight: var(--fw-light);
     color: var(--primary);
-    transform: scale(1.1);
+    margin-right: 0.3rem;
+    font-family: 'Geist Mono', monospace;
 }
 
-/* Style for the active mobile navigation link */
-.mobile-menu ul li a.active {
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active {
+    color: var(--primary);
+}
+
+.mobile-menu-utilities {
+    display: flex;
+    justify-content: flex-start; /* Align controls to the left */
+    align-items: center;
+    gap: 1.5rem; /* Tighter gap between control items */
+    padding-bottom: 20px;
+}
+
+#theme-toggle-mobile,
+.mobile-social-icons a {
+    background: transparent;
+    border: none;
+    color: var(--on-surface);
+    width: 50px; /* Fixed square container for identical sizing */
+    height: 50px;
+    font-size: 2.2rem; /* Uniform icon size */
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensure icons align to their own left edge */
+}
+
+.mobile-social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#theme-toggle-mobile:hover,
+.mobile-social-icons a:hover {
     color: var(--primary);
 }
 
 @media screen and (max-width: 768px) {
-    .mobile-menu ul li a {
-        font-size: 2rem; /* Slightly smaller font for smaller screens */
+    nav .nav-list {
+        display: none;
     }
-}
-
-/* Hero Section Styles */
 .hero {
     position: relative;
     height: 100vh; /* Make hero fill the viewport height */

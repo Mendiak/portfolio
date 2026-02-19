@@ -94,22 +94,24 @@
             <span class="hamburger-bar"></span>
         </button>
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-            <ul>
-                <li><a href="#about">ABOUT ME</a></li>
-                <li><a href="#technologies">TECHNOLOGIES</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <li class="mobile-menu-theme-toggle">
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-links">
+                    <li><a href="#about" data-index="01">ABOUT ME</a></li>
+                    <li><a href="#technologies" data-index="02">TECHNOLOGIES</a></li>
+                    <li><a href="#projects" data-index="03">PROJECTS</a></li>
+                    <li><a href="#contact" data-index="04">CONTACT</a></li>
+                </ul>
+                <div class="mobile-menu-utilities">
                     <button id="theme-toggle-mobile" aria-label="Toggle light and dark mode">
                         <i class="bi bi-sun-fill"></i>
                     </button>
-                </li>
-                <li class="mobile-menu-socials">
-                    <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="My LinkedIn profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                    <a href="https://github.com/Mendiak" aria-label="My Github profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </div>        
+                    <div class="mobile-social-icons">
+                        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Mendiak" aria-label="Github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>  
     </header>
 
 <main>
