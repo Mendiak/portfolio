@@ -32,44 +32,96 @@ document.addEventListener('DOMContentLoaded', function() {
     themeToggleMobile.addEventListener('click', toggleTheme);
 
     const welcomeOverlay = document.getElementById('welcome-overlay');
+    const heroTitle = document.querySelector('.hero h1');
+
+    // --- Prepare Hero Text (Word & Char Splitting) ---
+    if (heroTitle) {
+        const text = heroTitle.innerText;
+        heroTitle.innerHTML = text.split(' ').map(word => {
+            return `<span class="word" style="display: inline-block; white-space: nowrap;">${
+                word.split('').map(char => `<span class="char" style="display: inline-block;">${char}</span>`).join('')
+            }</span>`;
+        }).join(' ');
+
+        // Spotlight interaction (Mouse move)
+        window.addEventListener('mousemove', (e) => {
+            const rect = heroTitle.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            const dsX = (0.5 - (e.clientX - rect.left) / rect.width) * 24;
+            const dsY = (0.5 - (e.clientY - rect.top) / rect.height) * 24;
+            
+            gsap.to(heroTitle, {
+                '--mouse-x': `${x}%`,
+                '--mouse-y': `${y}%`,
+                '--ds-x': `${dsX}px`,
+                '--ds-y': `${dsY}px`,
+                duration: 0.8,
+                overwrite: 'auto',
+                ease: 'power2.out'
+            });
+        });
+
+        // Ambient pulse
+        gsap.to(heroTitle, {
+            '--mouse-x': '60%',
+            '--mouse-y': '60%',
+            duration: 8,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+    }
 
     setTimeout(() => {
         welcomeOverlay.style.opacity = '0';
-        // Remove the overlay from the DOM after the transition is complete
+        
+        if (heroTitle) {
+            gsap.from('.hero h1 .char', {
+                opacity: 0,
+                x: () => (Math.random() - 0.5) * 800,
+                y: () => (Math.random() - 0.5) * 600,
+                z: () => (Math.random() - 0.5) * 1000,
+                rotationX: () => (Math.random() - 0.5) * 360,
+                rotationY: () => (Math.random() - 0.5) * 360,
+                rotationZ: () => (Math.random() - 0.5) * 360,
+                duration: 2.5,
+                stagger: {
+                    each: 0.03,
+                    from: "random"
+                },
+                ease: "expo.out",
+                onComplete: () => {
+                    gsap.set('.hero h1 .char', { clearProps: "transform,opacity" });
+                }
+            });
+        }
+
         welcomeOverlay.addEventListener('transitionend', () => {
             welcomeOverlay.remove();
         });
     }, 3000); 
 
     // --- Cache DOM elements for performance and clarity ---
-    const hero = document.querySelector('.hero');
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const yearSpan = document.getElementById('copyright-year');
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"]');
 
-        // --- GSAP Hero Animation ---
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-    tl.from('.hero h1', { opacity: 0, y: 20, duration: 1 })
-
-
     // --- GSAP Scroll-Triggered Animations ---
     gsap.registerPlugin(ScrollTrigger);
-
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 769px)", () => {
-        // Parallax effect for .parallax-divider elements only on desktop
         gsap.utils.toArray(".parallax-divider").forEach(divider => {
             gsap.to(divider, {
-                backgroundPositionY: "-20%", // Adjust this value for desired parallax strength
+                backgroundPositionY: "-20%",
                 ease: "none",
                 scrollTrigger: {
                     trigger: divider,
-                    start: "top bottom", // Start when the top of the divider enters the viewport
-                    end: "bottom top",   // End when the bottom of the divider leaves the viewport
+                    start: "top bottom",
+                    end: "bottom top",
                     scrub: true,
                 }
             });
@@ -80,8 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
         gsap.from(section, {
             scrollTrigger: {
                 trigger: section,
-                start: 'top 80%', // Animation starts when the top of the section is 80% down the viewport
-                toggleActions: 'play none none none', // Plays the animation once
+                start: 'top 80%',
+                toggleActions: 'play none none none',
             },
             opacity: 0,
             y: 50,
@@ -92,13 +144,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Cross Field Animation ---
     const crossGrid = document.getElementById('cross-grid');
-    const crossWidth = 30; // width of a cross in pixels
-    const gap = 10; // gap between crosses in pixels
-
+    const crossWidth = 30;
+    const gap = 10;
     const numRows = 5;
     let numCols = 0;
 
     function createGrid() {
+        if(!crossGrid) return;
         crossGrid.innerHTML = '';
         const gridWidth = crossGrid.offsetWidth;
         numCols = Math.floor(gridWidth / (crossWidth + gap));
@@ -118,232 +170,91 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     createGrid();
-    let resizeTimer;
     window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(createGrid, 250);
+        clearTimeout(window.resizeTimer);
+        window.resizeTimer = setTimeout(createGrid, 250);
     });
 
-    crossGrid.addEventListener('mouseover', (e) => {
-        if (e.target.classList.contains('cross')) {
-            const target = e.target;
-            target.classList.add('active');
-            setTimeout(() => {
-                target.classList.remove('active');
-                target.querySelectorAll('.cross-bar').forEach(bar => {
-                    bar.style.backgroundColor = 'var(--on-background)';
-                });
-            }, 1000);
-        }
-    });
-
-    crossGrid.addEventListener('touchmove', (e) => {
-        e.preventDefault(); // Prevent scrolling while dragging on the grid
-        const touch = e.touches[0];
-        const element = document.elementFromPoint(touch.clientX, touch.clientY);
-        if (element && element.classList.contains('cross')) {
-            const target = element;
-            if (!target.classList.contains('active')) {
+    if(crossGrid) {
+        crossGrid.addEventListener('mouseover', (e) => {
+            if (e.target.classList.contains('cross')) {
+                const target = e.target;
                 target.classList.add('active');
                 setTimeout(() => {
                     target.classList.remove('active');
-                    target.querySelectorAll('.cross-bar').forEach(bar => {
-                        bar.style.backgroundColor = 'var(--on-background)';
-                    });
                 }, 1000);
             }
-        }
-    }, { passive: false });
-
-    // --- Sophisticated Menu Handling ---
-    // Centralized function to toggle the menu state.
-    // It can be called to toggle, or with `true` to force it closed.
-    const toggleMenu = (forceClose = false) => {
-        const isActive = mobileMenu.classList.contains('active');
-        const shouldBeActive = forceClose ? false : !isActive;
-
-        mobileMenu.classList.toggle('active', shouldBeActive);
-        hamburgerBtn.classList.toggle('active', shouldBeActive);
-        hamburgerBtn.setAttribute('aria-expanded', shouldBeActive);
-        mobileMenu.setAttribute('aria-hidden', !shouldBeActive);
-    };
-
-    // 1. Toggle menu on button click
-    hamburgerBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevents the document click listener from firing immediately
-        toggleMenu();
-    });
-
-    // 2. Close menu when a link inside it is clicked
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => toggleMenu(true));
-    });
-
-    // 3. Close menu when clicking outside of it
-    document.addEventListener('click', (e) => {
-        if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-            toggleMenu(true);
-        }
-    });
-
-    // 4. Close menu on scroll for a better user experience
-    window.addEventListener('scroll', () => {
-        if (mobileMenu.classList.contains('active')) {
-            toggleMenu(true);
-        }
-    });
-
-
-
-    // --- Aurora Text Interactive Spotlight Effect ---
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle) {
-        // Subtle ambient pulsing for when the mouse is idle
-        gsap.to(heroTitle, {
-            '--mouse-x': '60%',
-            '--mouse-y': '60%',
-            duration: 8,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
-
-        window.addEventListener('mousemove', (e) => {
-            const rect = heroTitle.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-            // Calculate shadow offset: moves opposite to light source (max 12px)
-            const dsX = (0.5 - (e.clientX - rect.left) / rect.width) * 24;
-            const dsY = (0.5 - (e.clientY - rect.top) / rect.height) * 24;
-            
-            gsap.to(heroTitle, {
-                '--mouse-x': `${x}%`,
-                '--mouse-y': `${y}%`,
-                '--ds-x': `${dsX}px`,
-                '--ds-y': `${dsY}px`,
-                duration: 0.8,
-                overwrite: 'auto',
-                ease: 'power2.out'
-            });
         });
     }
 
-    // --- Image Loading Transitions (Skeleton Support) ---
-    const allImages = document.querySelectorAll('.image-wrapper img');
-    allImages.forEach(img => {
-        // If image is already cached/loaded
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', () => {
-                img.classList.add('loaded');
-            });
-        }
+    // --- Menu Handling ---
+    const toggleMenu = (forceClose = false) => {
+        if(!mobileMenu) return;
+        const isActive = mobileMenu.classList.contains('active');
+        const shouldBeActive = forceClose ? false : !isActive;
+        mobileMenu.classList.toggle('active', shouldBeActive);
+        hamburgerBtn.classList.toggle('active', shouldBeActive);
+    };
+
+    if(hamburgerBtn) hamburgerBtn.addEventListener('click', () => toggleMenu());
+    
+    // --- Image Loading ---
+    document.querySelectorAll('.image-wrapper img').forEach(img => {
+        if (img.complete) img.classList.add('loaded');
+        else img.addEventListener('load', () => img.classList.add('loaded'));
     });
 
-    // --- AJAX Form Submission with Web3Forms ---
+    // --- AJAX Form ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
-            
-            // UI Feedback: Loading
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
-
-            const formData = new FormData(contactForm);
-            
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    body: formData
+                    body: new FormData(contactForm)
                 });
-
                 if (response.ok) {
-                    // Success! Show Message
-                    contactForm.style.display = 'none';
-                    const successMessage = document.createElement('div');
-                    successMessage.className = 'form-success-message';
-                    successMessage.innerHTML = `
-                        <i class="bi bi-check-circle-fill"></i>
-                        <h3>Message Sent!</h3>
-                        <p>Thank you for reaching out, Mikel will get back to you soon.</p>
-                    `;
-                    successMessage.style.display = 'block';
-                    contactForm.parentNode.insertBefore(successMessage, contactForm.nextSibling);
-                } else {
-                    throw new Error('Something went wrong');
+                    contactForm.innerHTML = '<div class="form-success-message" style="display:block"><i class="bi bi-check-circle-fill"></i><h3>Message Sent!</h3><p>Mikel will get back to you soon.</p></div>';
                 }
             } catch (error) {
-                alert('Oops! There was a problem sending your message. Please try again.');
-                submitBtn.textContent = originalBtnText;
+                submitBtn.textContent = 'Try Again';
                 submitBtn.disabled = false;
             }
         });
     }
 
-    // --- Dynamic Copyright Year ---
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // --- Active nav link on scroll ---
-    // Your IntersectionObserver implementation is already excellent!
-    const observerOptions = {
-        root: null, // Observes intersections relative to the viewport
-        rootMargin: '-55px 0px -50% 0px', // Adjusts the intersection box. -55px top for the nav bar, -50% bottom to switch earlier.
-        threshold: 0 // Trigger as soon as a pixel is visible
-    };
-
+    // --- Active Nav ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                // Remove 'active' from all navigation links
-                navLinks.forEach(link => link.classList.remove('active'));
-                // Add 'active' to the links corresponding to the visible section
-                document.querySelectorAll(`a[href="#${id}"]`).forEach(link => link.classList.add('active'));
+                document.querySelectorAll('nav a, .mobile-menu a').forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                });
             }
         });
-    }, observerOptions);
+    }, { rootMargin: '-55px 0px -50% 0px' });
 
-    // Observe each section
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
 
+    // --- Spotlight/Lightbox ---
     const imageWrappers = document.querySelectorAll('.image-wrapper');
-
     const spotlightImages = [];
     imageWrappers.forEach((wrapper, index) => {
-        const image = wrapper.querySelector('img[data-spotlight]');
-        if (image) {
-            const card = wrapper.closest('.card'); // Get the parent card element
-            const titleElement = card.querySelector('h4');
-            const descriptionElements = card.querySelectorAll('p');
-            let description = '';
-
-            // Assuming the first <p> tag after h4 is the description
-            if (descriptionElements.length > 0) {
-                description = descriptionElements[0].textContent;
-            }
-
+        const img = wrapper.querySelector('img[data-spotlight]');
+        if (img) {
             spotlightImages.push({
-                src: image.src,
-                title: titleElement ? titleElement.textContent : image.alt, // Use h4 text as title, fallback to alt
-                description: description,
-                projectLink: card.querySelector('.card-link') ? card.querySelector('.card-link').href : null
+                src: img.src,
+                title: wrapper.closest('.card').querySelector('h4').textContent,
+                description: wrapper.closest('.card').querySelector('p').textContent
             });
-
-            wrapper.addEventListener('click', () => {
-                Spotlight.show(spotlightImages, {
-                    index: index + 1
-                });
-            });
+            wrapper.addEventListener('click', () => Spotlight.show(spotlightImages, { index: index + 1 }));
         }
     });
-
 });

@@ -407,6 +407,7 @@ nav .nav-list li:hover {
     align-items: center; /* Center horizontally */
     overflow: hidden;
     text-align: center; /* Center text */
+    perspective: 1200px; /* Enable 3D depth for text assembly */
 }
 
 .hero::before {
