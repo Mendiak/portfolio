@@ -195,6 +195,96 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+    // --- Aurora Text Interactive Spotlight Effect ---
+    const heroTitle = document.querySelector('.hero h1');
+    if (heroTitle) {
+        // Subtle ambient pulsing for when the mouse is idle
+        gsap.to(heroTitle, {
+            '--mouse-x': '60%',
+            '--mouse-y': '60%',
+            duration: 8,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            const rect = heroTitle.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+            // Calculate shadow offset: moves opposite to light source (max 12px)
+            const dsX = (0.5 - (e.clientX - rect.left) / rect.width) * 24;
+            const dsY = (0.5 - (e.clientY - rect.top) / rect.height) * 24;
+            
+            gsap.to(heroTitle, {
+                '--mouse-x': `${x}%`,
+                '--mouse-y': `${y}%`,
+                '--ds-x': `${dsX}px`,
+                '--ds-y': `${dsY}px`,
+                duration: 0.8,
+                overwrite: 'auto',
+                ease: 'power2.out'
+            });
+        });
+    }
+
+    // --- Image Loading Transitions (Skeleton Support) ---
+    const allImages = document.querySelectorAll('.image-wrapper img');
+    allImages.forEach(img => {
+        // If image is already cached/loaded
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
+
+    // --- AJAX Form Submission with Web3Forms ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            
+            // UI Feedback: Loading
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    // Success! Show Message
+                    contactForm.style.display = 'none';
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'form-success-message';
+                    successMessage.innerHTML = `
+                        <i class="bi bi-check-circle-fill"></i>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out, Mikel will get back to you soon.</p>
+                    `;
+                    successMessage.style.display = 'block';
+                    contactForm.parentNode.insertBefore(successMessage, contactForm.nextSibling);
+                } else {
+                    throw new Error('Something went wrong');
+                }
+            } catch (error) {
+                alert('Oops! There was a problem sending your message. Please try again.');
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
     // --- Dynamic Copyright Year ---
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
