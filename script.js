@@ -34,23 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const welcomeOverlay = document.getElementById('welcome-overlay');
     const heroTitle = document.querySelector('.hero h1');
 
-    // --- Prepare Hero Text (Word & Char Splitting) ---
+    // Spotlight interaction (Mouse move)
     if (heroTitle) {
-        const text = heroTitle.innerText;
-        heroTitle.innerHTML = text.split(' ').map(word => {
-            return `<span class="word" style="display: inline-block; white-space: nowrap;">${
-                word.split('').map(char => `<span class="char" style="display: inline-block;">${char}</span>`).join('')
-            }</span>`;
-        }).join(' ');
-
-        // Spotlight interaction (Mouse move)
         window.addEventListener('mousemove', (e) => {
             const rect = heroTitle.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width) * 100;
             const y = ((e.clientY - rect.top) / rect.height) * 100;
             const dsX = (0.5 - (e.clientX - rect.left) / rect.width) * 24;
             const dsY = (0.5 - (e.clientY - rect.top) / rect.height) * 24;
-            
+
             gsap.to(heroTitle, {
                 '--mouse-x': `${x}%`,
                 '--mouse-y': `${y}%`,
@@ -75,32 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(() => {
         welcomeOverlay.style.opacity = '0';
-        
-        if (heroTitle) {
-            gsap.from('.hero h1 .char', {
-                opacity: 0,
-                x: () => (Math.random() - 0.5) * 800,
-                y: () => (Math.random() - 0.5) * 600,
-                z: () => (Math.random() - 0.5) * 1000,
-                rotationX: () => (Math.random() - 0.5) * 360,
-                rotationY: () => (Math.random() - 0.5) * 360,
-                rotationZ: () => (Math.random() - 0.5) * 360,
-                duration: 2.5,
-                stagger: {
-                    each: 0.03,
-                    from: "random"
-                },
-                ease: "expo.out",
-                onComplete: () => {
-                    gsap.set('.hero h1 .char', { clearProps: "transform,opacity" });
-                }
-            });
-        }
 
         welcomeOverlay.addEventListener('transitionend', () => {
             welcomeOverlay.remove();
         });
-    }, 3000); 
+    }, 3000);
 
     // --- Cache DOM elements for performance and clarity ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
