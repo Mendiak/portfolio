@@ -165,9 +165,28 @@ document.addEventListener('DOMContentLoaded', function() {
         const shouldBeActive = forceClose ? false : !isActive;
         mobileMenu.classList.toggle('active', shouldBeActive);
         hamburgerBtn.classList.toggle('active', shouldBeActive);
+        hamburgerBtn.setAttribute('aria-expanded', shouldBeActive);
+        mobileMenu.setAttribute('aria-hidden', !shouldBeActive);
     };
 
     if(hamburgerBtn) hamburgerBtn.addEventListener('click', () => toggleMenu());
+
+    // Close menu when clicking on links
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a[href^="#"]');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu(true); // Force close the menu
+        });
+    });
+
+    // Close menu when clicking outside (on the menu background)
+    if(mobileMenu) {
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                toggleMenu(true);
+            }
+        });
+    }
     
     // --- AJAX Form ---
     const contactForm = document.getElementById('contact-form');
@@ -214,10 +233,14 @@ document.addEventListener('DOMContentLoaded', function() {
     imageWrappers.forEach((wrapper, index) => {
         const img = wrapper.querySelector('img[data-spotlight]');
         if (img) {
+            const card = wrapper.closest('.card');
+            const titleElement = card.querySelector('h3') || card.querySelector('h4');
+            const descriptionElement = card.querySelector('p');
+            
             spotlightImages.push({
                 src: img.src,
-                title: wrapper.closest('.card').querySelector('h4').textContent,
-                description: wrapper.closest('.card').querySelector('p').textContent
+                title: titleElement ? titleElement.textContent : '',
+                description: descriptionElement ? descriptionElement.textContent : ''
             });
             wrapper.addEventListener('click', () => Spotlight.show(spotlightImages, { index: index + 1 }));
         }
