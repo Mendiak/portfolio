@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Mikel Aramendia · Portfolio de Entusiasta Web",
+    "description": "Portfolio de Mikel Aramendia, un entusiasta web de Barcelona que disfruta construyendo sitios web por diversión y desafío. Abierto a colaboraciones y proyectos.",
+    "og_title": "Mikel Aramendia · Portfolio de Entusiasta Web",
+    "og_description": "Soy Mikel, un entusiasta web de Barcelona. Me encanta construir sitios web por diversión y desafío. Abierto a colaboraciones — explora mis proyectos y experimentos.",
+    "twitter_title": "Mikel Aramendia · Portfolio de Entusiasta Web",
+    "twitter_description": "Soy Mikel, un entusiasta web de Barcelona. Me encanta construir sitios web por diversión y desafío. Abierto a colaboraciones — explora mis proyectos y experimentos."
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "technologies": "Tecnologías",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "welcome": "Hola, soy Mikel. Bienvenido a mi portfolio",
+  "hero": "Construir webs es mi playground de creatividad e ingenio",
+  "about": {
+    "title": "Sobre mí",
+    "profile_pic_alt": "Mikel Aramendia, entusiasta web de Barcelona",
+    "paragraph1": "¡Hola! Soy Mikel. Vivo en El Maresme, provincia de Barcelona. Siempre me ha fascinado la tecnología y las posibilidades creativas de la web. Mi formación académica es en estudios empresariales, lo que me ha dado una mentalidad práctica y analítica. Para mí, construir sitios web es tanto un ejercicio mental como una forma de dar vida a las ideas, a veces solo por diversión, a veces para ver hasta dónde puedo llegar a aprender algo nuevo.",
+    "paragraph2": "Disfruto experimentando con código, diseño y nuevas herramientas. Mi enfoque se guía por la usabilidad, la simplicidad y la claridad, pero también me gusta jugar y probar cosas, incluso si el resultado no siempre es perfecto. Creo que cada proyecto, grande o pequeño, es una oportunidad para aprender y mejorar.",
+    "paragraph3": "Aunque no soy desarrollador web a tiempo completo, me enorgullece crear sitios que sean intuitivos y agradables de usar. Este portfolio es una colección de mis experimentos personales y trayectorias de aprendizaje; si tú también tienes curiosidad, o simplemente quieres charlar sobre temas web, ¡no dudes en conectar!"
+  },
+  "technologies": {
+    "title": "Las tecnologías que uso",
+    "paragraph1": "En mis proyectos web, me centro en crear experiencias que sean claras, atractivas y con propósito. Me gusta diseñar interfaces que guíen al usuario de forma natural, donde la forma y la función se complementen.",
+    "paragraph2": "Mi proceso combina diseño visual, interacción y usabilidad. Disfruto explorando cómo los detalles sutiles —el ritmo, la composición, la jerarquía— pueden moldear la forma en que las personas perciben y usan un producto.",
+    "paragraph3": "También cuento con el Certificado de Diseño UX de Google, que ha profundizado mi comprensión de las metodologías centradas en el usuario y el diseño accesible. Este background me permite abordar cada proyecto desde una perspectiva creativa y analítica, asegurando que el resultado final sea intuitivo y significativo."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "intro": "Estos son algunos de los proyectos web que he construido por diversión, aprendizaje, o simplemente para ver si podía. Cada uno me enseñó algo nuevo y me dio la oportunidad de experimentar con diferentes ideas y tecnologías.",
+    "socratika": {
+      "title": "Socratika: chatea con las grandes mentes de la historia",
+      "alt": "Socratika - plataforma impulsada por IA para conversaciones con figuras históricas",
+      "paragraph1": "Un Ágora digital para la exploración intelectual, construida con Next.js, React y TypeScript. Los usuarios pueden participar en conversaciones esclarecedoras con las grandes mentes de la historia, cobradas a la vida por IA (Google Gemini).",
+      "paragraph2": "Cuenta con una interfaz multilingüe, cuentas de usuario para experiencias personalizadas y funcionalidades de chat en tiempo real impulsadas por Firebase, todo elegantemente estilizado con Tailwind CSS y Shadcn/ui.",
+      "link": "Ver Proyecto"
+    },
+    "confessio": {
+      "title": "Confessio: santuario digital de IA",
+      "alt": "Confessio - santuario digital impulsado por IA para reflexiones anónimas",
+      "paragraph1": "Un santuario anónimo para la reflexión, construido con Next.js, React y TypeScript. Los usuarios pueden compartir sus pensamientos y recibir orientación espiritual generada por una IA (Google Gemini).",
+      "paragraph2": "Cuenta con una interfaz multilingüe, categorización inteligente de contenido y un interactivo \"Muro de Intenciones\" impulsado por Firebase, todo estilizado con Tailwind CSS y Shadcn/ui.",
+      "link": "Ver Proyecto"
+    },
+    "bitcoin": {
+      "title": "Historia de Bitcoin",
+      "alt": "Historia de Bitcoin - Visualización interactiva de datos del precio de Bitcoin",
+      "paragraph1": "Este proyecto es una visualización interactiva de datos que narra la historia del precio de Bitcoin. Usando D3.js, presenta un gráfico detallado con funciones como escalado logarítmico y lineal, capacidades de zoom y eventos históricos categorizados.",
+      "paragraph2": "La aplicación está construida con tecnologías frontend modernas (HTML, CSS, JavaScript y Bootstrap), soporta múltiples idiomas e incluye un tema claro/oscuro, ofreciendo una experiencia de usuario completa y atractiva para explorar el recorrido financiero de Bitcoin.",
+      "link": "Ver Proyecto"
+    },
+    "party_invitations": {
+      "title": "Invitaciones de fiesta",
+      "alt": "Invitaciones de fiesta - aplicación web generadora de invitaciones responsivas",
+      "paragraph1": "Un generador de invitaciones responsivo construido con JavaScript vanilla, HTML5 y CSS3.",
+      "paragraph2": "Incluye personalización en vivo, búsqueda de fondos a través de la API de Unsplash y múltiples opciones de exportación, incluyendo PNG, enlaces compartibles, códigos QR y archivos de calendario .ICS.",
+      "link": "Ver Proyecto"
+    },
+    "when_lambo": {
+      "title": "When Lambo",
+      "alt": "When Lambo - Aplicación web interactiva calculadora de Bitcoin a Lambo",
+      "paragraph1": "\"When Lambo?\" es una aplicación web interactiva que permite a los usuarios determinar su potencial para comprar un Lamborghini en función de sus tenencias de Bitcoin.",
+      "paragraph2": "La aplicación cuenta con datos de precios en tiempo real a través de la API de CoinDesk, soporta múltiples monedas fiduciarias y está diseñada con un tono humorístico y atractivo para el público crypto.",
+      "link": "Ver Proyecto"
+    },
+    "pulse_roots": {
+      "title": "PulseRoots: explorador interactivo de géneros de música electrónica",
+      "alt": "PulseRoots - explorador interactivo de géneros de música electrónica con visualización D3.js",
+      "paragraph1": "PulseRoots es una aplicación web interactiva de una sola página que visualiza el panorama de los géneros de música electrónica. Construida con D3.js para estructuras dinámicas de árbol/mapa de árbol, permite a los usuarios explorar las principales familias (como Ambient, Techno, House) y sus subgéneros.",
+      "paragraph2": "Con diseño HTML/CSS responsivo, paneles de información detallada de géneros y vistas previas integradas de Spotify, PulseRoots ofrece un recorrido musical educativo e inmersivo. Tecnologías utilizadas: JavaScript moderno (ES6+), D3.js para visualización, Spotify Web Embed, layout responsivo.",
+      "link": "Ver Proyecto"
+    },
+    "new_contemporary_photography": {
+      "title": "Nueva fotografía contemporánea",
+      "alt": "Nueva fotografía contemporánea - galería de fotos con API de Flickr y diseño responsivo",
+      "paragraph1": "Una aplicación de una sola página que se conecta a la API de Flickr para mostrar fotos aleatorias de un grupo de fotografía.",
+      "paragraph2": "Construida con JavaScript vanilla, cuenta con un layout completamente responsivo, animaciones CSS fluidas y un toggle de modo oscuro.",
+      "link": "Ver Proyecto"
+    },
+    "drake": {
+      "title": "Visualizador de la Ecuación de Drake",
+      "alt": "Visualizador de la Ecuación de Drake - Herramienta interactiva para estimar civilizaciones extraterrestres",
+      "paragraph1": "Una aplicación web interactiva de una sola página que ilustra la famosa Ecuación de Drake, que estima el número de civilizaciones extraterrestres comunicativas en nuestra galaxia.",
+      "paragraph2": "Construida con HTML, CSS y JavaScript, el sitio permite a los usuarios ajustar parámetros y ver instantáneamente cómo cada factor influye en el resultado final, combinando divulgación científica con un diseño limpio y responsivo.",
+      "link": "Ver Proyecto"
+    },
+    "plaintext": {
+      "title": "Plaintext: generador de fondos de pantalla tipográfico",
+      "alt": "Plaintext - generador de fondos de pantalla impulsado por tipografía con diseños de estilo suizo",
+      "paragraph1": "Un generador de fondos de pantalla con JavaScript vanilla y HTML5 Canvas que transforma citas curadas en pósters tipográficos de alta resolución con diseños inspirados en el diseño gráfico suizo.",
+      "paragraph2": "Incluye una interfaz bilingüe (inglés/español), modo oscuro, modo Zen, integración con Google Fonts, controles de color personalizados y opciones de exportación optimizadas para escritorio y móvil.",
+      "link": "Ver Proyecto"
+    }
+  },
+  "ux_studies": {
+    "title": "Estudios de caso UX",
+    "marsconnect": {
+      "title": "Estudio de caso UX: MarsConnect",
+      "alt": "Estudio de caso UX de MarsConnect - diseño de app de onboarding para colonos de Marte",
+      "description": "Este proyecto se centra en diseñar una aplicación de onboarding para futuros colonos de Marte, con el objetivo de guiar a los usuarios a través de procedimientos esenciales para adaptarse a su nueva vida en el planeta. La aplicación también ofrece recomendaciones y eventos personalizados para fomentar la integración en la primera colonia marciana.",
+      "link": "Ver Más"
+    },
+    "design_forward_summit": {
+      "title": "Estudio de caso UX: Design Forward Summit",
+      "alt": "Estudio de caso UX de Design Forward Summit - plataforma web para nominaciones de conferencias de diseño",
+      "description": "Este proyecto implica diseñar una plataforma web para facilitar el proceso de nominación para una conferencia de diseño, haciéndolo más intuitivo y accesible. El objetivo fue simplificar la navegación, mejorar las confirmaciones de envío y garantizar una experiencia de usuario fluida.",
+      "link": "Ver Más"
+    },
+    "guardians_polecat": {
+      "title": "Estudio de caso UX: Guardianes del Turón",
+      "alt": "Estudio de caso UX de Guardianes del Turón - plataforma para la concienciación sobre la conservación del turón europeo",
+      "description": "El proyecto 'Guardianes del Turón' es una plataforma interactiva diseñada para crear conciencia sobre la conservación del turón europeo. A través de una aplicación móvil y un sitio web responsivo, permite a los usuarios reportar avistamientos, participar en eventos de voluntariado y adoptar simbólicamente esta especie en peligro de extinción.",
+      "link": "Ver Más"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "intro": "Gracias por visitar mi portfolio. Espero tener la oportunidad de colaborar contigo y crear experiencias digitales únicas en el futuro. Escríbeme a través de este formulario y... ¡Empecemos!",
+    "name_label": "Nombre",
+    "name_placeholder": "Tu nombre",
+    "email_label": "Email",
+    "email_placeholder": "Tu email",
+    "message_label": "Mensaje",
+    "message_placeholder": "Tu mensaje",
+    "submit_button": "Enviar mensaje"
+  },
+  "footer": {
+    "note": "Este portfolio es un espacio personal para aprender, experimentar y compartir lo que disfruto de la web.",
+    "view_source": "Ver código fuente en GitHub",
+    "icon_credits": "Créditos de iconos",
+    "image_credits": "Créditos de imágenes"
+  },
+  "aria": {
+    "main_nav": "Navegación principal",
+    "theme_toggle": "Alternar modo claro y oscuro",
+    "open_menu": "Abrir menú",
+    "linkedin": "LinkedIn",
+    "github": "Github",
+    "my_linkedin": "Mi perfil de LinkedIn",
+    "my_github": "Mi perfil de Github"
+  },
+  "lang_switcher": {
+    "label": "Cambiar a inglés",
+    "button": "EN"
+  }
+}

@@ -19,8 +19,8 @@
 
 
 <!-- SEO Meta Tags -->
-<title>Mikel Aramendia · Web Enthusiast Portfolio</title>
-<meta name="description" content="Portfolio of Mikel Aramendia, a web enthusiast from Barcelona who loves building websites for the fun and challenge of it. Open to collaborations and projects.">
+<title data-i18n="meta.title">Mikel Aramendia · Web Enthusiast Portfolio</title>
+<meta name="description" data-i18n-attr="content|meta.description" content="Portfolio of Mikel Aramendia, a web enthusiast from Barcelona who loves building websites for the fun and challenge of it. Open to collaborations and projects.">
 <meta name="keywords" content="web enthusiast, portfolio, Barcelona, JavaScript, React, Next.js, HTML, CSS, web design, UX, personal projects, web experiments">
 <meta name="author" content="Mikel Aramendia">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -33,12 +33,12 @@
 <link rel="alternate" hreflang="x-default" href="https://mendiak.github.io/portfolio/">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="en_US" data-i18n-attr="content|og.locale">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mendiak.github.io/portfolio/">
 <meta property="og:site_name" content="Mikel Aramendia Portfolio">
-<meta property="og:title" content="Mikel Aramendia · Web Enthusiast Portfolio">
-<meta property="og:description" content="I'm Mikel, a web enthusiast from Barcelona. I love building websites for the fun and challenge of it. Open to collaborations — explore my projects and experiments.">
+<meta property="og:title" data-i18n-attr="content|meta.og_title" content="Mikel Aramendia · Web Enthusiast Portfolio">
+<meta property="og:description" data-i18n-attr="content|meta.og_description" content="I'm Mikel, a web enthusiast from Barcelona. I love building websites for the fun and challenge of it. Open to collaborations — explore my projects and experiments.">
 <meta property="og:image" content="https://mendiak.github.io/portfolio/assets/images/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -49,8 +49,8 @@
 <meta name="twitter:creator" content="@mendiak">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://mendiak.github.io/portfolio/">
-<meta property="twitter:title" content="Mikel Aramendia · Web Enthusiast Portfolio">
-<meta property="twitter:description" content="I'm Mikel, a web enthusiast from Barcelona. I love building websites for the fun and challenge of it. Open to collaborations — explore my projects and experiments.">
+<meta property="twitter:title" data-i18n-attr="content|meta.twitter_title" content="Mikel Aramendia · Web Enthusiast Portfolio">
+<meta property="twitter:description" data-i18n-attr="content|meta.twitter_description" content="I'm Mikel, a web enthusiast from Barcelona. I love building websites for the fun and challenge of it. Open to collaborations — explore my projects and experiments.">
 <meta property="twitter:image" content="https://mendiak.github.io/portfolio/assets/images/og.png">
 <meta property="twitter:image:alt" content="Mikel Aramendia Portfolio - Web Enthusiast">
 
@@ -109,44 +109,52 @@
 </head>
 <body>
     <div id="welcome-overlay">
-        <div id="welcome-message">Hi, I'm Mikel. Welcome To My Portfolio</div>
+        <div id="welcome-message" data-i18n="welcome">Hi, I'm Mikel. Welcome To My Portfolio</div>
     </div>
 
 
     <header>
 
-        <nav aria-label="Main navigation">
+        <nav aria-label="Main navigation" data-i18n-attr="aria-label|aria.main_nav">
             <ul class="desktop-menu nav-list">
-                <li><a href="#about">ABOUT ME</a></li>
-                <li><a href="#technologies">TECHNOLOGIES</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#about" data-i18n="nav.about">ABOUT ME</a></li>
+                <li><a href="#technologies" data-i18n="nav.technologies">TECHNOLOGIES</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">PROJECTS</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
                 <li>
-                    <button id="theme-toggle" aria-label="Toggle light and dark mode">
+                    <button id="theme-toggle" aria-label="Toggle light and dark mode" data-i18n-attr="aria-label|aria.theme_toggle">
                         <i class="bi bi-sun-fill"></i>
+                    </button>
+                </li>
+                <li>
+                    <button id="lang-toggle" aria-label="Switch to Spanish" data-i18n-attr="aria-label|lang_switcher.label">
+                        <span id="lang-button-text" data-i18n="lang_switcher.button">ES</span>
                     </button>
                 </li>
             </ul>
         </nav>
-        <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <button id="hamburger-btn" aria-label="Open menu" data-i18n-attr="aria-label|aria.open_menu" aria-expanded="false" aria-controls="mobile-menu">
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
         </button>
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <div class="mobile-menu-content">
                 <ul class="mobile-nav-links">
-                    <li><a href="#about" data-index="01">ABOUT ME</a></li>
-                    <li><a href="#technologies" data-index="02">TECHNOLOGIES</a></li>
-                    <li><a href="#projects" data-index="03">PROJECTS</a></li>
-                    <li><a href="#contact" data-index="04">CONTACT</a></li>
+                    <li><a href="#about" data-index="01" data-i18n="nav.about">ABOUT ME</a></li>
+                    <li><a href="#technologies" data-index="02" data-i18n="nav.technologies">TECHNOLOGIES</a></li>
+                    <li><a href="#projects" data-index="03" data-i18n="nav.projects">PROJECTS</a></li>
+                    <li><a href="#contact" data-index="04" data-i18n="nav.contact">CONTACT</a></li>
                 </ul>
                 <div class="mobile-menu-utilities">
-                    <button id="theme-toggle-mobile" aria-label="Toggle light and dark mode">
+                    <button id="theme-toggle-mobile" aria-label="Toggle light and dark mode" data-i18n-attr="aria-label|aria.theme_toggle">
                         <i class="bi bi-sun-fill"></i>
                     </button>
+                    <button id="lang-toggle-mobile" aria-label="Switch to Spanish" data-i18n-attr="aria-label|lang_switcher.label">
+                        <span id="lang-button-text-mobile" data-i18n="lang_switcher.button">ES</span>
+                    </button>
                     <div class="mobile-social-icons">
-                        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://github.com/Mendiak" aria-label="Github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="LinkedIn" data-i18n-attr="aria-label|aria.linkedin" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/Mendiak" aria-label="Github" data-i18n-attr="aria-label|aria.github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -156,131 +164,131 @@
 <main>
             <div class="hero">
                         <section class="hero-text" aria-label="Introduction">
-                                <h1>I enjoy building websites for the fun and challenge of it</h1>
+                                <h1 data-i18n="hero">I enjoy building websites for the fun and challenge of it</h1>
                         </section>
                      </div>
                         
         <section id="about">
-        <h2>About Me</h2>
+        <h2 data-i18n="about.title">About Me</h2>
         <div class="profile-pic-wrapper">
-            <img src="./assets/images/profile_picture.webp" alt="Mikel Aramendia, web enthusiast from Barcelona" class="profile-pic" loading="lazy" decoding="async" width="400" height="400">
+            <img src="./assets/images/profile_picture.webp" alt="Mikel Aramendia, web enthusiast from Barcelona" data-i18n-attr="alt|about.profile_pic_alt" class="profile-pic" loading="lazy" decoding="async" width="400" height="400">
         </div>
-        <p>Hi! I'm Mikel. I live in El Maresme, Barcelona province. I've always been fascinated by technology and the creative possibilities of the web. My academic background is in business studies, which has given me a practical, analytical mindset. For me, building websites is both a mental exercise and a way to bring ideas to life—sometimes just for the fun of it, sometimes to see how far I can push myself to learn something new.</p>
+        <p data-i18n="about.paragraph1">Hi! I'm Mikel. I live in El Maresme, Barcelona province.</p>
 
-        <p>I enjoy experimenting with code, design, and new tools. My approach is guided by usability, simplicity, and clarity, but I also like to play and try things out, even if the result isn’t always perfect. I believe that every project, big or small, is a chance to learn and improve.</p>
+        <p data-i18n="about.paragraph2">I enjoy experimenting with code, design, and new tools.</p>
 
-        <p>While I’m not a full-time web developer, I take pride in crafting sites that are intuitive and enjoyable to use. This portfolio is a collection of my personal experiments and learning journeys—if you’re curious too, or just want to chat about web stuff, feel free to connect!</p>
+        <p data-i18n="about.paragraph3">While I'm not a full-time web developer, I take pride in crafting sites that are intuitive and enjoyable to use.</p>
 
-        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn profile"><i class="bi bi-linkedin linkedin" aria-hidden="true"></i></a> 
-        <a href="https://github.com/Mendiak" title="My Github profile" target="_blank" rel="noopener noreferrer" aria-label="My Github profile"><i class="bi bi-github github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" data-i18n-attr="title|aria.my_linkedin" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn profile" data-i18n-attr-aria="aria-label|aria.my_linkedin"><i class="bi bi-linkedin linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/Mendiak" title="My Github profile" data-i18n-attr="title|aria.my_github" target="_blank" rel="noopener noreferrer" aria-label="My Github profile" data-i18n-attr-aria="aria-label|aria.my_github"><i class="bi bi-github github" aria-hidden="true"></i></a>
     </section>  
 
     <div class="parallax-divider"></div>        
     <section id="technologies">
         <div>
-            <h2>The Technologies I Use</h2>
-            <p>In my web projects, I focus on crafting experiences that feel clear, engaging, and purposeful. I like designing interfaces that guide the user naturally, where form and function complement each other.</p>
-        
-            <p>My process blends visual design, interaction, and usability. I enjoy exploring how subtle details —timing, rhythm, layout, or hierarchy— can shape how people perceive and use a product.</p>
-        
-            <p>I also hold the Google UX Design Certificate, which has deepened my understanding of user-centered methodologies and accessible design. This background allows me to approach each project from both a creative and analytical perspective, ensuring the final result feels intuitive and meaningful.</p>
+            <h2 data-i18n="technologies.title">The Technologies I Use</h2>
+            <p data-i18n="technologies.paragraph1">In my web projects, I focus on crafting experiences that feel clear, engaging, and purposeful.</p>
+
+            <p data-i18n="technologies.paragraph2">My process blends visual design, interaction, and usability.</p>
+
+            <p data-i18n="technologies.paragraph3">I also hold the Google UX Design Certificate, which has deepened my understanding of user-centered methodologies and accessible design.</p>
         </div>
     </section>
 
     <div class="parallax-divider"></div>
 
     <section id="projects">
-        <h2>Projects</h2>
-            <p>These are some of the web projects I've built for fun, learning, or just to see if I could. Each one taught me something new and gave me a chance to experiment with different ideas and technologies.</p>        <div class="card-container">
+        <h2 data-i18n="projects.title">Projects</h2>
+            <p data-i18n="projects.intro">These are some of the web projects I've built for fun, learning, or just to see if I could.</p>        <div class="card-container">
             
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/socratika.webp" alt="Socratika - AI-powered platform for conversations with historical figures" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/socratika.webp" alt="Socratika - AI-powered platform for conversations with historical figures" data-i18n-attr="alt|projects.socratika.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>Socratika: Chat With History's Greatest Minds</h3>
-                <p>A digital Agora for intellectual exploration, built with Next.js, React, and TypeScript. Users can engage in enlightening conversations with history's greatest minds, brought to life by AI (Google Gemini).</p>
-                <p>It features a multilingual interface, user accounts for personalized experiences, and real-time chat functionalities powered by Firebase, all elegantly styled with Tailwind CSS & Shadcn/ui.</p>
-                <a href="https://www.socratika.org" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.socratika.title">Socratika: Chat With History's Greatest Minds</h3>
+                <p data-i18n="projects.socratika.paragraph1">A digital Agora for intellectual exploration, built with Next.js, React, and TypeScript.</p>
+                <p data-i18n="projects.socratika.paragraph2">It features a multilingual interface, user accounts for personalized experiences, and real-time chat functionalities powered by Firebase.</p>
+                <a href="https://www.socratika.org" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.socratika.link">View Project</a>
             </div>    
             
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/confessio.webp" alt="Confessio - AI-powered digital sanctuary for anonymous reflections" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/confessio.webp" alt="Confessio - AI-powered digital sanctuary for anonymous reflections" data-i18n-attr="alt|projects.confessio.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>Confessio: AI Digital Sanctuary</h3>
-                <p>An anonymous sanctuary for reflection, built with Next.js, React, and TypeScript. Users can share their thoughts and receive spiritual guidance generated by an AI (Google Gemini).</p>
-                <p>It features a multilingual UI, smart content categorization, and an interactive "Wall of Intentions" powered by Firebase, all styled with Tailwind CSS & Shadcn/ui.</p>
-                <a href="https://confessio-ai.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.confessio.title">Confessio: AI Digital Sanctuary</h3>
+                <p data-i18n="projects.confessio.paragraph1">An anonymous sanctuary for reflection, built with Next.js, React, and TypeScript.</p>
+                <p data-i18n="projects.confessio.paragraph2">It features a multilingual UI, smart content categorization, and an interactive "Wall of Intentions" powered by Firebase.</p>
+                <a href="https://confessio-ai.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.confessio.link">View Project</a>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/bitcoin.webp" alt="Bitcoin History - Interactive data visualization of Bitcoin price history" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/bitcoin.webp" alt="Bitcoin History - Interactive data visualization of Bitcoin price history" data-i18n-attr="alt|projects.bitcoin.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>Bitcoin History</h3>
-                <p>This project is an interactive data visualization that chronicles the history of Bitcoin's price. Using D3.js, it presents a detailed chart with features like logarithmic and linear scaling, zoom capabilities, and categorized historical events.</p>
-                <p>The application is built with modern frontend technologies (HTML, CSS, JavaScript, and Bootstrap), supports multiple languages, and includes a light/dark theme, offering a comprehensive and engaging user experience for exploring Bitcoin's financial journey.</p>
-                <a href="https://bitcoin-history.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.bitcoin.title">Bitcoin History</h3>
+                <p data-i18n="projects.bitcoin.paragraph1">This project is an interactive data visualization that chronicles the history of Bitcoin's price using D3.js.</p>
+                <p data-i18n="projects.bitcoin.paragraph2">The application is built with modern frontend technologies and supports multiple languages with a light/dark theme.</p>
+                <a href="https://bitcoin-history.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.bitcoin.link">View Project</a>
             </div>  
             
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/partyinvitations.webp" alt="Party Invitations - Responsive invitation generator web application" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/partyinvitations.webp" alt="Party Invitations - Responsive invitation generator web application" data-i18n-attr="alt|projects.party_invitations.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>Party Invitations</h3>
-                <p>A responsive invitation generator built with vanilla JavaScript, HTML5, and CSS3.</p>
-                <p>Features live customization, background search via the Unsplash API, and multiple export options including PNG, shareable links, QR codes, and .ICS calendar files.</p>
-                <a href="https://party-invitations.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.party_invitations.title">Party Invitations</h3>
+                <p data-i18n="projects.party_invitations.paragraph1">A responsive invitation generator built with vanilla JavaScript, HTML5, and CSS3.</p>
+                <p data-i18n="projects.party_invitations.paragraph2">Features live customization, background search via the Unsplash API, and multiple export options.</p>
+                <a href="https://party-invitations.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.party_invitations.link">View Project</a>
             </div>
             
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/whenlambo.webp" alt="When Lambo - Interactive Bitcoin-to-Lambo calculator web application" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/whenlambo.webp" alt="When Lambo - Interactive Bitcoin-to-Lambo calculator web application" data-i18n-attr="alt|projects.when_lambo.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>When Lambo</h3>
-                <p>"When Lambo?" is an interactive web application that allows users to determine their Lamborghini-buying potential based on their Bitcoin holdings.</p>
-                <p>The app features real-time price data via the CoinDesk API, supports multiple fiat currencies, and is designed with a humorous, engaging tone for the crypto audience.</p>
-                <a href="https://when-lambo.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.when_lambo.title">When Lambo</h3>
+                <p data-i18n="projects.when_lambo.paragraph1">"When Lambo?" is an interactive web application that allows users to determine their Lamborghini-buying potential based on their Bitcoin holdings.</p>
+                <p data-i18n="projects.when_lambo.paragraph2">The app features real-time price data via the CoinDesk API and supports multiple fiat currencies.</p>
+                <a href="https://when-lambo.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.when_lambo.link">View Project</a>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/pulseroots.webp" alt="PulseRoots - Interactive electronic music genre explorer with D3.js visualization" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/pulseroots.webp" alt="PulseRoots - Interactive electronic music genre explorer with D3.js visualization" data-i18n-attr="alt|projects.pulse_roots.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>PulseRoots: Interactive Electronic Music Genre Explorer</h3>
-                <p>PulseRoots is an interactive, single‑page web app that visualizes the landscape of electronic music genres. Built with D3.js for dynamic tree/treemap structures, it lets users explore major families (like Ambient, Techno, House) and their subgenres.</p>
-                <p>Featuring responsive HTML/CSS design, detailed genre info panels, and embedded Spotify previews, PulseRoots offers both an educational and immersive musical journey. Technologies used: modern JavaScript (ES6+), D3.js for visualization, Spotify Web Embed, responsive layout.</p>
-                <a href="https://mendiak.github.io/pulse.roots/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.pulse_roots.title">PulseRoots: Interactive Electronic Music Genre Explorer</h3>
+                <p data-i18n="projects.pulse_roots.paragraph1">PulseRoots is an interactive, single‑page web app that visualizes the landscape of electronic music genres using D3.js.</p>
+                <p data-i18n="projects.pulse_roots.paragraph2">Featuring responsive HTML/CSS design, detailed genre info panels, and embedded Spotify previews.</p>
+                <a href="https://mendiak.github.io/pulse.roots/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.pulse_roots.link">View Project</a>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/newcontemporaryphotography.webp" alt="New Contemporary Photography - Flickr API photo gallery with responsive design" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/newcontemporaryphotography.webp" alt="New Contemporary Photography - Flickr API photo gallery with responsive design" data-i18n-attr="alt|projects.new_contemporary_photography.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>New Contemporary Photography</h3>
-                <p>A single-page application that connects to the Flickr API to display random photos from a photography group.</p>
-                <p>Built with vanilla JavaScript, it features a fully responsive layout, smooth CSS animations, and a dark mode toggle.</p>
-                <a href="https://new-contemporary-photography.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.new_contemporary_photography.title">New Contemporary Photography</h3>
+                <p data-i18n="projects.new_contemporary_photography.paragraph1">A single-page application that connects to the Flickr API to display random photos from a photography group.</p>
+                <p data-i18n="projects.new_contemporary_photography.paragraph2">Built with vanilla JavaScript, it features a fully responsive layout, smooth CSS animations, and a dark mode toggle.</p>
+                <a href="https://new-contemporary-photography.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.new_contemporary_photography.link">View Project</a>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/drake.webp" alt="Drake Equation Visualizer - Interactive tool for estimating extraterrestrial civilizations" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/drake.webp" alt="Drake Equation Visualizer - Interactive tool for estimating extraterrestrial civilizations" data-i18n-attr="alt|projects.drake.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>Drake Equation Visualizer</h3>
-                <p>An interactive single-page web app that illustrates the famous Drake Equation, which estimates the number of communicative extraterrestrial civilizations in our galaxy.</p>
-                <p>Built with HTML, CSS, and JavaScript, the site lets users adjust parameters and instantly see how each factor influences the final result, combining science outreach with a clean, responsive design.</p>
-                <a href="https://mendiak.github.io/drake.equation/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.drake.title">Drake Equation Visualizer</h3>
+                <p data-i18n="projects.drake.paragraph1">An interactive single-page web app that illustrates the famous Drake Equation, which estimates the number of communicative extraterrestrial civilizations in our galaxy.</p>
+                <p data-i18n="projects.drake.paragraph2">Built with HTML, CSS, and JavaScript, the site lets users adjust parameters and instantly see how each factor influences the final result.</p>
+                <a href="https://mendiak.github.io/drake.equation/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.drake.link">View Project</a>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/plaintext.webp" alt="Plaintext - Typography-driven wallpaper generator with Swiss design layouts" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/plaintext.webp" alt="Plaintext - Typography-driven wallpaper generator with Swiss design layouts" data-i18n-attr="alt|projects.plaintext.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>Plaintext: Typography-Driven Wallpaper Generator</h3>
-                <p>A vanilla JavaScript and HTML5 Canvas wallpaper generator that transforms curated quotes into high-resolution typographic posters with Swiss design-inspired layouts.</p>
-                <p>Features a bilingual interface (English/Spanish), dark mode, Zen mode, Google Fonts integration, custom color controls, and export options optimized for desktop and mobile.</p>
-                <a href="https://mendiak.github.io/plaintext/" class="card-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <h3 data-i18n="projects.plaintext.title">Plaintext: Typography-Driven Wallpaper Generator</h3>
+                <p data-i18n="projects.plaintext.paragraph1">A vanilla JavaScript and HTML5 Canvas wallpaper generator that transforms curated quotes into high-resolution typographic posters with Swiss design-inspired layouts.</p>
+                <p data-i18n="projects.plaintext.paragraph2">Features a bilingual interface (English/Spanish), dark mode, Zen mode, Google Fonts integration, custom color controls, and export options.</p>
+                <a href="https://mendiak.github.io/plaintext/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.plaintext.link">View Project</a>
             </div>
 
         </div>
@@ -289,33 +297,33 @@
     <div class="parallax-divider"></div>
 
     <section id="ux-studies">
-        <h2>UX Case Studies</h2>
+        <h2 data-i18n="ux_studies.title">UX Case Studies</h2>
         <div class="card-container">
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/marsconnect.webp" alt="MarsConnect UX Case Study - Onboarding app design for Mars colonists" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/marsconnect.webp" alt="MarsConnect UX Case Study - Onboarding app design for Mars colonists" data-i18n-attr="alt|ux_studies.marsconnect.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>UX Case Study: MarsConnect</h3>
-                <p>This project focuses on designing an onboarding app for future Mars colonists, aiming to guide users through essential procedures to adapt to their new life on the planet. The app also offers personalized recommendations and events to foster integration into the first Martian colony.</p>
-                <a href="https://docs.google.com/presentation/d/12UOfbEr6N2_4kM4snO4fYbaOnsqSgTK3/edit?usp=sharing&ouid=113552910971866545750&rtpof=true&sd=true" class="card-link" target="_blank" rel="noopener noreferrer">View More</a>
+                <h3 data-i18n="ux_studies.marsconnect.title">UX Case Study: MarsConnect</h3>
+                <p data-i18n="ux_studies.marsconnect.description">This project focuses on designing an onboarding app for future Mars colonists.</p>
+                <a href="https://docs.google.com/presentation/d/12UOfbEr6N2_4kM4snO4fYbaOnsqSgTK3/edit?usp=sharing&ouid=113552910971866545750&rtpof=true&sd=true" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="ux_studies.marsconnect.link">View More</a>
             </div>
-            
+
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/designforwardsummit.webp" alt="Design Forward Summit UX Case Study - Web platform for design conference nominations" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/designforwardsummit.webp" alt="Design Forward Summit UX Case Study - Web platform for design conference nominations" data-i18n-attr="alt|ux_studies.design_forward_summit.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>UX Case Study: Design Forward Summit</h3>
-                <p>This project involves designing a web platform to facilitate the nomination process for a design conference, making it more intuitive and accessible. The goal was to simplify navigation, improve submission confirmations, and ensure a smooth user experience.</p>
-                <a href="https://docs.google.com/presentation/d/1gFegfqNyxWkfqWVlagLPFGDMsQjepAyLkdd2viOiLVc/edit?usp=sharing" class="card-link" target="_blank" rel="noopener noreferrer">View More</a>
+                <h3 data-i18n="ux_studies.design_forward_summit.title">UX Case Study: Design Forward Summit</h3>
+                <p data-i18n="ux_studies.design_forward_summit.description">This project involves designing a web platform to facilitate the nomination process for a design conference.</p>
+                <a href="https://docs.google.com/presentation/d/1gFegfqNyxWkfqWVlagLPFGDMsQjepAyLkdd2viOiLVc/edit?usp=sharing" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="ux_studies.design_forward_summit.link">View More</a>
             </div>
-            
+
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/guardianesdelturon.webp" alt="Guardians of the Polecat UX Case Study - Platform for European polecat conservation awareness" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/guardianesdelturon.webp" alt="Guardians of the Polecat UX Case Study - Platform for European polecat conservation awareness" data-i18n-attr="alt|ux_studies.guardians_polecat.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
                 </div>
-                <h3>UX Case Study: Guardians of the Polecat</h3>
-                <p>The 'Guardians of the Polecat' project is an interactive platform designed to raise awareness about the conservation of the European polecat. Through a mobile app and a responsive website, it allows users to report sightings, participate in volunteer events, and symbolically adopt this endangered species.</p>
-                <a href="https://docs.google.com/presentation/d/1NguajI3vGbqC4zX9fLyJg7aCDmrQUzg0LKqSPVjJUo4/edit?usp=sharing" class="card-link" target="_blank" rel="noopener noreferrer">View More</a>
+                <h3 data-i18n="ux_studies.guardians_polecat.title">UX Case Study: Guardians of the Polecat</h3>
+                <p data-i18n="ux_studies.guardians_polecat.description">The 'Guardians of the Polecat' project is an interactive platform designed to raise awareness about the conservation of the European polecat.</p>
+                <a href="https://docs.google.com/presentation/d/1NguajI3vGbqC4zX9fLyJg7aCDmrQUzg0LKqSPVjJUo4/edit?usp=sharing" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="ux_studies.guardians_polecat.link">View More</a>
             </div>
         </div>
     </section>
@@ -324,19 +332,19 @@
     <section id="contact">
         <div class="contact-wrapper">
             <div class="contact-text">
-                <h2>Contact</h2>   
-                <p>Thank you for visiting my portfolio. I look forward to the opportunity to collaborate with you and create unique digital experiences in the future. Write to me through this form and... Let's get started!</p>
+                <h2 data-i18n="contact.title">Contact</h2>
+                <p data-i18n="contact.intro">Thank you for visiting my portfolio. I look forward to the opportunity to collaborate with you.</p>
             </div>
             <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="41398cfd-0efd-45fa-859e-50b9e66d6f31">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Your name" name="name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Your email" name="email" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" cols="50" placeholder="Your message" required></textarea>
+                <label for="name" data-i18n="contact.name_label">Name</label>
+                <input type="text" id="name" placeholder="Your name" data-i18n-attr="placeholder|contact.name_placeholder" name="name" required>
+                <label for="email" data-i18n="contact.email_label">Email</label>
+                <input type="email" id="email" placeholder="Your email" data-i18n-attr="placeholder|contact.email_placeholder" name="email" required>
+                <label for="message" data-i18n="contact.message_label">Message</label>
+                <textarea id="message" name="message" rows="6" cols="50" placeholder="Your message" data-i18n-attr="placeholder|contact.message_placeholder" required></textarea>
                 <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                <button type="submit" class="btn" id="submit-button">Send Message</button>
+                <button type="submit" class="btn" id="submit-button" data-i18n="contact.submit_button">Send Message</button>
             </form>
         </div>
     <section id="cross-field">
@@ -347,27 +355,28 @@
     <footer>
         <div class="footer-info">
             <p>&copy; <span id="copyright-year"></span> Mikel Aramendia</p>
-                    <p class="footer-note">
+                    <p class="footer-note" data-i18n="footer.note">
                         This portfolio is a personal space for learning, experimenting, and sharing what I enjoy about the web.
                     </p>
                     <div class="footer-attributions">
-                        <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank" rel="noopener noreferrer" class="attribution-link">View source on GitHub</a>
-                        <a href="https://www.flaticon.com/authors/vectorslab" target="_blank" rel="noopener noreferrer" title="Icons created by Vectorslab @ Flaticon" class="attribution-link">Icon credits</a>
-                        <a href="https://unsplash.com/@shioyang" target="_blank" rel="noopener noreferrer" title="Images by Shio Yang on Unsplash" class="attribution-link">Image credits</a>
+                        <a href="https://github.com/Mendiak/portfolio" title="Github Portfolio Repository" target="_blank" rel="noopener noreferrer" class="attribution-link" data-i18n="footer.view_source">View source on GitHub</a>
+                        <a href="https://www.flaticon.com/authors/vectorslab" target="_blank" rel="noopener noreferrer" title="Icons created by Vectorslab @ Flaticon" class="attribution-link" data-i18n="footer.icon_credits">Icon credits</a>
+                        <a href="https://unsplash.com/@shioyang" target="_blank" rel="noopener noreferrer" title="Images by Shio Yang on Unsplash" class="attribution-link" data-i18n="footer.image_credits">Image credits</a>
                     </div>
                 </div>       
         <ul class="footer-socials">
             <li>
-                <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="My LinkedIn profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="My LinkedIn profile" data-i18n-attr-aria="aria-label|aria.my_linkedin" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
             </li>
             <li>
-                <a href="https://github.com/Mendiak" aria-label="My Github profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
+                <a href="https://github.com/Mendiak" aria-label="My Github profile" data-i18n-attr-aria="aria-label|aria.my_github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
             </li>
         </ul>
 </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./i18n.js"></script>
     <script src="./script.js">
        
     </script>
