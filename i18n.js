@@ -102,10 +102,20 @@
         // Update HTML lang attribute
         document.documentElement.lang = lang;
 
-        // Update all elements with data-i18n
+        // Update all elements with data-i18n (text content)
         document.querySelectorAll('[data-i18n]').forEach(element => {
             translateElement(element, lang);
             translateElementAttributes(element, lang);
+            translateAriaAttributes(element, lang);
+        });
+
+        // Update all elements with only data-i18n-attr (attributes like placeholder, alt)
+        document.querySelectorAll('[data-i18n-attr]:not([data-i18n])').forEach(element => {
+            translateElementAttributes(element, lang);
+        });
+
+        // Update all elements with data-i18n-attr-aria
+        document.querySelectorAll('[data-i18n-attr-aria]').forEach(element => {
             translateAriaAttributes(element, lang);
         });
 
