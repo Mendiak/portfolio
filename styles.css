@@ -1166,17 +1166,6 @@ footer a:hover {
     object-fit: cover;
 }
 
-.profile-pic-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--text-accent);
-    opacity: 0.2;
-}
-
 @media screen and (max-width: 600px) {
     .profile-pic-wrapper {
         width: var(--space-3xl);
