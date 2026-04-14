@@ -198,12 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if(hamburgerBtn) hamburgerBtn.addEventListener('click', () => toggleMenu());
     
-    // --- Image Loading ---
-    document.querySelectorAll('.image-wrapper img').forEach(img => {
-        if (img.complete) img.classList.add('loaded');
-        else img.addEventListener('load', () => img.classList.add('loaded'));
-    });
-
     // --- AJAX Form ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {

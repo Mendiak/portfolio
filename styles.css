@@ -26,13 +26,13 @@
     --spotlight-color: #ff8c00;
     --shadow-color: rgba(0, 0, 0, 0.3);
 
-    /* Spacing & Sizing */
-    --space-xs: 10px;
-    --space-sm: 15px;
-    --space-md: 20px;
-    --space-lg: 30px;
-    --space-xl: 40px;
-    --space-xxl: 50px;
+    /* Spacing & Sizing - Based on 8px grid for Swiss-style rhythm */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-xxl: 64px;
     --max-width-narrow: 720px;
     --max-width-wide: 960px;
 }
@@ -429,6 +429,7 @@ nav .nav-list li:hover {
     font-size: clamp(3rem, 8vw, 8rem);
     font-weight: var(--fw-bold);
     line-height: 1.2;
+    letter-spacing: -0.03em;
     background: radial-gradient(
         circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
         #fff 0%,
@@ -471,8 +472,17 @@ nav .nav-list li:hover {
     max-width: var(--max-width-wide);
 }
 
+#projects {
+    margin-top: var(--space-xxl);
+}
+
+#projects > p,
+#ux-studies > p {
+    margin-bottom: var(--space-xl);
+}
+
 #about {
-    margin-top: 120px;
+    margin-top: 96px;
 }
 
 /* Styles for all main section titles */
@@ -489,10 +499,12 @@ section[id] h2 {
     margin-bottom: var(--space-md);
     color: var(--primary);
     font-weight: var(--fw-semibold);
+    letter-spacing: -0.02em;
 }
 
 #ux-studies h2 {
     color: var(--on-background);
+    margin-top: var(--space-xxl);
 }
 
 div.contact-text h2 {
@@ -612,11 +624,12 @@ input:user-invalid, textarea:user-invalid {
     background-color: var(--surface);
     padding: var(--space-lg);
     border-radius: var(--radius-card);
-    transition: box-shadow 0.3s ease;
+    border: 1px solid var(--dark-grey);
+    transition: border-color 0.3s ease;
 }
 
 #contact-form:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-color: var(--primary);
 }
 
 #contact {    
@@ -680,22 +693,22 @@ footer a:hover {
 }
 
 .parallax-divider {
-    height: 200px;
+    height: 192px;
     background-image: url(./assets/images/banner.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     filter: grayscale(100%) brightness(50%); /* Darken the image for better contrast with shadows */
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 96px;
+    margin-bottom: 96px;
 }
 
-/* Section Styles for shadow effect */
+/* Section Styles for border effect */
 #about, #technologies, #projects, #ux-studies, .contact-wrapper {
     position: relative;
     z-index: 2; /* Ensure sections are above the parallax divider */
-    margin-bottom: -50px; /* Negative margin to overlap the divider */
-    padding-bottom: 50px; /* Add padding to compensate for negative margin */
+    margin-bottom: -48px; /* Negative margin to overlap the divider */
+    padding-bottom: 48px; /* Add padding to compensate for negative margin */
 }
 
 /* Responsive Aurora Text Alignment */
@@ -752,9 +765,9 @@ footer a:hover {
     #technologies,
     #ux-studies,
     #contact {
-        margin-right: 5%; 
+        margin-right: 5%;
         margin-left: 5%;
-        margin-bottom: 40px; /* Better spacing between sections */
+        margin-bottom: 48px; /* Better spacing between sections */
         padding-bottom: 0;
         z-index: 2;
       }
@@ -813,17 +826,22 @@ footer a:hover {
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
-    gap: var(--space-sm);
+    gap: var(--space-lg);
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        gap: var(--space-md);
+    }
 }
 
 .card {
     background-color: var(--surface);
     border: 1px solid var(--dark-grey);
-    border-radius: var(--radius-card);    
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left; 
-    padding: 25px;
+    border-radius: var(--radius-card);
+    transition: border-color 0.3s ease;
+    text-align: left;
+    padding: 40px;
     display: flex;
     flex-direction: column;
 }
@@ -845,37 +863,23 @@ footer a:hover {
     border-radius: var(--radius-std);
 }
 
-/* Image Loading & Skeleton Styles */
+/* Image Styles */
 .image-wrapper {
     position: relative;
     overflow: hidden;
-    border-radius: var(--radius-std);
+    border-radius: var(--radius-card);
     cursor: pointer;
-    background: linear-gradient(
-        90deg,
-        var(--light-grey) 25%,
-        var(--dark-grey) 50%,
-        var(--light-grey) 75%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-pulse 1.5s infinite linear;
-}
-
-@keyframes skeleton-pulse {
-    from { background-position: 200% 0; }
-    to { background-position: -200% 0; }
 }
 
 .image-wrapper img {
     display: block;
     width: 100%;
     height: auto;
-    transition: filter 0.3s ease, opacity 0.5s ease;
-    opacity: 0; /* Hidden until loaded */
+    transition: opacity 0.3s ease;
 }
 
-.image-wrapper img.loaded {
-    opacity: 1;
+.image-wrapper:hover img {
+    opacity: 0.85;
 }
 
 /* Success Message Styles */
@@ -908,15 +912,16 @@ footer a:hover {
 
 .card h4 {
     font-size: var(--fs-lg);
-    margin: var(--space-sm) 0;
+    margin: var(--space-md) 0 var(--space-sm) 0;
     color: var(--on-surface);
 }
 
 .card p {
     font-size: var(--fs-sm);
     color: var(--on-surface);
-    margin-bottom: var(--space-sm); 
-    flex-grow: 1; 
+    margin-bottom: var(--space-sm);
+    flex-grow: 1;
+    line-height: 1.7;
 }
 
 .card-link {
@@ -943,12 +948,7 @@ footer a:hover {
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme='dark'] .card:hover {
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    border-color: var(--primary);
 }
 
 .cross.active .cross-bar {
@@ -966,9 +966,8 @@ footer a:hover {
     margin: 18px 0 28px 0;
     width: 90px;
     height: 90px;
-    border-radius: 0;
     border: 3px solid var(--primary);
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
+    box-shadow: none;
     overflow: hidden; /* Ensures the overlay respects the border-radius */
 }
 
