@@ -262,7 +262,7 @@
     border: var(--border-width) solid var(--color-border-default);
     color: var(--text-primary);
     cursor: pointer;
-    padding: var(--space-2xs) var(--space-xs);
+    padding: var(--space-2xs);
     min-width: var(--touch-target-min);
     min-height: var(--touch-target-min);
     display: inline-flex;
@@ -279,6 +279,7 @@
 #lang-toggle-mobile:hover {
     background-color: var(--color-grey-medium);
     border-color: var(--color-border-active);
+    color: var(--text-accent);
 }
 
 #lang-toggle:active,
@@ -454,7 +455,7 @@ nav .nav-list li:hover {
     border: none;
     padding: 0;
     cursor: pointer;
-    z-index: var(--z-overlay);
+    z-index: calc(var(--z-overlay) + 1);
     position: fixed;
     top: 0;
     right: var(--space-xs);
@@ -564,15 +565,6 @@ nav .nav-list li:hover {
     align-items: center;
 }
 
-/* Numbered prefix for links */
-.mobile-nav-links a::before {
-    content: attr(data-index) " / ";
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-light);
-    color: var(--text-accent);
-    margin-right: var(--space-xs);
-    font-family: 'Geist Mono', monospace;
-}
 
 .mobile-nav-links a:hover,
 .mobile-nav-links a.active {
@@ -589,6 +581,7 @@ nav .nav-list li:hover {
 }
 
 #theme-toggle-mobile,
+#lang-toggle-mobile,
 .mobile-social-icons a {
     background: transparent;
     border: none;
@@ -609,13 +602,32 @@ nav .nav-list li:hover {
 }
 
 #theme-toggle-mobile:hover,
+#lang-toggle-mobile:hover,
 .mobile-social-icons a:hover {
     color: var(--text-accent);
+    transform: scale(1.1);
 }
 
 @media screen and (max-width: 768px) {
     nav .nav-list {
         display: none;
+    }
+    
+    #theme-toggle-mobile,
+    #lang-toggle-mobile {
+        padding: 0;
+        min-width: var(--touch-target-comfortable);
+        min-height: var(--touch-target-comfortable);
+    }
+    
+    #theme-toggle-mobile i,
+    #lang-toggle-mobile i,
+    .mobile-social-icons a {
+        font-size: var(--font-size-xl);
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
