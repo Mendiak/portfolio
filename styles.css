@@ -259,7 +259,7 @@
 #lang-toggle,
 #lang-toggle-mobile {
     background: transparent;
-    border: var(--border-width) solid var(--color-border-default);
+    border: none;
     color: var(--text-primary);
     cursor: pointer;
     padding: var(--space-2xs);
@@ -787,7 +787,7 @@ div.contact-text h2 {
 input, textarea {
     margin-bottom: var(--space-sm);
     width: 100%;
-    border: var(--border-width) solid transparent;
+    border: var(--border-width) solid var(--color-border-default);
     background-color: var(--color-input-bg);
     color: var(--text-secondary);
     border-radius: var(--radius-none); /* Swiss Style: no rounding */
@@ -1181,20 +1181,11 @@ footer a:hover {
 }
 
 .card-link {
-    display: inline-block;
-    padding: var(--space-2xs) var(--space-sm);
-    background-color: var(--text-accent);
-    color: var(--color-bg-primary);
-    text-decoration: none;
-    border-radius: var(--radius-button);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
     margin-top: auto;
     align-self: flex-start;
-    min-height: var(--touch-target-min);
-    display: inline-flex;
-    align-items: center;
-    transition: background-color var(--transition-base), transform var(--transition-fast);
+    background-color: var(--text-accent);
+    color: var(--color-bg-primary);
+    border-color: var(--text-accent);
 }
 
 .card-link:hover {
@@ -1249,7 +1240,7 @@ footer a:hover {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 2px 8px;
-    border: 1px solid var(--color-border-default);
+    border: var(--border-width) solid var(--color-border-default);
     color: var(--text-secondary);
     border-radius: var(--radius-button);
     font-weight: var(--font-weight-medium);
@@ -1281,7 +1272,7 @@ footer a:hover {
     margin: var(--space-sm) 0 var(--space-md) 0;
     width: var(--space-4xl);
     height: var(--space-4xl);
-    border: var(--border-width-thick) solid var(--text-accent);
+    border: var(--border-width) solid var(--text-accent);
     box-shadow: none;
     overflow: hidden;
 }
@@ -1424,7 +1415,7 @@ footer a:hover {
     text-align: center;
     padding: var(--space-xl);
     background-color: var(--color-bg-surface);
-    border: var(--border-width-thick) solid var(--text-accent);
+    border: var(--border-width) solid var(--text-accent);
     border-radius: var(--radius-card);
     animation: fadeIn 0.5s ease forwards;
 }

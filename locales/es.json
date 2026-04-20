@@ -11,7 +11,6 @@
     "about": "SOBRE MI",
     "technologies": "TECNOLOGIAS",
     "projects": "PROYECTOS",
-    "open_source": "CÓDIGO ABIERTO",
     "contact": "CONTACTO"
   },
   "welcome": "Hola, soy Mikel. Bienvenido a mi portfolio",
@@ -21,7 +20,7 @@
     "profile_pic_alt": "Mikel Aramendia, entusiasta web de Barcelona",
     "paragraph1": "¡Hola! Soy Mikel. Vivo en El Maresme, provincia de Barcelona. Siempre me ha fascinado la tecnología y las posibilidades creativas de la web. Mi formación académica es en estudios empresariales, lo que me ha dado una mentalidad práctica y analítica. Para mí, construir sitios web es tanto un ejercicio mental como una forma de dar vida a las ideas, a veces solo por diversión, a veces para ver hasta dónde puedo llegar a aprender algo nuevo.",
     "paragraph2": "Disfruto experimentando con código, diseño y nuevas herramientas. Mi enfoque se guía por la usabilidad, la simplicidad y la claridad, pero también me gusta jugar y probar cosas, incluso si el resultado no siempre es perfecto. Creo que cada proyecto, grande o pequeño, es una oportunidad para aprender y mejorar.",
-    "paragraph3": "Aunque no soy desarrollador web a tiempo completo, me enorgullece crear sitios que sean intuitivos y agradables de usar. Este portfolio es una colección de mis experimentos personales y trayectorias de aprendizaje; si tú también tienes curiosidad, o simplemente quieres charlar sobre temas web, ¡no dudes en conectar!"
+    "paragraph3": "Disfruto creando sitios que sean intuitivos y agradables de usar. Este portfolio es una colección de mis experimentos personales y trayectorias de aprendizaje; si tú también tienes curiosidad, o simplemente quieres charlar sobre temas web, ¡no dudes en conectar!"
   },
   "technologies": {
     "title": "Las tecnologías que uso",
