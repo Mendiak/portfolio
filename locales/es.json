@@ -107,8 +107,7 @@
     "title": "El Lab",
     "less_is_more": {
       "title": "Less Is More UI (AI Agent Skill)",
-      "description": "Una habilidad extensible para agentes de IA que impone restricciones de diseño modernista durante la generación de frontend. Al integrar principios arquitectónicos y antipatrones minimalistas, garantiza que las interfaces generadas por IA sigan siendo atemporales, estructuradas y centradas en el usuario.",
-      "link": "Ver en GitHub"
+      "description": "Una skill extensible para agentes de IA que impone restricciones de diseño modernista durante la generación de frontend. Al integrar principios arquitectónicos y antipatrones minimalistas, garantiza que las interfaces generadas por IA sigan siendo atemporales, estructuradas y centradas en el usuario."
     }
   },
   "ux_studies": {

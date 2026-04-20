@@ -1212,20 +1212,31 @@ footer a:hover {
     flex-wrap: wrap;
 }
 
-/* GitHub specific link in cards */
+/* GitHub specific link in cards (styled as secondary button) */
 .github-link {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: var(--font-size-sm);
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2xs);
-    transition: color var(--transition-base);
+    gap: var(--space-xs);
+    padding: var(--space-2xs) var(--space-sm);
+    border: var(--border-width) solid var(--color-border-default);
+    border-radius: var(--radius-button);
+    transition: all var(--transition-base);
     min-height: var(--touch-target-min);
+    background-color: transparent;
 }
 
 .github-link:hover {
+    background-color: var(--color-grey-light);
+    border-color: var(--color-border-active);
     color: var(--text-accent);
+    transform: translateY(-1px);
+}
+
+.github-link:active {
+    transform: translateY(0);
 }
 
 /* Minimalist Open Source Badge */
