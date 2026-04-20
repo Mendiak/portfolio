@@ -308,12 +308,10 @@
 }
 
 /* ========================================
-   GLOBAL RESETS
+   GLOBAL RESETS (Modernist Foundation)
    ======================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*, *::before, *::after { 
+    box-sizing: border-box; 
 }
 
 html {
@@ -324,7 +322,7 @@ html {
 }
 
 /* ========================================
-   BODY (Swiss Style: flush-left, clean)
+   BODY (Modernist Clarity)
    ======================================== */
 body {
     background-color: var(--color-bg-primary);
@@ -333,9 +331,27 @@ body {
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-body);
     color: var(--text-primary);
+    margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 { 
+    margin-top: 0; 
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+button, input, textarea { 
+    font: inherit; 
 }
 
 [data-theme='light'] body {
@@ -384,12 +400,11 @@ a:visited {
 }
 
 /* ========================================
-   NAVIGATION (Swiss Style: grid-aligned)
+   NAVIGATION (Modernist Structure)
    ======================================== */
 nav {
-    background-color: var(--color-nav-bg);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-nav);
+    background-color: var(--color-bg-primary);
+    border-bottom: var(--border-width) solid var(--color-border-default);
     position: fixed;
     top: 0;
     left: 0;
@@ -419,7 +434,13 @@ nav .nav-list li a {
     min-height: var(--touch-target-min);
     display: inline-flex;
     align-items: center;
-    transition: background-color var(--transition-base);
+    transition: background-color var(--transition-base), color var(--transition-base);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+nav .nav-list li a:hover {
+    background-color: var(--color-grey-light);
 }
 
 /* Active navigation link */
@@ -675,7 +696,6 @@ nav .nav-list li:hover {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(var(--ds-x, 2px) var(--ds-y, 2px) 10px rgba(0, 0, 0, 0.4));
     text-align: left; /* Swiss Style: flush-left */
 }
 
@@ -690,29 +710,18 @@ nav .nav-list li:hover {
 }
 
 /* ========================================
-   SECTIONS (Swiss Style: grid rhythm)
+   SECTIONS (Modernist Rhythm)
    ======================================== */
 #about, #technologies, #contact-wrapper {
     margin-left: var(--margin-page-desktop);
     max-width: var(--max-width-narrow);
+    margin-top: var(--space-xxl);
 }
 
 #projects, #ux-studies, #the-lab {
     margin-left: var(--margin-page-desktop);
     max-width: var(--max-width-wide);
-}
-
-#projects {
     margin-top: var(--space-xxl);
-}
-
-#projects > p,
-#ux-studies > p {
-    margin-bottom: var(--space-xl);
-}
-
-#about {
-    margin-top: var(--space-3xl);
 }
 
 /* Section scroll margin */
@@ -812,35 +821,43 @@ input:user-invalid, textarea:user-invalid {
 }
 
 /* ========================================
-   BUTTONS (Swiss Style: minimal)
+   BUTTONS (Modernist Components)
    ======================================== */
-.btn {
-    width: fit-content;
+.btn, .card-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-height: var(--touch-target-min);
-    padding: var(--space-sm);
-    border-radius: var(--radius-button);
-    margin-top: var(--space-xs);
-    border: none;
-    background-color: var(--text-accent);
-    color: var(--color-bg-primary);
+    padding: var(--space-xs) var(--space-md);
+    background-color: transparent;
+    border: var(--border-width) solid var(--text-primary);
+    color: var(--text-primary);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    cursor: pointer;
     text-decoration: none;
-    transition: background-color var(--transition-base), transform var(--transition-fast);
+    cursor: pointer;
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+    border-radius: var(--radius-none);
+}
+
+.btn:hover, .card-link:hover {
+    background-color: var(--text-primary);
+    color: var(--color-bg-primary);
 }
 
 .btn#submit-button {
     width: 100%;
-    text-align: center;
 }
 
-.btn:hover {
-    background-color: var(--color-grey-medium);
+/* Primary Action variation */
+.btn--primary {
+    background-color: var(--text-primary);
+    color: var(--color-bg-primary);
 }
 
-.btn:active {
-    transform: scale(0.98);
+.btn--primary:hover {
+    background-color: transparent;
+    color: var(--text-primary);
 }
 
 /* ========================================

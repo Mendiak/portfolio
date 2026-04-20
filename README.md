@@ -1,49 +1,50 @@
-# Mikel Aramendia · Web Developer Portfolio
+# Mikel Aramendia · Portfolio
+### [mendiak.github.io/portfolio](https://mendiak.github.io/portfolio/)
 
-This repository contains the source code for my personal web developer portfolio. It's a curated collection of my work, showcasing my passion for creating clean, functional, and engaging digital experiences.
+![Portfolio Preview](./assets/images/og.png)
 
-[**View Live Demo**](https://mendiak.github.io/portfolio/)
-
----
-
-## About This Project
-
-This portfolio is a static website built from the ground up using modern web technologies. It serves as a central hub for my projects, experiments, and professional background. The design philosophy is minimalist and content-focused, with subtle animations to enhance the user experience.
-
-## Key Features
-
-*   **Responsive Design:** Fully responsive layout that adapts to all screen sizes, from mobile to desktop.
-*   **Interactive UI:** Smooth animations and transitions powered by GSAP.
-*   **Project Showcase:** A clean and organized display of my web development projects.
-*   **Contact Form:** A functional contact form for inquiries and collaboration.
-
-## Technologies Used
-
-*   **HTML5**
-*   **CSS3**
-*   **JavaScript (ES6+)**
-*   **GSAP (GreenSock Animation Platform)** for animations.
-*   **Bootstrap Icons** for iconography.
-
-## Getting Started
-
-To run this project locally, follow these steps:
-
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/Mendiak/portfolio.git
-    ```
-2.  Navigate to the project directory:
-    ```bash
-    cd portfolio
-    ```
-3.  Open the `index.html` file in your web browser.
+A personal web sanctuary and experimental playground focused on **Swiss Design** principles: minimalism, modularity, and typographic clarity. Built with a "Vanilla First" philosophy.
 
 ---
 
-## Contact
+## 📐 Design Philosophy
+This project is an exploration of the **International Typographic Style**. It prioritizes:
+- **Modular Grids:** Systematic layouts that ensure visual balance.
+- **Minimalist Aesthetic:** Stripping away the unnecessary to let content speak.
+- **Interactive Nuance:** Subtle, purposeful motion that enhances rather than distracts.
 
-Feel free to reach out for collaboration or just to say hi.
+## 🚀 Key Features
+- **Custom i18n Engine:** A lightweight, vanilla JavaScript translation system supporting English and Spanish.
+- **Interactive Motion:** Smooth, scroll-triggered animations powered by **GSAP**.
+- **Dark Mode:** A refined theme system with manual override and system preference detection.
+- **Open Source Showcase:** Integrated GitHub connectivity for featured projects.
+- **Responsive Architecture:** Fluid layouts designed to be readable across all viewport scales.
 
-*   **Email:** [mikel.aramendia.lacalle@gmail.com](mailto:mikel.aramendia.lacalle@gmail.com)
-*   **LinkedIn:** [linkedin.com/in/mikel-aramendia-lacalle](https://www.linkedin.com/in/mikel-aramendia-lacalle/)
+## 🛠️ Tech Stack
+- **Languages:** HTML5, CSS3 (Custom Properties), JavaScript (ES6+).
+- **Libraries:** [GSAP](https://greensock.com/gsap/) (ScrollTrigger), [Bootstrap Icons](https://icons.getbootstrap.com/).
+- **Tools:** Spotlight.js for immersive image galleries.
+
+## 📂 Project Structure
+```text
+├── assets/         # Optimized webp images and assets
+├── locales/        # i18n JSON translation files
+├── i18n.js         # Custom translation engine
+├── script.js       # Main interactive logic
+├── styles.css      # Swiss Design system & variables
+└── index.html      # Semantic document structure
+```
+
+## ⌨️ Development
+Clone the repository and serve the root directory using any local server (like VS Code's Live Server):
+
+```bash
+git clone https://github.com/Mendiak/portfolio.git
+cd portfolio
+```
+
+## 📄 License
+This project is open-source and available under the [MIT License](./LICENSE).
+
+---
+*Created by [Mikel Aramendia](https://www.linkedin.com/in/mikel-aramendia-lacalle/)*
