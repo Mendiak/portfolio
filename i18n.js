@@ -259,7 +259,12 @@
             });
         }
 
-        console.log(`i18n initialized with language: ${currentLang}`);
+        console.log(
+            "%c Hello world! %c I see you're checking under the hood. 🚀\n%cInterested in the source code? Check it out at: https://github.com/Mendiak/portfolio",
+            "color: #ffb94f; font-weight: bold; font-size: 1.2rem;",
+            "color: inherit; font-size: 1rem;",
+            "color: #888; font-size: 0.9rem;"
+        );
     }
 
     // Start initialization when DOM is ready
