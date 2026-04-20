@@ -697,7 +697,7 @@ nav .nav-list li:hover {
     max-width: var(--max-width-narrow);
 }
 
-#projects, #ux-studies {
+#projects, #ux-studies, #the-lab {
     margin-left: var(--margin-page-desktop);
     max-width: var(--max-width-wide);
 }

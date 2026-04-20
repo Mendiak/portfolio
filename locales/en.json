@@ -11,6 +11,7 @@
     "about": "ABOUT ME",
     "technologies": "TECHNOLOGIES",
     "projects": "PROJECTS",
+    "open_source": "OPEN SOURCE",
     "contact": "CONTACT"
   },
   "welcome": "Hi, I'm Mikel. Welcome To My Portfolio",
@@ -93,6 +94,14 @@
       "paragraph1": "A vanilla JavaScript and HTML5 Canvas wallpaper generator that transforms curated quotes into high-resolution typographic posters with Swiss design-inspired layouts.",
       "paragraph2": "Features a bilingual interface (English/Spanish), dark mode, Zen mode, Google Fonts integration, custom color controls, and export options optimized for desktop and mobile.",
       "link": "View Project"
+    }
+  },
+  "the_lab": {
+    "title": "The Lab",
+    "less_is_more": {
+      "title": "Less Is More UI (AI Agent Skill)",
+      "description": "An extensible skill for AI agents that enforces modernist design constraints during frontend generation. By integrating architectural principles and minimalist anti-patterns, it ensures that AI-generated interfaces remain timeless, structured, and user-centric.",
+      "link": "View on GitHub"
     }
   },
   "ux_studies": {

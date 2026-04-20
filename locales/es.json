@@ -11,6 +11,7 @@
     "about": "SOBRE MI",
     "technologies": "TECNOLOGIAS",
     "projects": "PROYECTOS",
+    "open_source": "CÓDIGO ABIERTO",
     "contact": "CONTACTO"
   },
   "welcome": "Hola, soy Mikel. Bienvenido a mi portfolio",
@@ -93,6 +94,14 @@
       "paragraph1": "Un generador de fondos de pantalla con JavaScript vanilla y HTML5 Canvas que transforma citas curadas en pósters tipográficos de alta resolución con diseños inspirados en el diseño gráfico suizo.",
       "paragraph2": "Incluye una interfaz bilingüe (inglés/español), modo oscuro, modo Zen, integración con Google Fonts, controles de color personalizados y opciones de exportación optimizadas para escritorio y móvil.",
       "link": "Ver Proyecto"
+    }
+  },
+  "the_lab": {
+    "title": "El Lab",
+    "less_is_more": {
+      "title": "Less Is More UI (AI Agent Skill)",
+      "description": "Una habilidad extensible para agentes de IA que impone restricciones de diseño modernista durante la generación de frontend. Al integrar principios arquitectónicos y antipatrones minimalistas, garantiza que las interfaces generadas por IA sigan siendo atemporales, estructuradas y centradas en el usuario.",
+      "link": "Ver en GitHub"
     }
   },
   "ux_studies": {
