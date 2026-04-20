@@ -1094,12 +1094,6 @@ footer a:hover {
     gap: var(--space-lg);
 }
 
-@media screen and (max-width: 768px) {
-    .card-container {
-        gap: var(--space-md);
-    }
-}
-
 .card {
     background-color: var(--color-bg-surface);
     border: var(--border-width) solid var(--color-border-default);
@@ -1109,6 +1103,15 @@ footer a:hover {
     padding: var(--space-xl);
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        gap: var(--space-md);
+    }
+    .card {
+        padding: var(--space-md);
+    }
 }
 
 .card a[data-spotlight] {
