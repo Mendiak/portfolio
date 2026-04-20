@@ -893,60 +893,74 @@ input:user-invalid, textarea:user-invalid {
 }
 
 /* ========================================
-   FOOTER (Swiss Style: clean grid)
+   FOOTER (Swiss Style: refined grid)
    ======================================== */
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-    color: var(--text-secondary);
+    padding: var(--space-xxl) var(--margin-page-desktop);
     background-color: var(--color-bg-surface);
+    border-top: var(--border-width) solid var(--color-border-default);
     width: 100%;
-    padding-left: var(--margin-page-desktop);
-    padding-right: var(--margin-page-desktop);
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
 }
 
-footer p {
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.footer-column p, 
+.footer-column a {
     margin: 0;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
     line-height: var(--line-height-relaxed);
-}
-
-.footer-attributions {
-    display: flex;
-    gap: var(--space-sm);
-    margin-top: var(--space-xs);
-}
-
-.attribution-link:last-of-type::after {
-    content: "";
-}
-
-.footer-socials {
-    display: flex;
-    gap: var(--space-md);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer-socials a i {
-    font-size: var(--font-size-xl);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    text-decoration: none;
     transition: color var(--transition-base);
 }
 
-footer a, footer a:visited {
-    color: var(--text-secondary);
-    text-decoration: none;
+.footer-column.links,
+.footer-column.socials {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
 }
 
-footer a:hover {
+.footer-column a:hover {
     color: var(--text-accent);
     text-decoration: underline;
+}
+
+.footer-column.note p {
+    text-transform: none;
+    letter-spacing: normal;
+    max-width: 25ch;
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 1024px) {
+    footer {
+        padding-left: var(--margin-page-tablet);
+        padding-right: var(--margin-page-tablet);
+    }
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: var(--space-xl) var(--margin-page-mobile);
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    .footer-column.note p {
+        max-width: 100%;
+    }
 }
 
 /* ========================================
