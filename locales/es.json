@@ -32,6 +32,8 @@
   "projects": {
     "title": "Proyectos",
     "intro": "Estos son algunos de los proyectos web que he construido por diversión, aprendizaje, o simplemente para ver si podía. Cada uno me enseñó algo nuevo y me dio la oportunidad de experimentar con diferentes ideas y tecnologías.",
+    "github_link": "Ver Código",
+    "open_source": "Código Abierto",
     "socratika": {
       "title": "Socratika: chatea con las grandes mentes de la historia",
       "alt": "Socratika - plataforma impulsada por IA para conversaciones con figuras históricas",
@@ -51,7 +53,8 @@
       "alt": "Historia de Bitcoin - Visualización interactiva de datos del precio de Bitcoin",
       "paragraph1": "Este proyecto es una visualización interactiva de datos que narra la historia del precio de Bitcoin. Usando D3.js, presenta un gráfico detallado con funciones como escalado logarítmico y lineal, capacidades de zoom y eventos históricos categorizados.",
       "paragraph2": "La aplicación está construida con tecnologías frontend modernas (HTML, CSS, JavaScript y Bootstrap), soporta múltiples idiomas e incluye un tema claro/oscuro, ofreciendo una experiencia de usuario completa y atractiva para explorar el recorrido financiero de Bitcoin.",
-      "link": "Ver Proyecto"
+      "link": "Ver Proyecto",
+      "github": "https://github.com/Mendiak/bitcoin.history"
     },
     "party_invitations": {
       "title": "Invitaciones de fiesta",
@@ -72,28 +75,32 @@
       "alt": "PulseRoots - explorador interactivo de géneros de música electrónica con visualización D3.js",
       "paragraph1": "PulseRoots es una aplicación web interactiva de una sola página que visualiza el panorama de los géneros de música electrónica. Construida con D3.js para estructuras dinámicas de árbol/mapa de árbol, permite a los usuarios explorar las principales familias (como Ambient, Techno, House) y sus subgéneros.",
       "paragraph2": "Con diseño HTML/CSS responsivo, paneles de información detallada de géneros y vistas previas integradas de Spotify, PulseRoots ofrece un recorrido musical educativo e inmersivo. Tecnologías utilizadas: JavaScript moderno (ES6+), D3.js para visualización, Spotify Web Embed, layout responsivo.",
-      "link": "Ver Proyecto"
+      "link": "Ver Proyecto",
+      "github": "https://github.com/Mendiak/pulse.roots"
     },
     "new_contemporary_photography": {
       "title": "Nueva fotografía contemporánea",
       "alt": "Nueva fotografía contemporánea - galería de fotos con API de Flickr y diseño responsivo",
       "paragraph1": "Una aplicación de una sola página que se conecta a la API de Flickr para mostrar fotos aleatorias de un grupo de fotografía.",
       "paragraph2": "Construida con JavaScript vanilla, cuenta con un layout completamente responsivo, animaciones CSS fluidas y un toggle de modo oscuro.",
-      "link": "Ver Proyecto"
+      "link": "Ver Proyecto",
+      "github": "https://github.com/Mendiak/new-contemporary-photography"
     },
     "drake": {
       "title": "Visualizador de la Ecuación de Drake",
       "alt": "Visualizador de la Ecuación de Drake - Herramienta interactiva para estimar civilizaciones extraterrestres",
       "paragraph1": "Una aplicación web interactiva de una sola página que ilustra la famosa Ecuación de Drake, que estima el número de civilizaciones extraterrestres comunicativas en nuestra galaxia.",
       "paragraph2": "Construida con HTML, CSS y JavaScript, el sitio permite a los usuarios ajustar parámetros y ver instantáneamente cómo cada factor influye en el resultado final, combinando divulgación científica con un diseño limpio y responsivo.",
-      "link": "Ver Proyecto"
+      "link": "Ver Proyecto",
+      "github": "https://github.com/Mendiak/drake.equation"
     },
     "plaintext": {
       "title": "Plaintext: generador de fondos de pantalla tipográfico",
       "alt": "Plaintext - generador de fondos de pantalla impulsado por tipografía con diseños de estilo suizo",
       "paragraph1": "Un generador de fondos de pantalla con JavaScript vanilla y HTML5 Canvas que transforma citas curadas en pósters tipográficos de alta resolución con diseños inspirados en el diseño gráfico suizo.",
       "paragraph2": "Incluye una interfaz bilingüe (inglés/español), modo oscuro, modo Zen, integración con Google Fonts, controles de color personalizados y opciones de exportación optimizadas para escritorio y móvil.",
-      "link": "Ver Proyecto"
+      "link": "Ver Proyecto",
+      "github": "https://github.com/Mendiak/plaintext"
     }
   },
   "the_lab": {

@@ -32,6 +32,8 @@
   "projects": {
     "title": "Projects",
     "intro": "These are some of the web projects I've built for fun, learning, or just to see if I could. Each one taught me something new and gave me a chance to experiment with different ideas and technologies.",
+    "github_link": "View Source",
+    "open_source": "Open Source",
     "socratika": {
       "title": "Socratika: Chat With History's Greatest Minds",
       "alt": "Socratika - AI-powered platform for conversations with historical figures",
@@ -51,7 +53,8 @@
       "alt": "Bitcoin History - Interactive data visualization of Bitcoin price history",
       "paragraph1": "This project is an interactive data visualization that chronicles the history of Bitcoin's price. Using D3.js, it presents a detailed chart with features like logarithmic and linear scaling, zoom capabilities, and categorized historical events.",
       "paragraph2": "The application is built with modern frontend technologies (HTML, CSS, JavaScript, and Bootstrap), supports multiple languages, and includes a light/dark theme, offering a comprehensive and engaging user experience for exploring Bitcoin's financial journey.",
-      "link": "View Project"
+      "link": "View Project",
+      "github": "https://github.com/Mendiak/bitcoin.history"
     },
     "party_invitations": {
       "title": "Party Invitations",
@@ -72,28 +75,32 @@
       "alt": "PulseRoots - Interactive electronic music genre explorer with D3.js visualization",
       "paragraph1": "PulseRoots is an interactive, single‑page web app that visualizes the landscape of electronic music genres. Built with D3.js for dynamic tree/treemap structures, it lets users explore major families (like Ambient, Techno, House) and their subgenres.",
       "paragraph2": "Featuring responsive HTML/CSS design, detailed genre info panels, and embedded Spotify previews, PulseRoots offers both an educational and immersive musical journey. Technologies used: modern JavaScript (ES6+), D3.js for visualization, Spotify Web Embed, responsive layout.",
-      "link": "View Project"
+      "link": "View Project",
+      "github": "https://github.com/Mendiak/pulse.roots"
     },
     "new_contemporary_photography": {
       "title": "New Contemporary Photography",
       "alt": "New Contemporary Photography - Flickr API photo gallery with responsive design",
       "paragraph1": "A single-page application that connects to the Flickr API to display random photos from a photography group.",
       "paragraph2": "Built with vanilla JavaScript, it features a fully responsive layout, smooth CSS animations, and a dark mode toggle.",
-      "link": "View Project"
+      "link": "View Project",
+      "github": "https://github.com/Mendiak/new-contemporary-photography"
     },
     "drake": {
       "title": "Drake Equation Visualizer",
       "alt": "Drake Equation Visualizer - Interactive tool for estimating extraterrestrial civilizations",
       "paragraph1": "An interactive single-page web app that illustrates the famous Drake Equation, which estimates the number of communicative extraterrestrial civilizations in our galaxy.",
       "paragraph2": "Built with HTML, CSS, and JavaScript, the site lets users adjust parameters and instantly see how each factor influences the final result, combining science outreach with a clean, responsive design.",
-      "link": "View Project"
+      "link": "View Project",
+      "github": "https://github.com/Mendiak/drake.equation"
     },
     "plaintext": {
       "title": "Plaintext: Typography-Driven Wallpaper Generator",
       "alt": "Plaintext - Typography-driven wallpaper generator with Swiss design layouts",
       "paragraph1": "A vanilla JavaScript and HTML5 Canvas wallpaper generator that transforms curated quotes into high-resolution typographic posters with Swiss design-inspired layouts.",
       "paragraph2": "Features a bilingual interface (English/Spanish), dark mode, Zen mode, Google Fonts integration, custom color controls, and export options optimized for desktop and mobile.",
-      "link": "View Project"
+      "link": "View Project",
+      "github": "https://github.com/Mendiak/plaintext"
     }
   },
   "the_lab": {
