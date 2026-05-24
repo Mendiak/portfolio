@@ -712,7 +712,7 @@ nav .nav-list li:hover {
 /* ========================================
    SECTIONS (Modernist Rhythm)
    ======================================== */
-#about, #technologies, #contact-wrapper {
+#about, #technologies, #contact {
     margin-left: var(--margin-page-desktop);
     max-width: var(--max-width-narrow);
     margin-top: var(--space-xxl);
