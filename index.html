@@ -108,9 +108,6 @@
 </script>
 </head>
 <body>
-    <div id="welcome-overlay">
-        <div id="welcome-message" data-i18n="welcome">Hi, I'm Mikel. Welcome To My Portfolio</div>
-    </div>
 
 
     <header>
@@ -179,8 +176,11 @@
 
         <p data-i18n="about.paragraph3">I take pride in crafting sites that are intuitive and enjoyable to use.</p>
 
-        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" data-i18n-attr="title|aria.my_linkedin" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn profile" data-i18n-attr-aria="aria-label|aria.my_linkedin"><i class="bi bi-linkedin linkedin" aria-hidden="true"></i></a>
-        <a href="https://github.com/Mendiak" title="My Github profile" data-i18n-attr="title|aria.my_github" target="_blank" rel="noopener noreferrer" aria-label="My Github profile" data-i18n-attr-aria="aria-label|aria.my_github"><i class="bi bi-github github" aria-hidden="true"></i></a>
+        <div class="about-links">
+            <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" data-i18n-attr="title|aria.my_linkedin" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn profile" data-i18n-attr-aria="aria-label|aria.my_linkedin"><i class="bi bi-linkedin linkedin" aria-hidden="true"></i></a>
+            <a href="https://github.com/Mendiak" title="My Github profile" data-i18n-attr="title|aria.my_github" target="_blank" rel="noopener noreferrer" aria-label="My Github profile" data-i18n-attr-aria="aria-label|aria.my_github"><i class="bi bi-github github" aria-hidden="true"></i></a>
+            <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer" class="bmc-link" title="Buy me a coffee" data-i18n-attr="title|footer.buy_me_a_coffee" aria-label="Buy me a coffee" data-i18n-attr-aria="aria-label|footer.buy_me_a_coffee"><i class="bi bi-cup-hot-fill bmc-icon" aria-hidden="true"></i></a>
+        </div>
     </section>  
 
     <div class="parallax-divider"></div>        
@@ -405,22 +405,23 @@
             </div>
             
             <div class="footer-column note">
-                <p data-i18n="footer.note">
-                    This portfolio is a personal space for learning, experimenting, and sharing what I enjoy about the web.
+                <p>
+                    <span data-i18n="footer.manifesto_prefix">Crafted under the</span>
+                    <a href="https://github.com/Mendiak/less-is-more-ui" target="_blank" rel="noopener noreferrer">Less Is More UI</a>
+                    <span data-i18n="footer.manifesto_suffix">principles. Every element here justifies its presence.</span>
                 </p>
             </div>
 
             <div class="footer-column links">
                 <a href="https://github.com/Mendiak/portfolio" target="_blank" rel="noopener noreferrer" data-i18n="footer.view_source">View source on GitHub</a>
-                <a href="https://www.flaticon.com/authors/vectorslab" target="_blank" rel="noopener noreferrer" data-i18n="footer.icon_credits">Icon credits</a>
                 <a href="https://unsplash.com/@shioyang" target="_blank" rel="noopener noreferrer" data-i18n="footer.image_credits">Image credits</a>
             </div>
 
             <div class="footer-column socials">
                 <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" target="_blank" rel="noopener noreferrer" data-i18n-attr-aria="aria-label|aria.linkedin">LinkedIn</a>
                 <a href="https://github.com/Mendiak" target="_blank" rel="noopener noreferrer" data-i18n-attr-aria="aria-label|aria.github">GitHub</a>
-                <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer" class="bmc-link">
-                    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=Mendiak&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff" alt="Buy me a coffee" loading="lazy">
+                <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer" class="github-link">
+                    <i class="bi bi-cup-hot-fill"></i> <span data-i18n="footer.buy_me_a_coffee">Buy me a coffee</span>
                 </a>
             </div>
         </div>

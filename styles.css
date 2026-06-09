@@ -169,7 +169,7 @@
         --color-border-default: #3C3C3C;
         --color-border-active: #E0E0E0;
 
-        --shadow-nav: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        --shadow-nav: 0px 1px 3px rgba(0, 0, 0, 0.3);
         --color-spotlight: #ffb94f;
     }
 }
@@ -198,7 +198,7 @@
     --color-border-default: #3C3C3C;
     --color-border-active: #E0E0E0;
 
-    --shadow-nav: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    --shadow-nav: 0px 1px 3px rgba(0, 0, 0, 0.3);
     --color-spotlight: #ffb94f;
 }
 
@@ -626,7 +626,6 @@ nav .nav-list li:hover {
 #lang-toggle-mobile:hover,
 .mobile-social-icons a:hover {
     color: var(--text-accent);
-    transform: scale(1.1);
 }
 
 @media screen and (max-width: 768px) {
@@ -664,7 +663,6 @@ nav .nav-list li:hover {
     align-items: center;
     overflow: hidden;
     text-align: center;
-    perspective: 1200px;
 }
 
 .hero::before {
@@ -712,9 +710,15 @@ nav .nav-list li:hover {
 /* ========================================
    SECTIONS (Modernist Rhythm)
    ======================================== */
-#about, #technologies, #contact {
+#about, #technologies {
     margin-left: var(--margin-page-desktop);
     max-width: var(--max-width-narrow);
+    margin-top: var(--space-xxl);
+}
+
+#contact {
+    margin-left: var(--margin-page-desktop);
+    max-width: var(--max-width-wide);
     margin-top: var(--space-xxl);
 }
 
@@ -769,6 +773,34 @@ div.contact-text h2 {
     color: var(--text-accent);
 }
 
+.about-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.bmc-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    transition: color var(--transition-base);
+}
+
+.bmc-link:visited {
+    color: var(--text-primary);
+}
+
+.bmc-link:hover {
+    color: var(--text-accent);
+}
+
+.bmc-icon {
+    font-size: var(--space-xl);
+}
+
 #projects {
     color: var(--text-primary);
 }
@@ -777,22 +809,25 @@ div.contact-text h2 {
    CONTACT FORM (Swiss Style: clean)
    ======================================== */
 #contact-form label {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-2xs);
     display: block;
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    color: var(--text-secondary);
+    color: var(--color-grey-dark);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
 }
 
 /* Form inputs */
 input, textarea {
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
     width: 100%;
-    border: var(--border-width) solid var(--color-border-default);
-    background-color: var(--color-input-bg);
-    color: var(--text-secondary);
-    border-radius: var(--radius-none); /* Swiss Style: no rounding */
-    padding: var(--space-sm);
-    transition: border-color var(--transition-smooth), background-color var(--transition-smooth);
+    border: none;
+    border-bottom: var(--border-width-thick) solid var(--color-border-default);
+    background-color: transparent;
+    color: var(--text-primary);
+    padding: var(--space-sm) 0;
+    transition: border-color var(--transition-smooth);
     font-family: 'Geist Mono', monospace;
     font-size: var(--font-size-base);
 }
@@ -804,8 +839,7 @@ textarea {
 }
 
 input:focus-visible, textarea:focus-visible {
-    border-color: var(--text-accent);
-    background-color: var(--color-input-focus-bg);
+    border-bottom-color: var(--text-accent);
     outline: none;
 }
 
@@ -847,6 +881,17 @@ input:user-invalid, textarea:user-invalid {
 
 .btn#submit-button {
     width: 100%;
+    background-color: var(--text-primary);
+    color: var(--color-bg-primary);
+    border-color: var(--text-primary);
+    margin-top: var(--space-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.btn#submit-button:hover {
+    background-color: transparent;
+    color: var(--text-primary);
 }
 
 /* Primary Action variation */
@@ -865,8 +910,8 @@ input:user-invalid, textarea:user-invalid {
    ======================================== */
 .contact-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-xxl);
     align-items: start;
     margin-left: var(--margin-page-mobile);
     margin-right: var(--margin-page-mobile);
@@ -884,6 +929,10 @@ input:user-invalid, textarea:user-invalid {
 }
 
 #contact-form:hover {
+    border-color: var(--color-border-active);
+}
+
+#contact-form:focus-within {
     border-color: var(--color-border-active);
 }
 
@@ -933,10 +982,21 @@ footer {
     text-decoration: underline;
 }
 
-.footer-column.note p {
+.footer-column.note p,
+.footer-column.note a {
     text-transform: none;
     letter-spacing: normal;
     max-width: 25ch;
+}
+
+.footer-column.note a {
+    color: var(--text-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.footer-column.note a:hover {
+    color: var(--text-primary);
 }
 
 /* Responsive Footer */
@@ -1375,53 +1435,6 @@ footer {
 }
 
 /* ========================================
-   WELCOME OVERLAY (Swiss Style: minimal)
-   ======================================== */
-#welcome-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: var(--z-splash);
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-    background-image:
-        linear-gradient(to bottom left, rgba(0, 0, 0, 1) 0%, transparent 70%),
-        linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-    background-size: auto, 20px 20px, 20px 20px;
-    background-position: 0 0, 0 0, 0 0;
-}
-
-#welcome-message {
-    font-family: 'Geist Mono', monospace;
-    font-size: var(--font-size-xxl);
-    color: #fff;
-    opacity: 0;
-    animation: fadeInOut 3s ease-in-out forwards;
-    text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-    #welcome-message {
-        padding: 0 var(--space-md);
-        font-size: var(--font-size-xl);
-    }
-}
-
-@keyframes fadeInOut {
-    0% { opacity: 0; }
-    25% { opacity: 1; }
-    75% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* ========================================
    SUCCESS MESSAGE
    ======================================== */
 .form-success-message {
@@ -1484,7 +1497,6 @@ footer {
 
 #theme-toggle-mobile:hover {
     color: var(--text-accent);
-    transform: scale(1.1);
 }
 
 #theme-toggle-mobile i,
@@ -1504,7 +1516,6 @@ footer {
 
 .mobile-menu-socials a:hover {
     color: var(--text-accent);
-    transform: scale(1.1);
 }
 
 /* ========================================

@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     themeToggle.addEventListener('click', toggleTheme);
     themeToggleMobile.addEventListener('click', toggleTheme);
 
-    const welcomeOverlay = document.getElementById('welcome-overlay');
     const heroTitle = document.querySelector('.hero h1');
 
     // Spotlight interaction (Mouse move)
@@ -64,14 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
             ease: "sine.inOut"
         });
     }
-
-    setTimeout(() => {
-        welcomeOverlay.style.opacity = '0';
-
-        welcomeOverlay.addEventListener('transitionend', () => {
-            welcomeOverlay.remove();
-        });
-    }, 3000);
 
     // --- Cache DOM elements for performance and clarity ---
     const hamburgerBtn = document.getElementById('hamburger-btn');

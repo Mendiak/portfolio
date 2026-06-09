@@ -147,7 +147,9 @@
     "view_source": "Ver código fuente en GitHub",
     "icon_credits": "Créditos de iconos",
     "image_credits": "Créditos de imágenes",
-    "buy_me_a_coffee": "Invítame a un café"
+    "buy_me_a_coffee": "Invítame a un café",
+    "manifesto_prefix": "Creado bajo los principios de",
+    "manifesto_suffix": "Cada elemento aquí justifica su presencia."
   },
   "aria": {
     "main_nav": "Navegación principal",

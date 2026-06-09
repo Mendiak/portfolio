@@ -147,7 +147,9 @@
     "view_source": "View source on GitHub",
     "icon_credits": "Icon credits",
     "image_credits": "Image credits",
-    "buy_me_a_coffee": "Buy me a coffee"
+    "buy_me_a_coffee": "Buy me a coffee",
+    "manifesto_prefix": "Crafted under the",
+    "manifesto_suffix": "principles. Every element here justifies its presence."
   },
   "aria": {
     "main_nav": "Main navigation",
