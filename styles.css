@@ -84,9 +84,6 @@
     --margin-page-desktop: 15%;
     --margin-page-tablet: 10%;
     --margin-page-mobile: 5%;
-    --margin-section-narrow: var(--max-width-narrow);
-    --margin-section-wide: var(--max-width-wide);
-
     /* ── Layout ── */
     --max-width-narrow: 720px;
     --max-width-wide: 960px;
@@ -120,28 +117,6 @@
     --z-modal: 9999;
     --z-splash: 10000;
 
-    /* ── Deprecated aliases (backward compatibility) ── */
-    --background: var(--color-bg-primary);
-    --surface: var(--color-bg-surface);
-    --primary: var(--text-accent);
-    --on-background: var(--text-primary);
-    --on-surface: var(--text-secondary);
-    --light-grey: var(--color-grey-light);
-    --dark-grey: var(--color-grey-medium);
-    --nav-bg: var(--color-nav-bg);
-    --nav-shadow: var(--shadow-nav);
-    --visited-link: var(--text-link-visited);
-    --grid-color: var(--color-grid-overlay);
-    --radius-std: var(--radius-none);
-    --fs-base: var(--font-size-base);
-    --fs-sm: var(--font-size-sm);
-    --fs-lg: var(--font-size-md);
-    --fw-light: var(--font-weight-light);
-    --fw-normal: var(--font-weight-normal);
-    --fw-medium: var(--font-weight-medium);
-    --fw-semibold: var(--font-weight-semibold);
-    --fw-bold: var(--font-weight-bold);
-    --spotlight-color: var(--color-spotlight);
 }
 
 /* ── Dark Theme (prefers-color-scheme) ── */
@@ -394,11 +369,6 @@ a:visited {
     outline-offset: var(--space-2xs);
 }
 
-.highlight {
-    color: var(--text-accent);
-    font-weight: var(--font-weight-bold);
-}
-
 /* ========================================
    NAVIGATION (Modernist Structure)
    ======================================== */
@@ -601,7 +571,6 @@ nav .nav-list li:hover {
     padding-bottom: var(--space-sm);
 }
 
-#theme-toggle-mobile,
 #lang-toggle-mobile,
 .mobile-social-icons a {
     background: transparent;
@@ -702,11 +671,6 @@ nav .nav-list li:hover {
     to { background-position: 400% 50%; }
 }
 
-.hero-highlight {
-    color: var(--text-primary);
-    font-weight: var(--font-weight-bold);
-}
-
 /* ========================================
    SECTIONS (Modernist Rhythm)
    ======================================== */
@@ -761,18 +725,6 @@ div.contact-text h2 {
 /* ========================================
    SOCIAL ICONS
    ======================================== */
-.linkedin, .github {
-    font-size: var(--space-xl);
-    color: var(--text-primary);
-    margin-right: var(--space-xs);
-    transition: color var(--transition-base);
-}
-
-.linkedin:hover, .github:hover {
-    cursor: pointer;
-    color: var(--text-accent);
-}
-
 .about-links {
     display: flex;
     align-items: center;
@@ -780,7 +732,7 @@ div.contact-text h2 {
     flex-wrap: wrap;
 }
 
-.bmc-link {
+.about-links a {
     color: var(--text-primary);
     text-decoration: none;
     display: inline-flex;
@@ -789,16 +741,16 @@ div.contact-text h2 {
     transition: color var(--transition-base);
 }
 
-.bmc-link:visited {
-    color: var(--text-primary);
-}
-
-.bmc-link:hover {
+.about-links a:hover {
     color: var(--text-accent);
 }
 
-.bmc-icon {
-    font-size: var(--space-xl);
+.about-links a:visited {
+    color: var(--text-primary);
+}
+
+.about-links i {
+    font-size: var(--space-lg);
 }
 
 #projects {
@@ -890,17 +842,6 @@ input:user-invalid, textarea:user-invalid {
 }
 
 .btn#submit-button:hover {
-    background-color: transparent;
-    color: var(--text-primary);
-}
-
-/* Primary Action variation */
-.btn--primary {
-    background-color: var(--text-primary);
-    color: var(--color-bg-primary);
-}
-
-.btn--primary:hover {
     background-color: transparent;
     color: var(--text-primary);
 }
@@ -1027,12 +968,13 @@ footer {
    PARALLAX DIVIDER (Swiss Style: minimal)
    ======================================== */
 .parallax-divider {
-    height: var(--space-4xl);
+    height: 200px;
     background-image: url(./assets/images/banner.webp);
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: grayscale(100%) brightness(50%);
+    background-position: center;
+    background-attachment: fixed;
+    filter: grayscale(100%) brightness(70%);
     margin-top: var(--space-3xl);
     margin-bottom: var(--space-3xl);
 }
@@ -1043,35 +985,7 @@ footer {
     z-index: var(--z-raised);
     margin-bottom: calc(var(--space-xl) * -1);
     padding-bottom: var(--space-xl);
-}
-
-/* Aurora text responsive alignment (Swiss Style: systematic) */
-.aurora-text {
-    margin-left: 20%;
-}
-
-@media screen and (max-width: 1440px) {
-    .aurora-text {
-        margin-left: var(--margin-page-desktop);
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .aurora-text {
-        margin-left: var(--margin-page-tablet);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .aurora-text {
-        margin-left: var(--margin-page-mobile);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .aurora-text {
-        margin-left: 0;
-    }
+    background-color: var(--color-bg-primary);
 }
 
 /* ========================================
@@ -1152,14 +1066,7 @@ footer {
         justify-content: center;
     }
 
-    .parallax-divider {
-        background-repeat: no-repeat;
-        background-position: center;
-    }
 }
-
-
-
 /* ========================================
    CARDS (Swiss Style: grid, minimal)
    ======================================== */
@@ -1308,19 +1215,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Minimalist Open Source Badge */
-.badge.open-source {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 2px 8px;
-    border: var(--border-width) solid var(--color-border-default);
-    color: var(--text-secondary);
-    border-radius: var(--radius-button);
-    font-weight: var(--font-weight-medium);
-    opacity: 0.8;
-}
-
 .card:hover {
     border-color: var(--color-border-active);
 }
@@ -1467,23 +1361,6 @@ footer {
 /* ========================================
    MOBILE MENU CONTROLS
    ======================================== */
-.mobile-menu-theme-toggle,
-.mobile-menu-socials {
-    margin-top: var(--space-lg);
-    padding-left: var(--space-sm);
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.mobile-menu-socials {
-    margin-top: var(--space-lg);
-    gap: var(--space-xl);
-}
-
 #theme-toggle-mobile {
     background: transparent;
     border: none;
@@ -1496,25 +1373,6 @@ footer {
 }
 
 #theme-toggle-mobile:hover {
-    color: var(--text-accent);
-}
-
-#theme-toggle-mobile i,
-.mobile-menu-socials a {
-    font-size: var(--font-size-xl);
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mobile-menu-socials a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color var(--transition-base), transform var(--transition-base);
-}
-
-.mobile-menu-socials a:hover {
     color: var(--text-accent);
 }
 

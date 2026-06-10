@@ -73,22 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- GSAP Scroll-Triggered Animations ---
     gsap.registerPlugin(ScrollTrigger);
-    let mm = gsap.matchMedia();
-
-    mm.add("(min-width: 769px)", () => {
-        gsap.utils.toArray(".parallax-divider").forEach(divider => {
-            gsap.to(divider, {
-                backgroundPositionY: "-20%",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: divider,
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true,
-                }
-            });
-        });
-    });
 
     sections.forEach(section => {
         gsap.from(section, {
