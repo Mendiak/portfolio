@@ -9,24 +9,25 @@
   },
   "nav": {
     "about": "ABOUT ME",
-    "technologies": "TECHNOLOGIES",
     "projects": "PROJECTS",
     "contact": "CONTACT"
   },
-  "welcome": "Hi, I'm Mikel. Welcome To My Portfolio",
-  "hero": "I enjoy building websites for the fun and challenge of it",
+  "hero": {
+    "greeting": "Hi, this is",
+    "text": "I build for the web",
+    "tagline": "Simple, useful, and built with care"
+  },
   "about": {
     "title": "About Me",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "buymeacoffee": "Buy me a coffee",
     "profile_pic_alt": "Mikel Aramendia, web enthusiast from Barcelona",
-    "paragraph1": "Hi! I'm Mikel. I live in El Maresme, Barcelona province. I've always been fascinated by technology and the creative possibilities of the web. My academic background is in business studies, which has given me a practical, analytical mindset. For me, building websites is both a mental exercise and a way to bring ideas to life—sometimes just for the fun of it, sometimes to see how far I can push myself to learn something new.",
-    "paragraph2": "I enjoy experimenting with code, design, and new tools. My approach is guided by usability, simplicity, and clarity, but I also like to play and try things out, even if the result isn't always perfect. I believe that every project, big or small, is a chance to learn and improve.",
-    "paragraph3": "I take pride in crafting sites that are intuitive and enjoyable to use. This portfolio is a collection of my personal experiments and learning journeys—if you're curious too, or just want to chat about web stuff, feel free to connect!"
-  },
-  "technologies": {
-    "title": "The Technologies I Use",
-    "paragraph1": "In my web projects, I focus on crafting experiences that feel clear, engaging, and purposeful. I like designing interfaces that guide the user naturally, where form and function complement each other.",
-    "paragraph2": "My process blends visual design, interaction, and usability. I enjoy exploring how subtle details —timing, rhythm, layout, or hierarchy— can shape how people perceive and use a product.",
-    "paragraph3": "I also hold the Google UX Design Certificate, which has deepened my understanding of user-centered methodologies and accessible design. This background allows me to approach each project from both a creative and analytical perspective, ensuring the final result feels intuitive and meaningful."
+    "paragraph1": "Hi! I'm Mikel and I live in El Maresme, Barcelona.",
+    "paragraph2": "I've always been interested in technology and the creative potential of the web. Although my background is in business studies, much of how I create comes from other places: before code I went through graffiti, skateboarding, photography, electronic music, and watercolor.",
+    "paragraph3": "Today I design and develop web projects focused on simplicity, usability, and a clear, intuitive experience. I'm interested in exploring how visual design, interaction, and small details change the way we use a product.",
+    "paragraph4": "I also hold the Google UX Design Certificate, which reinforced my human-centered approach and accessible design.",
+    "paragraph5": "This portfolio brings together personal projects, experiments, and continuous learning."
   },
   "projects": {
     "title": "Projects",
@@ -133,8 +134,7 @@
   },
   "contact": {
     "title": "Contact",
-    "intro": "Thank you for visiting my portfolio. I look forward to the opportunity to collaborate with you and create unique digital experiences in the future. Write to me through this form and... Let's get started!",
-    "name_label": "Name",
+    "intro": "Like what you see? Drop me a line. Tell me about your project or just say hello.",
     "name_placeholder": "Your name",
     "email_label": "Email",
     "email_placeholder": "Your email",

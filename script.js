@@ -1,69 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-    const sunIcon = themeToggle.querySelector('i');
-    const sunIconMobile = themeToggleMobile.querySelector('i');
-
-    const updateThemeIcons = (theme) => {
-        const iconClass = theme === 'dark' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
-        sunIcon.className = iconClass;
-        sunIconMobile.className = iconClass;
-    };
-
-    const getPreferredTheme = () => {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) return savedTheme;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    };
-
-    const currentTheme = getPreferredTheme();
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateThemeIcons(currentTheme);
-
-    const toggleTheme = () => {
-        const theme = document.documentElement.getAttribute('data-theme');
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcons(newTheme);
-    };
-
-    themeToggle.addEventListener('click', toggleTheme);
-    themeToggleMobile.addEventListener('click', toggleTheme);
-
-    const heroTitle = document.querySelector('.hero h1');
-
-    // Spotlight interaction (Mouse move)
-    if (heroTitle) {
-        window.addEventListener('mousemove', (e) => {
-            const rect = heroTitle.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            const dsX = (0.5 - (e.clientX - rect.left) / rect.width) * 24;
-            const dsY = (0.5 - (e.clientY - rect.top) / rect.height) * 24;
-
-            gsap.to(heroTitle, {
-                '--mouse-x': `${x}%`,
-                '--mouse-y': `${y}%`,
-                '--ds-x': `${dsX}px`,
-                '--ds-y': `${dsY}px`,
-                duration: 0.8,
-                overwrite: 'auto',
-                ease: 'power2.out'
-            });
-        });
-
-        // Ambient pulse
-        gsap.to(heroTitle, {
-            '--mouse-x': '60%',
-            '--mouse-y': '60%',
-            duration: 8,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
-    }
-
     // --- Cache DOM elements for performance and clarity ---
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -74,21 +9,76 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- GSAP Scroll-Triggered Animations ---
     gsap.registerPlugin(ScrollTrigger);
 
-    sections.forEach(section => {
-        gsap.from(section, {
+    // Hero: fade in on load
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
+    heroTl
+        .from('.hero-name', { opacity: 0, y: 30 })
+        .from('.hero-tagline', { opacity: 0, y: 20 }, '-=0.6');
+
+    // Sections: per-section granular animations
+    const animConfigs = [
+        {
+            id: 'about',
+            children: [
+                { selector: 'h2', from: { opacity: 0, x: -30 } },
+                { selector: 'p', from: { opacity: 0, y: 15 }, stagger: 0.08 },
+                { selector: '.about-links a', from: { opacity: 0, y: 10 }, stagger: 0.08 },
+            ]
+        },
+        {
+            id: 'projects',
+            children: [
+                { selector: 'h2', from: { opacity: 0, x: -30 } },
+                { selector: ':scope > p', from: { opacity: 0, y: 15 } },
+                { selector: '.card', from: { opacity: 0, y: 30 }, stagger: 0.1 },
+            ]
+        },
+        {
+            id: 'the-lab',
+            children: [
+                { selector: 'h2', from: { opacity: 0, x: -30 } },
+                { selector: '.card', from: { opacity: 0, y: 30 }, stagger: 0.1 },
+            ]
+        },
+        {
+            id: 'ux-studies',
+            children: [
+                { selector: 'h2', from: { opacity: 0, x: -30 } },
+                { selector: '.card', from: { opacity: 0, y: 30 }, stagger: 0.1 },
+            ]
+        },
+        {
+            id: 'contact',
+            children: [
+                { selector: '.contact-text h2', from: { opacity: 0, x: -30 } },
+                { selector: '.contact-text p', from: { opacity: 0, y: 15 } },
+                { selector: '#contact-form input, #contact-form textarea, #contact-form button', from: { opacity: 0, y: 15 }, stagger: 0.08 },
+            ]
+        },
+    ];
+
+    animConfigs.forEach(({ id, children }) => {
+        const section = document.getElementById(id);
+        if (!section) return;
+
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: section,
                 start: 'top 80%',
                 toggleActions: 'play none none none',
             },
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: 'power3.out',
+            defaults: { ease: 'power3.out', duration: 0.8 },
+        });
+
+        children.forEach(({ selector, from, stagger }) => {
+            const targets = section.querySelectorAll(selector);
+            if (targets.length) {
+                tl.from(targets, { ...from, stagger: stagger || 0 }, 0);
+            }
         });
     });
 
-    // --- Cross Field Animation ---
+    // Cross Field Animation
     const crossGrid = document.getElementById('cross-grid');
     const crossWidth = 30;
     const gap = 10;
@@ -142,6 +132,11 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburgerBtn.classList.toggle('active', shouldBeActive);
         hamburgerBtn.setAttribute('aria-expanded', shouldBeActive);
         mobileMenu.setAttribute('aria-hidden', !shouldBeActive);
+
+        if (shouldBeActive) {
+            hamburgerBtn.classList.add('spinning');
+            setTimeout(() => hamburgerBtn.classList.remove('spinning'), 1000);
+        }
     };
 
     if(hamburgerBtn) hamburgerBtn.addEventListener('click', () => toggleMenu());
@@ -150,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu a[href^="#"]');
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', () => {
-            toggleMenu(true); // Force close the menu
+            toggleMenu(true);
         });
     });
 
@@ -193,31 +188,15 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                document.querySelectorAll('nav a, .mobile-menu a').forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                });
+                const navLinks = document.querySelectorAll('nav a, .mobile-menu a');
+                const matchingLink = Array.from(navLinks).find(link => link.getAttribute('href') === `#${id}`);
+                if (matchingLink) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    matchingLink.classList.add('active');
+                }
             }
         });
     }, { rootMargin: '-55px 0px -50% 0px' });
 
     sections.forEach(section => observer.observe(section));
-
-    // --- Spotlight/Lightbox ---
-    const imageWrappers = document.querySelectorAll('.image-wrapper');
-    const spotlightImages = [];
-    imageWrappers.forEach((wrapper, index) => {
-        const img = wrapper.querySelector('img[data-spotlight]');
-        if (img) {
-            const card = wrapper.closest('.card');
-            const titleElement = card.querySelector('h3') || card.querySelector('h4');
-            const descriptionElement = card.querySelector('p');
-            
-            spotlightImages.push({
-                src: img.src,
-                title: titleElement ? titleElement.textContent : '',
-                description: descriptionElement ? descriptionElement.textContent : ''
-            });
-            wrapper.addEventListener('click', () => Spotlight.show(spotlightImages, { index: index + 1 }));
-        }
-    });
 });

@@ -9,24 +9,25 @@
   },
   "nav": {
     "about": "SOBRE MI",
-    "technologies": "TECNOLOGIAS",
     "projects": "PROYECTOS",
     "contact": "CONTACTO"
   },
-  "welcome": "Hola, soy Mikel. Bienvenido a mi portfolio",
-  "hero": "Construir webs es mi playground de creatividad e ingenio",
+  "hero": {
+    "greeting": "Hola, soy",
+    "text": "Hago sitios web",
+    "tagline": "Cosas sencillas, bien hechas"
+  },
   "about": {
     "title": "Sobre mí",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "buymeacoffee": "Cómprame un café",
     "profile_pic_alt": "Mikel Aramendia, entusiasta web de Barcelona",
-    "paragraph1": "¡Hola! Soy Mikel. Vivo en El Maresme, provincia de Barcelona. Siempre me ha fascinado la tecnología y las posibilidades creativas de la web. Mi formación académica es en estudios empresariales, lo que me ha dado una mentalidad práctica y analítica. Para mí, construir sitios web es tanto un ejercicio mental como una forma de dar vida a las ideas, a veces solo por diversión, a veces para ver hasta dónde puedo llegar a aprender algo nuevo.",
-    "paragraph2": "Disfruto experimentando con código, diseño y nuevas herramientas. Mi enfoque se guía por la usabilidad, la simplicidad y la claridad, pero también me gusta jugar y probar cosas, incluso si el resultado no siempre es perfecto. Creo que cada proyecto, grande o pequeño, es una oportunidad para aprender y mejorar.",
-    "paragraph3": "Disfruto creando sitios que sean intuitivos y agradables de usar. Este portfolio es una colección de mis experimentos personales y trayectorias de aprendizaje; si tú también tienes curiosidad, o simplemente quieres charlar sobre temas web, ¡no dudes en conectar!"
-  },
-  "technologies": {
-    "title": "Las tecnologías que uso",
-    "paragraph1": "En mis proyectos web, me centro en crear experiencias que sean claras, atractivas y con propósito. Me gusta diseñar interfaces que guíen al usuario de forma natural, donde la forma y la función se complementen.",
-    "paragraph2": "Mi proceso combina diseño visual, interacción y usabilidad. Disfruto explorando cómo los detalles sutiles —el ritmo, la composición, la jerarquía— pueden moldear la forma en que las personas perciben y usan un producto.",
-    "paragraph3": "También cuento con el Certificado de Diseño UX de Google, que ha profundizado mi comprensión de las metodologías centradas en el usuario y el diseño accesible. Este background me permite abordar cada proyecto desde una perspectiva creativa y analítica, asegurando que el resultado final sea intuitivo y significativo."
+    "paragraph1": "¡Hola! Soy Mikel y vivo en El Maresme, Barcelona.",
+    "paragraph2": "Siempre me ha interesado la tecnología y el potencial creativo de la web. Aunque mi formación es en estudios empresariales, gran parte de mi forma de crear viene de otros lugares: antes del código pasé por el graffiti, el skate, la fotografía, la música electrónica y la acuarela.",
+    "paragraph3": "Hoy diseño y desarrollo proyectos web centrados en la simplicidad, la usabilidad y una experiencia clara e intuitiva. Me interesa explorar cómo el diseño visual, la interacción y los pequeños detalles cambian la forma en que usamos un producto.",
+    "paragraph4": "También cuento con el Certificado de Diseño UX de Google, que reforzó mi enfoque centrado en las personas y el diseño accesible.",
+    "paragraph5": "Este portfolio reúne proyectos personales, experimentos y aprendizajes continuos."
   },
   "projects": {
     "title": "Proyectos",
@@ -133,8 +134,7 @@
   },
   "contact": {
     "title": "Contacto",
-    "intro": "Gracias por visitar mi portfolio. Espero tener la oportunidad de colaborar contigo y crear experiencias digitales únicas en el futuro. Escríbeme a través de este formulario y... ¡Empecemos!",
-    "name_label": "Nombre",
+    "intro": "Si te gusta lo que ves, escríbeme. Cuéntame tu proyecto o simplemente di hola.",
     "name_placeholder": "Tu nombre",
     "email_label": "Email",
     "email_placeholder": "Tu email",

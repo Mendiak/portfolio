@@ -59,14 +59,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <!-- Preload the LCP image for faster rendering -->
 <link rel="preload" fetchpriority="high" as="image" href="./assets/images/banner.webp" type="image/webp">
 
-<!-- Spotlight CSS -->
-<link rel="stylesheet" href="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/css/spotlight.min.css" />
+
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -115,14 +115,8 @@
         <nav aria-label="Main navigation" data-i18n-attr="aria-label|aria.main_nav">
             <ul class="desktop-menu nav-list">
                 <li><a href="#about" data-i18n="nav.about">ABOUT ME</a></li>
-                <li><a href="#technologies" data-i18n="nav.technologies">TECHNOLOGIES</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">PROJECTS</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
-                <li>
-                    <button id="theme-toggle" aria-label="Toggle light and dark mode" data-i18n-attr="aria-label|aria.theme_toggle">
-                        <i class="bi bi-sun-fill"></i>
-                    </button>
-                </li>
                 <li>
                     <button id="lang-toggle" aria-label="Switch to Spanish" data-i18n-attr="aria-label|lang_switcher.label">
                         <span id="lang-button-text" data-i18n="lang_switcher.button">ES</span>
@@ -138,21 +132,13 @@
             <div class="mobile-menu-content">
                 <ul class="mobile-nav-links">
                     <li><a href="#about" data-index="01" data-i18n="nav.about">ABOUT ME</a></li>
-                    <li><a href="#technologies" data-index="02" data-i18n="nav.technologies">TECHNOLOGIES</a></li>
-                    <li><a href="#projects" data-index="03" data-i18n="nav.projects">PROJECTS</a></li>
-                    <li><a href="#contact" data-index="04" data-i18n="nav.contact">CONTACT</a></li>
+                    <li><a href="#projects" data-index="02" data-i18n="nav.projects">PROJECTS</a></li>
+                    <li><a href="#contact" data-index="03" data-i18n="nav.contact">CONTACT</a></li>
                 </ul>
                 <div class="mobile-menu-utilities">
-                    <button id="theme-toggle-mobile" aria-label="Toggle light and dark mode" data-i18n-attr="aria-label|aria.theme_toggle">
-                        <i class="bi bi-sun-fill"></i>
-                    </button>
                     <button id="lang-toggle-mobile" aria-label="Switch to Spanish" data-i18n-attr="aria-label|lang_switcher.label">
                         <span id="lang-button-text-mobile" data-i18n="lang_switcher.button">ES</span>
                     </button>
-                    <div class="mobile-social-icons">
-                        <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" aria-label="LinkedIn" data-i18n-attr="aria-label|aria.linkedin" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://github.com/Mendiak" aria-label="Github" data-i18n-attr="aria-label|aria.github" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
-                    </div>
                 </div>
             </div>
         </div>  
@@ -161,8 +147,9 @@
 <main>
             <div class="hero">
                         <section class="hero-text" aria-label="Introduction">
-                                <h1 data-i18n="hero">I enjoy building websites for the fun and challenge of it</h1>
+                                <h1 class="hero-name" data-i18n="hero.text">I build for the web</h1>
                         </section>
+                        <p class="hero-tagline"><span data-i18n="hero.tagline">Simple, useful, and built with care</span></p>
                      </div>
                         
         <section id="about">
@@ -170,30 +157,22 @@
         <div class="profile-pic-wrapper">
             <img src="./assets/images/profile_picture.webp" alt="Mikel Aramendia, web enthusiast from Barcelona" data-i18n-attr="alt|about.profile_pic_alt" class="profile-pic" loading="lazy" decoding="async" width="400" height="400">
         </div>
-        <p data-i18n="about.paragraph1">Hi! I'm Mikel. I live in El Maresme, Barcelona province.</p>
+        <p data-i18n="about.paragraph1">Hi! I'm Mikel and I live in El Maresme, Barcelona.</p>
 
-        <p data-i18n="about.paragraph2">I enjoy experimenting with code, design, and new tools.</p>
+        <p data-i18n="about.paragraph2">I've always been interested in technology and the creative potential of the web.</p>
 
-        <p data-i18n="about.paragraph3">I take pride in crafting sites that are intuitive and enjoyable to use.</p>
+        <p data-i18n="about.paragraph3">Today I design and develop web projects focused on simplicity, usability, and a clear, intuitive experience.</p>
+
+        <p data-i18n="about.paragraph4">I also hold the Google UX Design Certificate, which reinforced my human-centered approach and accessible design.</p>
+
+        <p data-i18n="about.paragraph5">This portfolio brings together personal projects, experiments, and continuous learning.</p>
 
         <div class="about-links">
-            <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" title="My LinkedIn profile" data-i18n-attr="title|aria.my_linkedin" target="_blank" rel="noopener noreferrer" aria-label="My LinkedIn profile" data-i18n-attr-aria="aria-label|aria.my_linkedin"><i class="bi bi-linkedin linkedin" aria-hidden="true"></i></a>
-            <a href="https://github.com/Mendiak" title="My Github profile" data-i18n-attr="title|aria.my_github" target="_blank" rel="noopener noreferrer" aria-label="My Github profile" data-i18n-attr-aria="aria-label|aria.my_github"><i class="bi bi-github github" aria-hidden="true"></i></a>
-            <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer" class="bmc-link" title="Buy me a coffee" data-i18n-attr="title|footer.buy_me_a_coffee" aria-label="Buy me a coffee" data-i18n-attr-aria="aria-label|footer.buy_me_a_coffee"><i class="bi bi-cup-hot-fill bmc-icon" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" target="_blank" rel="noopener noreferrer"><span data-i18n="about.linkedin">LinkedIn</span></a>
+            <a href="https://github.com/Mendiak" target="_blank" rel="noopener noreferrer"><span data-i18n="about.github">GitHub</span></a>
+            <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer"><span data-i18n="about.buymeacoffee">Buy me a coffee</span></a>
         </div>
     </section>  
-
-    <div class="parallax-divider"></div>        
-    <section id="technologies">
-        <div>
-            <h2 data-i18n="technologies.title">The Technologies I Use</h2>
-            <p data-i18n="technologies.paragraph1">In my web projects, I focus on crafting experiences that feel clear, engaging, and purposeful.</p>
-
-            <p data-i18n="technologies.paragraph2">My process blends visual design, interaction, and usability.</p>
-
-            <p data-i18n="technologies.paragraph3">I also hold the Google UX Design Certificate, which has deepened my understanding of user-centered methodologies and accessible design.</p>
-        </div>
-    </section>
 
     <div class="parallax-divider"></div>
 
@@ -203,7 +182,7 @@
             
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/socratika.webp" alt="Socratika - AI-powered platform for conversations with historical figures" data-i18n-attr="alt|projects.socratika.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/socratika.webp" alt="Socratika - AI-powered platform for conversations with historical figures" data-i18n-attr="alt|projects.socratika.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.socratika.title">Socratika: Chat With History's Greatest Minds</h3>
                 <p data-i18n="projects.socratika.paragraph1">A digital Agora for intellectual exploration, built with Next.js, React, and TypeScript.</p>
@@ -213,7 +192,7 @@
             
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/confessio.webp" alt="Confessio - AI-powered digital sanctuary for anonymous reflections" data-i18n-attr="alt|projects.confessio.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/confessio.webp" alt="Confessio - AI-powered digital sanctuary for anonymous reflections" data-i18n-attr="alt|projects.confessio.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.confessio.title">Confessio: AI Digital Sanctuary</h3>
                 <p data-i18n="projects.confessio.paragraph1">An anonymous sanctuary for reflection, built with Next.js, React, and TypeScript.</p>
@@ -223,7 +202,7 @@
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/bitcoin.webp" alt="Bitcoin History - Interactive data visualization of Bitcoin price history" data-i18n-attr="alt|projects.bitcoin.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/bitcoin.webp" alt="Bitcoin History - Interactive data visualization of Bitcoin price history" data-i18n-attr="alt|projects.bitcoin.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.bitcoin.title">Bitcoin History</h3>
                 <p data-i18n="projects.bitcoin.paragraph1">This project is an interactive data visualization that chronicles the history of Bitcoin's price using D3.js.</p>
@@ -231,14 +210,14 @@
                 <div class="card-links">
                     <a href="https://bitcoin-history.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.bitcoin.link">View Project</a>
                     <a href="https://github.com/Mendiak/bitcoin.history" class="github-link" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                        <span data-i18n="projects.open_source">Open Source</span>
                     </a>
                 </div>
             </div>  
             
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/partyinvitations.webp" alt="Party Invitations - Responsive invitation generator web application" data-i18n-attr="alt|projects.party_invitations.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/partyinvitations.webp" alt="Party Invitations - Responsive invitation generator web application" data-i18n-attr="alt|projects.party_invitations.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.party_invitations.title">Party Invitations</h3>
                 <p data-i18n="projects.party_invitations.paragraph1">A responsive invitation generator built with vanilla JavaScript, HTML5, and CSS3.</p>
@@ -248,7 +227,7 @@
             
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/whenlambo.webp" alt="When Lambo - Interactive Bitcoin-to-Lambo calculator web application" data-i18n-attr="alt|projects.when_lambo.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/whenlambo.webp" alt="When Lambo - Interactive Bitcoin-to-Lambo calculator web application" data-i18n-attr="alt|projects.when_lambo.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.when_lambo.title">When Lambo</h3>
                 <p data-i18n="projects.when_lambo.paragraph1">"When Lambo?" is an interactive web application that allows users to determine their Lamborghini-buying potential based on their Bitcoin holdings.</p>
@@ -258,7 +237,7 @@
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/pulseroots.webp" alt="PulseRoots - Interactive electronic music genre explorer with D3.js visualization" data-i18n-attr="alt|projects.pulse_roots.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/pulseroots.webp" alt="PulseRoots - Interactive electronic music genre explorer with D3.js visualization" data-i18n-attr="alt|projects.pulse_roots.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.pulse_roots.title">PulseRoots: Interactive Electronic Music Genre Explorer</h3>
                 <p data-i18n="projects.pulse_roots.paragraph1">PulseRoots is an interactive, single‑page web app that visualizes the landscape of electronic music genres using D3.js.</p>
@@ -266,14 +245,14 @@
                 <div class="card-links">
                     <a href="https://mendiak.github.io/pulse.roots/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.pulse_roots.link">View Project</a>
                     <a href="https://github.com/Mendiak/pulse.roots" class="github-link" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                        <span data-i18n="projects.open_source">Open Source</span>
                     </a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/newcontemporaryphotography.webp" alt="New Contemporary Photography - Flickr API photo gallery with responsive design" data-i18n-attr="alt|projects.new_contemporary_photography.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/newcontemporaryphotography.webp" alt="New Contemporary Photography - Flickr API photo gallery with responsive design" data-i18n-attr="alt|projects.new_contemporary_photography.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.new_contemporary_photography.title">New Contemporary Photography</h3>
                 <p data-i18n="projects.new_contemporary_photography.paragraph1">A single-page application that connects to the Flickr API to display random photos from a photography group.</p>
@@ -281,14 +260,14 @@
                 <div class="card-links">
                     <a href="https://new-contemporary-photography.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.new_contemporary_photography.link">View Project</a>
                     <a href="https://github.com/Mendiak/new-contemporary-photography" class="github-link" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                        <span data-i18n="projects.open_source">Open Source</span>
                     </a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/drake.webp" alt="Drake Equation Visualizer - Interactive tool for estimating extraterrestrial civilizations" data-i18n-attr="alt|projects.drake.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/drake.webp" alt="Drake Equation Visualizer - Interactive tool for estimating extraterrestrial civilizations" data-i18n-attr="alt|projects.drake.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.drake.title">Drake Equation Visualizer</h3>
                 <p data-i18n="projects.drake.paragraph1">An interactive single-page web app that illustrates the famous Drake Equation, which estimates the number of communicative extraterrestrial civilizations in our galaxy.</p>
@@ -296,14 +275,14 @@
                 <div class="card-links">
                     <a href="https://mendiak.github.io/drake.equation/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.drake.link">View Project</a>
                     <a href="https://github.com/Mendiak/drake.equation" class="github-link" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                        <span data-i18n="projects.open_source">Open Source</span>
                     </a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/plaintext.webp" alt="Plaintext - Typography-driven wallpaper generator with Swiss design layouts" data-i18n-attr="alt|projects.plaintext.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/plaintext.webp" alt="Plaintext - Typography-driven wallpaper generator with Swiss design layouts" data-i18n-attr="alt|projects.plaintext.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="projects.plaintext.title">Plaintext: Typography-Driven Wallpaper Generator</h3>
                 <p data-i18n="projects.plaintext.paragraph1">A vanilla JavaScript and HTML5 Canvas wallpaper generator that transforms curated quotes into high-resolution typographic posters with Swiss design-inspired layouts.</p>
@@ -311,7 +290,7 @@
                 <div class="card-links">
                     <a href="https://mendiak.github.io/plaintext/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.plaintext.link">View Project</a>
                     <a href="https://github.com/Mendiak/plaintext" class="github-link" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                        <span data-i18n="projects.open_source">Open Source</span>
                     </a>
                 </div>
             </div>
@@ -329,7 +308,7 @@
                 <p data-i18n="the_lab.less_is_more.description">An extensible skill for AI agents that enforces modernist design constraints during frontend generation. By integrating architectural principles and minimalist anti-patterns, it ensures that AI-generated interfaces remain timeless, structured, and user-centric.</p>
                 <div class="card-links">
                     <a href="https://github.com/Mendiak/less-is-more-ui" class="github-link" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                        <span data-i18n="projects.open_source">Open Source</span>
                     </a>
                     <a href="https://mendiak.github.io/less-is-more-ui/" class="github-link" target="_blank" rel="noopener noreferrer">
                         <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="the_lab.less_is_more.live_example">Live Example</span>
@@ -346,7 +325,7 @@
         <div class="card-container">
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/marsconnect.webp" alt="MarsConnect UX Case Study - Onboarding app design for Mars colonists" data-i18n-attr="alt|ux_studies.marsconnect.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/marsconnect.webp" alt="MarsConnect UX Case Study - Onboarding app design for Mars colonists" data-i18n-attr="alt|ux_studies.marsconnect.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="ux_studies.marsconnect.title">UX Case Study: MarsConnect</h3>
                 <p data-i18n="ux_studies.marsconnect.description">This project focuses on designing an onboarding app for future Mars colonists.</p>
@@ -355,7 +334,7 @@
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/designforwardsummit.webp" alt="Design Forward Summit UX Case Study - Web platform for design conference nominations" data-i18n-attr="alt|ux_studies.design_forward_summit.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/designforwardsummit.webp" alt="Design Forward Summit UX Case Study - Web platform for design conference nominations" data-i18n-attr="alt|ux_studies.design_forward_summit.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="ux_studies.design_forward_summit.title">UX Case Study: Design Forward Summit</h3>
                 <p data-i18n="ux_studies.design_forward_summit.description">This project involves designing a web platform to facilitate the nomination process for a design conference.</p>
@@ -364,7 +343,7 @@
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="./assets/images/projects/guardianesdelturon.webp" alt="Guardians of the Polecat UX Case Study - Platform for European polecat conservation awareness" data-i18n-attr="alt|ux_studies.guardians_polecat.alt" loading="lazy" decoding="async" data-spotlight width="600" height="400">
+                    <img src="./assets/images/projects/guardianesdelturon.webp" alt="Guardians of the Polecat UX Case Study - Platform for European polecat conservation awareness" data-i18n-attr="alt|ux_studies.guardians_polecat.alt" loading="lazy" decoding="async"  width="600" height="400">
                 </div>
                 <h3 data-i18n="ux_studies.guardians_polecat.title">UX Case Study: Guardians of the Polecat</h3>
                 <p data-i18n="ux_studies.guardians_polecat.description">The 'Guardians of the Polecat' project is an interactive platform designed to raise awareness about the conservation of the European polecat.</p>
@@ -402,6 +381,7 @@
         <div class="footer-container">
             <div class="footer-column copyright">
                 <p>&copy; <span id="copyright-year"></span> Mikel Aramendia</p>
+                <span class="footer-stamp" aria-hidden="true">Mikel</span>
             </div>
             
             <div class="footer-column note">
@@ -434,7 +414,7 @@
        
     </script>
 
-<script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js"></script>
+
 
 </body>
 </html>
