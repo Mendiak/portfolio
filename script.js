@@ -123,6 +123,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- Card image click handling ---
+    document.querySelectorAll('.card').forEach(card => {
+        const link = card.querySelector('.card-link');
+        if (!link) return;
+        const wrapper = card.querySelector('.image-wrapper');
+        if (wrapper) {
+            wrapper.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open(link.href, link.target || '_self');
+            });
+        }
+    });
+
     // --- Menu Handling ---
     const toggleMenu = (forceClose = false) => {
         if(!mobileMenu) return;
