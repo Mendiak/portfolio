@@ -601,6 +601,7 @@ nav .nav-list li a:visited {
     margin-left: var(--margin-page-desktop);
     max-width: var(--max-width-wide);
     margin-top: var(--space-xxl);
+    position: relative;
 }
 
 #projects, #ux-studies, #the-lab {
@@ -892,7 +893,7 @@ footer {
    PARALLAX DIVIDER (Swiss Style: minimal)
    ======================================== */
 .parallax-divider {
-    height: 200px;
+    height: 280px;
     background-image: url(./assets/images/banner.webp);
     background-repeat: no-repeat;
     background-size: cover;
@@ -901,6 +902,15 @@ footer {
     filter: grayscale(100%) brightness(70%);
     margin-top: var(--space-3xl);
     margin-bottom: var(--space-3xl);
+}
+
+/* Alternating diagonal clip-paths */
+.parallax-divider:nth-of-type(odd) {
+    clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 82%);
+}
+
+.parallax-divider:nth-of-type(even) {
+    clip-path: polygon(0 0, 100% 18%, 100% 82%, 0 100%);
 }
 
 /* Sections overlap divider */
@@ -913,12 +923,38 @@ footer {
 }
 
 /* ========================================
+   GEOMETRIC SECTION MARKERS (Swiss Style)
+   ======================================== */
+section[id][data-section]::before {
+    content: attr(data-section);
+    position: absolute;
+    top: var(--space-2xs);
+    right: 0;
+    font-family: 'Geist Mono', monospace;
+    font-size: 5rem;
+    font-weight: var(--font-weight-bold);
+    color: rgba(255, 255, 255, 0.035);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: var(--letter-spacing-tight);
+    z-index: var(--z-hide);
+}
+
+#contact::before {
+    z-index: 20;
+}
+
+
+
+/* ========================================
    RESPONSIVE LAYOUT (Swiss Style: grid)
    ======================================== */
 @media screen and (max-width: 768px) {
     .parallax-divider {
         height: var(--space-xl);
         background: none;
+        clip-path: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -992,6 +1028,12 @@ footer {
         width: 100%;
         display: grid;
         justify-content: center;
+    }
+
+    /* Smaller section markers on mobile */
+    section[id][data-section]::before {
+        font-size: 2.5rem;
+        top: 0;
     }
 
 }
