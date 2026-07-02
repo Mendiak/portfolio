@@ -38,22 +38,22 @@
     "socratika": {
       "title": "Socratika: chatea con las grandes mentes de la historia",
       "alt": "Socratika - plataforma impulsada por IA para conversaciones con figuras históricas",
-      "paragraph1": "Un Ágora digital para la exploración intelectual, construida con Next.js, React y TypeScript. Los usuarios pueden participar en conversaciones esclarecedoras con las grandes mentes de la historia, cobradas a la vida por IA (Google Gemini).",
-      "paragraph2": "Cuenta con una interfaz multilingüe, cuentas de usuario para experiencias personalizadas y funcionalidades de chat en tiempo real impulsadas por Firebase, todo elegantemente estilizado con Tailwind CSS y Shadcn/ui.",
+      "paragraph1": "A full-stack digital Ágora que da vida a las grandes mentes de la historia a través de conversaciones con IA. Construido con Next.js 15, TypeScript y Google Genkit.",
+      "paragraph2": "Incluye soporte multilingüe, cuentas de usuario, suscripciones con Stripe, chat en tiempo real mediante Firebase y una interfaz de administración completa. Estilizado con Tailwind CSS y shadcn/ui.",
       "link": "Ver Proyecto"
     },
     "confessio": {
       "title": "Confessio: santuario digital de IA",
       "alt": "Confessio - santuario digital impulsado por IA para reflexiones anónimas",
-      "paragraph1": "Un santuario anónimo para la reflexión, construido con Next.js, React y TypeScript. Los usuarios pueden compartir sus pensamientos y recibir orientación espiritual generada por una IA (Google Gemini).",
-      "paragraph2": "Cuenta con una interfaz multilingüe, categorización inteligente de contenido y un interactivo \"Muro de Intenciones\" impulsado por Firebase, todo estilizado con Tailwind CSS y Shadcn/ui.",
+      "paragraph1": "Un santuario digital anónimo para la reflexión y el apoyo espiritual guiado por IA. Construido con Next.js 15, TypeScript y Google Genkit.",
+      "paragraph2": "Incluye soporte multilingüe, categorización inteligente de contenido, un Muro de Intenciones interactivo y persistencia de datos con Firebase. Estilizado con Tailwind CSS y Radix UI.",
       "link": "Ver Proyecto"
     },
     "bitcoin": {
       "title": "Historia de Bitcoin",
       "alt": "Historia de Bitcoin - Visualización interactiva de datos del precio de Bitcoin",
-      "paragraph1": "Este proyecto es una visualización interactiva de datos que narra la historia del precio de Bitcoin. Usando D3.js, presenta un gráfico detallado con funciones como escalado logarítmico y lineal, capacidades de zoom y eventos históricos categorizados.",
-      "paragraph2": "La aplicación está construida con tecnologías frontend modernas (HTML, CSS, JavaScript y Bootstrap), soporta múltiples idiomas e incluye un tema claro/oscuro, ofreciendo una experiencia de usuario completa y atractiva para explorar el recorrido financiero de Bitcoin.",
+      "paragraph1": "Una visualización interactiva con D3.js que narra la historia del precio de Bitcoin con eventos clave. Incluye escalado logarítmico/lineal, zoom, marcadores y temas claro/oscuro.",
+      "paragraph2": "Construido con Vite, D3.js v7, Bootstrap 5.3 y Tailwind CSS. Soporta múltiples idiomas y diseños responsivos para explorar la trayectoria financiera de Bitcoin.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/bitcoin.history"
     },
@@ -67,15 +67,15 @@
     "when_lambo": {
       "title": "When Lambo",
       "alt": "When Lambo - Aplicación web interactiva calculadora de Bitcoin a Lambo",
-      "paragraph1": "\"When Lambo?\" es una aplicación web interactiva que permite a los usuarios determinar su potencial para comprar un Lamborghini en función de sus tenencias de Bitcoin.",
-      "paragraph2": "La aplicación cuenta con datos de precios en tiempo real a través de la API de CoinDesk, soporta múltiples monedas fiduciarias y está diseñada con un tono humorístico y atractivo para el público crypto.",
+      "paragraph1": "Una divertida calculadora de Bitcoin a Lamborghini que te dice lo cerca que estás de tener un superdeportivo según tus criptoactivos.",
+      "paragraph2": "Incluye datos en tiempo real de la API de CoinDesk, múltiples monedas fiduciarias, celebraciones con confeti y modelos de Lamborghini personalizables. Construido con JS vanilla y Google Fonts (Cormorant, Proza Libre).",
       "link": "Ver Proyecto"
     },
     "pulse_roots": {
       "title": "PulseRoots: explorador interactivo de géneros de música electrónica",
       "alt": "PulseRoots - explorador interactivo de géneros de música electrónica con visualización D3.js",
-      "paragraph1": "PulseRoots es una aplicación web interactiva de una sola página que visualiza el panorama de los géneros de música electrónica. Construida con D3.js para estructuras dinámicas de árbol/mapa de árbol, permite a los usuarios explorar las principales familias (como Ambient, Techno, House) y sus subgéneros.",
-      "paragraph2": "Con diseño HTML/CSS responsivo, paneles de información detallada de géneros y vistas previas integradas de Spotify, PulseRoots ofrece un recorrido musical educativo e inmersivo. Tecnologías utilizadas: JavaScript moderno (ES6+), D3.js para visualización, Spotify Web Embed, layout responsivo.",
+      "paragraph1": "Una visualización interactiva de la evolución de la música electrónica. Construido con Astro y D3.js v6, mapea la compleja red de géneros y subgéneros en un árbol jerárquico explorable.",
+      "paragraph2": "Incluye paneles informativos detallados, vistas previas integradas de Spotify y diseño responsivo. Explora familias como Ambient, Techno y House y sus subgéneros.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/pulse.roots"
     },
@@ -90,8 +90,8 @@
     "drake": {
       "title": "Visualizador de la Ecuación de Drake",
       "alt": "Visualizador de la Ecuación de Drake - Herramienta interactiva para estimar civilizaciones extraterrestres",
-      "paragraph1": "Una aplicación web interactiva de una sola página que ilustra la famosa Ecuación de Drake, que estima el número de civilizaciones extraterrestres comunicativas en nuestra galaxia.",
-      "paragraph2": "Construida con HTML, CSS y JavaScript, el sitio permite a los usuarios ajustar parámetros y ver instantáneamente cómo cada factor influye en el resultado final, combinando divulgación científica con un diseño limpio y responsivo.",
+      "paragraph1": "Una visualización 3D interactiva de la Ecuación de Drake que estima el número de civilizaciones extraterrestres en la Vía Láctea. Construido con Three.js, Chart.js y JavaScript vanilla.",
+      "paragraph2": "Ajusta cada parámetro con controles deslizantes en tiempo real y observa cómo influye en el resultado final. Incluye un campo estelar 3D, gráficos interactivos y un diseño limpio y responsivo.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/drake.equation"
     },
@@ -102,6 +102,14 @@
       "paragraph2": "Incluye una interfaz bilingüe (inglés/español), modo oscuro, modo Zen, integración con Google Fonts, controles de color personalizados y opciones de exportación optimizadas para escritorio y móvil.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/plaintext"
+    },
+    "only3left": {
+      "title": "Only 3 Left: Patrones UX Engañosos",
+      "alt": "Only 3 Left - Catálogo interactivo de patrones UX engañosos y dark patterns",
+      "paragraph1": "Un catálogo interactivo de patrones UX engañosos — dark patterns, interfaces manipuladoras y mecanismos persuasivos usados para influir en decisiones online. Construido con Next.js 16, TypeScript y Tailwind CSS.",
+      "paragraph2": "Incluye 40 patrones documentados en 10 categorías, especímenes interactivos (falsos contadores, simuladores de cookies, trampas de precios), niveles de toxicidad, desgloses psicológicos y alternativas éticas. Completamente bilingüe (EN/ES).",
+      "link": "Ver Proyecto",
+      "github": "https://github.com/Mendiak/only3left"
     }
   },
   "the_lab": {
