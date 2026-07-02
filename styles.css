@@ -593,7 +593,7 @@ nav .nav-list li a:visited {
    ======================================== */
 #about {
     margin-left: var(--margin-page-desktop);
-    max-width: var(--max-width-narrow);
+    max-width: var(--max-width-wide);
     margin-top: var(--space-xxl);
 }
 
@@ -635,7 +635,6 @@ div.contact-text h2 {
 }
 
 /* Paragraph right margin for breathing room */
-#about p,
 #projects > p {
     margin-right: var(--margin-page-mobile);
 }
@@ -670,6 +669,24 @@ div.contact-text h2 {
     margin-left: 0.35rem;
     font-size: 0.75em;
     vertical-align: middle;
+}
+
+/* About grid (Swiss asymmetric layout) */
+.about-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.about-media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-content p:last-of-type {
+    margin-bottom: var(--space-md);
 }
 
 #projects {
@@ -1007,6 +1024,11 @@ section[id][data-section]::before {
         padding-left: var(--margin-page-mobile);
     }
 
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
@@ -1194,10 +1216,10 @@ footer .github-link:hover {
    ======================================== */
 .profile-pic-wrapper {
     position: relative;
-    display: inline-block;
+    display: block;
     margin: var(--space-sm) 0 var(--space-md) 0;
-    width: var(--space-4xl);
-    height: var(--space-4xl);
+    width: 180px;
+    height: 180px;
     border: var(--border-width) solid var(--text-accent);
     box-shadow: none;
     overflow: hidden;
@@ -1220,6 +1242,10 @@ footer .github-link:hover {
         width: var(--space-3xl);
         height: var(--space-3xl);
     }
+
+    .profile-caption {
+        width: var(--space-3xl);
+    }
 }
 
 /* ========================================
@@ -1227,7 +1253,7 @@ footer .github-link:hover {
    ======================================== */
 .profile-caption {
     margin: 0 0 var(--space-md) 0;
-    width: var(--space-4xl);
+    width: 180px;
 }
 
 .caption-line {
