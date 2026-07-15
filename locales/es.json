@@ -57,13 +57,6 @@
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/bitcoin.history"
     },
-    "party_invitations": {
-      "title": "Invitaciones de fiesta",
-      "alt": "Invitaciones de fiesta - aplicación web generadora de invitaciones responsivas",
-      "paragraph1": "Un generador de invitaciones responsivo construido con JavaScript vanilla, HTML5 y CSS3.",
-      "paragraph2": "Incluye personalización en vivo, búsqueda de fondos a través de la API de Unsplash y múltiples opciones de exportación, incluyendo PNG, enlaces compartibles, códigos QR y archivos de calendario .ICS.",
-      "link": "Ver Proyecto"
-    },
     "when_lambo": {
       "title": "When Lambo",
       "alt": "When Lambo - Aplicación web interactiva calculadora de Bitcoin a Lambo",

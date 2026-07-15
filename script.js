@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             children: [
                 { selector: 'h2', from: { opacity: 0, x: -30 } },
                 { selector: ':scope > p', from: { opacity: 0, y: 15 } },
-                { selector: '.card', from: { opacity: 0, y: 30 }, stagger: 0.1 },
+                { selector: '.card', from: { opacity: 0, y: 30 }, stagger: 0.15 },
             ]
         },
         {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 start: 'top 80%',
                 toggleActions: 'play none none none',
             },
-            defaults: { ease: 'power3.out', duration: 0.8 },
+            defaults: { ease: 'power3.out', duration: 1.0 },
         });
 
         children.forEach(({ selector, from, stagger }) => {
