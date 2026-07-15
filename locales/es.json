@@ -39,21 +39,21 @@
       "title": "Socratika: chatea con las grandes mentes de la historia",
       "alt": "Socratika - plataforma impulsada por IA para conversaciones con figuras históricas",
       "paragraph1": "A full-stack digital Ágora que da vida a las grandes mentes de la historia a través de conversaciones con IA. Construido con Next.js 15, TypeScript y Google Genkit.",
-      "paragraph2": "Incluye soporte multilingüe, cuentas de usuario, suscripciones con Stripe, chat en tiempo real mediante Firebase y una interfaz de administración completa. Estilizado con Tailwind CSS y shadcn/ui.",
+      "paragraph2": "Incluye soporte multilingüe, cuentas de usuario, suscripciones con Stripe, chat en tiempo real con streaming mediante Firebase, generación automatizada de minipapers y un panel de administración con analíticas de uso.",
       "link": "Ver Proyecto"
     },
     "confessio": {
       "title": "Confessio: santuario digital de IA",
       "alt": "Confessio - santuario digital impulsado por IA para reflexiones anónimas",
       "paragraph1": "Un santuario digital anónimo para la reflexión y el apoyo espiritual guiado por IA. Construido con Next.js 15, TypeScript y Google Genkit.",
-      "paragraph2": "Incluye soporte multilingüe, categorización inteligente de contenido, un Muro de Intenciones interactivo y persistencia de datos con Firebase. Estilizado con Tailwind CSS y Radix UI.",
+      "paragraph2": "Incluye soporte multilingüe, categorización de contenido impulsada por IA, un Muro de Velas comunitario con intenciones compartidas e historial de conversaciones persistente.",
       "link": "Ver Proyecto"
     },
     "bitcoin": {
       "title": "Historia de Bitcoin",
       "alt": "Historia de Bitcoin - Visualización interactiva de datos del precio de Bitcoin",
       "paragraph1": "Una visualización interactiva con D3.js que narra la historia del precio de Bitcoin con eventos clave. Incluye escalado logarítmico/lineal, zoom, marcadores y temas claro/oscuro.",
-      "paragraph2": "Construido con Vite, D3.js v7, Bootstrap 5.3 y Tailwind CSS. Soporta múltiples idiomas y diseños responsivos para explorar la trayectoria financiera de Bitcoin.",
+      "paragraph2": "Construido con Vite y D3.js v7. Incluye una línea temporal narrativa con más de 30 eventos históricos, un brush contextual para zoom, un explicador educativo sobre el halving y soporte completo bilingüe EN/ES.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/bitcoin.history"
     },
@@ -61,22 +61,22 @@
       "title": "When Lambo",
       "alt": "When Lambo - Aplicación web interactiva calculadora de Bitcoin a Lambo",
       "paragraph1": "Una divertida calculadora de Bitcoin a Lamborghini que te dice lo cerca que estás de tener un superdeportivo según tus criptoactivos.",
-      "paragraph2": "Incluye datos en tiempo real de la API de CoinDesk, múltiples monedas fiduciarias, celebraciones con confeti y modelos de Lamborghini personalizables. Construido con JS vanilla y Google Fonts (Cormorant, Proza Libre).",
+      "paragraph2": "Incluye API de precio de Bitcoin con múltiples fuentes y failover automático, tasas de cambio en vivo, imágenes compartibles generadas con Canvas por modelo, URLs con parámetros compartibles y el índice de Miedo y Codicia.",
       "link": "Ver Proyecto"
     },
     "pulse_roots": {
       "title": "PulseRoots: explorador interactivo de géneros de música electrónica",
       "alt": "PulseRoots - explorador interactivo de géneros de música electrónica con visualización D3.js",
       "paragraph1": "Una visualización interactiva de la evolución de la música electrónica. Construido con Astro y D3.js v6, mapea la compleja red de géneros y subgéneros en un árbol jerárquico explorable.",
-      "paragraph2": "Incluye paneles informativos detallados, vistas previas integradas de Spotify y diseño responsivo. Explora familias como Ambient, Techno y House y sus subgéneros.",
+      "paragraph2": "Incluye tres modos de visualización (árbol, radial y línea temporal histórica), vistas previas integradas de Spotify, 107 hitos musicales desde 1897 hasta 2024 y soporte bilingüe EN/ES.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/pulse.roots"
     },
     "new_contemporary_photography": {
       "title": "Nueva fotografía contemporánea",
       "alt": "Nueva fotografía contemporánea - galería de fotos con API de Flickr y diseño responsivo",
-      "paragraph1": "Una aplicación de una sola página que se conecta a la API de Flickr para mostrar fotos aleatorias de un grupo de fotografía.",
-      "paragraph2": "Construida con JavaScript vanilla, cuenta con un layout completamente responsivo, animaciones CSS fluidas y un toggle de modo oscuro.",
+"paragraph1": "Una aplicación de una sola página que obtiene fotografías aleatorias de un grupo de Flickr mediante un pipeline de API de dos pasos con precarga inteligente de imágenes.",
+        "paragraph2": "Incluye precarga progresiva de imágenes, modo de presentación automática, descarga y compartición de fotos, y una estética brutalista de alto contraste.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/new-contemporary-photography"
     },
@@ -84,7 +84,7 @@
       "title": "Visualizador de la Ecuación de Drake",
       "alt": "Visualizador de la Ecuación de Drake - Herramienta interactiva para estimar civilizaciones extraterrestres",
       "paragraph1": "Una visualización 3D interactiva de la Ecuación de Drake que estima el número de civilizaciones extraterrestres en la Vía Láctea. Construido con Three.js, Chart.js y JavaScript vanilla.",
-      "paragraph2": "Ajusta cada parámetro con controles deslizantes en tiempo real y observa cómo influye en el resultado final. Incluye un campo estelar 3D, gráficos interactivos y un diseño limpio y responsivo.",
+      "paragraph2": "Ajusta cada parámetro con controles deslizantes en tiempo real y observa cómo influye en el resultado final. Incluye una Vía Láctea procedural en 3D, gráficos de análisis de sensibilidad, datos en vivo de exoplanetas de la NASA y URLs de preset compartibles.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/drake.equation"
     },
@@ -92,7 +92,7 @@
       "title": "Plaintext: generador de fondos de pantalla tipográfico",
       "alt": "Plaintext - generador de fondos de pantalla impulsado por tipografía con diseños de estilo suizo",
       "paragraph1": "Un generador de fondos de pantalla con JavaScript vanilla y HTML5 Canvas que transforma citas curadas en pósters tipográficos de alta resolución con diseños inspirados en el diseño gráfico suizo.",
-      "paragraph2": "Incluye una interfaz bilingüe (inglés/español), modo oscuro, modo Zen, integración con Google Fonts, controles de color personalizados y opciones de exportación optimizadas para escritorio y móvil.",
+      "paragraph2": "Incluye tres algoritmos de maquetación inspirados en el diseño suizo (Editorial, Ruled, Offset), un sistema de color basado en vibras, selección de tipografías, exportación multiresolución hasta 4K y una interfaz bilingüe EN/ES.",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/plaintext"
     },
@@ -100,7 +100,7 @@
       "title": "Only 3 Left: Patrones UX Engañosos",
       "alt": "Only 3 Left - Catálogo interactivo de patrones UX engañosos y dark patterns",
       "paragraph1": "Un catálogo interactivo de patrones UX engañosos — dark patterns, interfaces manipuladoras y mecanismos persuasivos usados para influir en decisiones online. Construido con Next.js 16, TypeScript y Tailwind CSS.",
-      "paragraph2": "Incluye 40 patrones documentados en 10 categorías, especímenes interactivos (falsos contadores, simuladores de cookies, trampas de precios), niveles de toxicidad, desgloses psicológicos y alternativas éticas. Completamente bilingüe (EN/ES).",
+      "paragraph2": "Incluye 42 patrones documentados en 10 categorías con especímenes interactivos y un TrapRevealer, niveles de toxicidad, desgloses psicológicos, alternativas éticas por patrón, búsqueda y filtrado por categorías, y un MetaToast educativo. Completamente bilingüe (EN/ES).",
       "link": "Ver Proyecto",
       "github": "https://github.com/Mendiak/only3left"
     }
@@ -109,7 +109,7 @@
     "title": "El Lab",
     "less_is_more": {
       "title": "Less Is More UI (AI Agent Skill)",
-      "description": "Una skill extensible para agentes de IA que impone restricciones de diseño modernista durante la generación de frontend. Al integrar principios arquitectónicos y antipatrones minimalistas, garantiza que las interfaces generadas por IA sigan siendo atemporales, estructuradas y centradas en el usuario.",
+      "description": "Un sistema de diseño CSS y skill para agentes de IA que impone restricciones de diseño modernista durante la generación de frontend. Integra un sistema de tokens CSS semánticos, principios arquitectónicos y antipatrones minimalistas para garantizar que las interfaces generadas por IA sigan siendo atemporales y centradas en el usuario.",
       "live_example": "Museum of the Essential"
     }
   },
