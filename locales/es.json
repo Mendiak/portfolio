@@ -13,9 +13,9 @@
     "contact": "CONTACTO"
   },
   "hero": {
-    "greeting": "Hola, soy",
-    "text": "Creo sitios web",
-    "tagline": "Convirtiendo ideas en proyectos reales."
+    "greeting": "Hola, soy Mikel",
+    "text": "Diseño y desarrollo para la web",
+    "tagline": "Proyectos personales, hechos con mimo"
   },
   "about": {
     "title": "Sobre mí",
@@ -24,11 +24,9 @@
     "buymeacoffee": "Invítame a un café",
     "profile_pic_alt": "Mikel Aramendia, entusiasta web de Barcelona",
     "location": "El Maresme, Barcelona",
-    "paragraph1": "¡Hola! Soy Mikel.",
-    "paragraph2": "Siempre me ha interesado la tecnología y el potencial creativo de la web. Aunque mi formación es en estudios empresariales, gran parte de mi forma de crear viene de otros lugares: antes del código pasé por el graffiti, el skate, la fotografía, la música electrónica y la acuarela.",
-    "paragraph3": "Hoy diseño y desarrollo proyectos web centrados en la simplicidad, la usabilidad y una experiencia clara e intuitiva. Me interesa explorar cómo el diseño visual, la interacción y los pequeños detalles cambian la forma en que usamos un producto.",
-    "paragraph4": "También cuento con el Certificado de Diseño UX de Google, que reforzó mi enfoque centrado en las personas y el diseño accesible.",
-    "paragraph5": "Este portfolio reúne proyectos personales, experimentos y aprendizajes continuos."
+    "paragraph1": "Hola, soy Mikel. Mi camino hasta la web no fue lineal — vengo de empresariales, y antes de escribir código pasé por el graffiti, el skate, la fotografía, la música electrónica y la acuarela. De cada uno aprendí algo sobre composición y el oficio de crear.",
+    "paragraph2": "Ahora diseño y desarrollo proyectos web donde la prioridad es la simplicidad y que las cosas funcionen con naturalidad. Me importa cómo el diseño, la interacción y los detalles pequeños condicionan la experiencia de quien usa un producto.",
+    "paragraph3": "Tengo el Certificado de Diseño UX de Google, que terminó de dar forma a mi enfoque centrado en las personas. Este portfolio es una recopilación de proyectos personales, experimentos y lo que he aprendido por el camino."
   },
   "projects": {
     "title": "Proyectos",

@@ -13,9 +13,9 @@
     "contact": "CONTACT"
   },
   "hero": {
-    "greeting": "Hi, this is",
-    "text": "I build for the web",
-    "tagline": "Simple, useful, and built with care"
+    "greeting": "Hi, I'm Mikel",
+    "text": "I design and develop for the web",
+    "tagline": "Personal projects, built with care"
   },
   "about": {
     "title": "About Me",
@@ -24,11 +24,9 @@
     "buymeacoffee": "Buy me a coffee",
     "profile_pic_alt": "Mikel Aramendia, web enthusiast from Barcelona",
     "location": "El Maresme, Barcelona",
-    "paragraph1": "Hi! I'm Mikel.",
-    "paragraph2": "I've always been interested in technology and the creative potential of the web. Although my background is in business studies, much of how I create comes from other places: before code I went through graffiti, skateboarding, photography, electronic music, and watercolor.",
-    "paragraph3": "Today I design and develop web projects focused on simplicity, usability, and a clear, intuitive experience. I'm interested in exploring how visual design, interaction, and small details change the way we use a product.",
-    "paragraph4": "I also hold the Google UX Design Certificate, which reinforced my human-centered approach and accessible design.",
-    "paragraph5": "This portfolio brings together personal projects, experiments, and continuous learning."
+    "paragraph1": "Hi, I'm Mikel. My path to the web wasn't a straight line — I came from business studies, and before code there was graffiti, skateboarding, photography, electronic music, and watercolor. Each one taught me something about composition and the craft of making things.",
+    "paragraph2": "Today I design and develop web projects focused on simplicity, usability, and a clear experience. I care about how visual design, interaction, and small details shape the way people use a product.",
+    "paragraph3": "I also hold the Google UX Design Certificate, which reinforced my human-centered approach. This portfolio brings together personal projects, experiments, and continuous learning."
   },
   "projects": {
     "title": "Projects",
