@@ -6,6 +6,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"]');
 
+    // --- Theme Toggle ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const themeToggleIcon = document.getElementById('theme-toggle-icon');
+    const themeToggleIconMobile = document.getElementById('theme-toggle-icon-mobile');
+
+    function getPreferredTheme() {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') return saved;
+        return 'dark';
+    }
+
+    function setTheme(theme) {
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            if (themeToggleIcon) themeToggleIcon.className = 'bi bi-moon-fill';
+            if (themeToggleIconMobile) themeToggleIconMobile.className = 'bi bi-moon-fill';
+            if (metaThemeColor) metaThemeColor.setAttribute('content', '#f8f8f8');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            if (themeToggleIcon) themeToggleIcon.className = 'bi bi-sun-fill';
+            if (themeToggleIconMobile) themeToggleIconMobile.className = 'bi bi-sun-fill';
+            if (metaThemeColor) metaThemeColor.setAttribute('content', '#0a0a0a');
+        }
+        localStorage.setItem('theme', theme);
+    }
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        setTheme(current === 'light' ? 'dark' : 'light');
+    }
+
+    // Init theme
+    setTheme(getPreferredTheme());
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
     // --- GSAP Scroll-Triggered Animations ---
     gsap.registerPlugin(ScrollTrigger);
 

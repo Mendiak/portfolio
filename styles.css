@@ -118,6 +118,49 @@
     --z-overlay: 3000;
     --z-modal: 9999;
     --z-splash: 10000;
+
+    /* ── Hero Override Tokens ── */
+    --hero-overlay-gradient: linear-gradient(
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    --hero-name-color: #ffffff;
+    --hero-tagline-color: rgba(255, 255, 255, 0.65);
+    --hero-tagline-underline: rgba(255, 255, 255, 0.35);
+    --scroll-indicator-color: #ffffff;
+    --section-marker-color: rgba(255, 255, 255, 0.035);
+}
+
+/* ── Light Theme Overrides ── */
+[data-theme="light"] {
+    --color-bg-primary: #f8f8f8;
+    --color-bg-surface: #ffffff;
+    --color-bg-elevated: #f0f0f0;
+    --color-grey-medium: #d0d0d0;
+    --color-grey-dark: #999999;
+
+    --text-primary: #1a1a1a;
+    --text-secondary: #333333;
+    --text-accent: #555555;
+    --text-link: #555555;
+    --text-link-visited: #888888;
+
+    --color-nav-bg: rgba(255, 255, 255, 0.85);
+    --color-grid-overlay: rgba(0, 0, 0, 0.06);
+    --color-border-default: #d0d0d0;
+    --color-border-active: #555555;
+
+    --hero-overlay-gradient: linear-gradient(
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    --hero-name-color: #1a1a1a;
+    --hero-tagline-color: rgba(0, 0, 0, 0.6);
+    --hero-tagline-underline: rgba(0, 0, 0, 0.2);
+    --scroll-indicator-color: #555555;
+    --section-marker-color: rgba(0, 0, 0, 0.04);
 }
 
 /* Language Switcher Button */
@@ -152,6 +195,39 @@
     transform: scale(0.98);
 }
 
+/* Theme Toggle Buttons */
+#theme-toggle,
+#theme-toggle-mobile {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: var(--space-2xs);
+    min-width: var(--touch-target-min);
+    min-height: var(--touch-target-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    font-size: var(--font-size-md);
+    border-radius: var(--radius-button);
+}
+
+#theme-toggle:hover,
+#theme-toggle-mobile:hover {
+    background-color: var(--color-grey-medium);
+    color: var(--color-spotlight);
+}
+
+#theme-toggle:active,
+#theme-toggle-mobile:active {
+    transform: scale(0.98);
+}
+
+#theme-toggle-mobile {
+    font-size: var(--font-size-xl);
+}
+
 /* ========================================
    CUSTOM SCROLLBAR (Swiss Style: minimal)
    ======================================== */
@@ -183,6 +259,7 @@ html {
     scroll-behavior: smooth;
     scrollbar-color: var(--color-grey-medium) var(--color-bg-primary);
     -webkit-text-size-adjust: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ========================================
@@ -480,7 +557,8 @@ nav .nav-list li a:visited {
 
 @media screen and (max-width: 768px) {
     
-    #lang-toggle-mobile {
+    #lang-toggle-mobile,
+    #theme-toggle-mobile {
         padding: 0;
         min-width: var(--touch-target-comfortable);
         min-height: var(--touch-target-comfortable);
@@ -508,13 +586,7 @@ nav .nav-list li a:visited {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.1) 0%,
-            rgba(0, 0, 0, 0.4) 50%,
-            rgba(0, 0, 0, 0.7) 100%
-        ),
-        url(./assets/images/banner.webp) center/cover no-repeat;
+    background: var(--hero-overlay-gradient), url(./assets/images/banner.webp) center/cover no-repeat;
     filter: grayscale(90%);
     z-index: var(--z-hide);
     animation: heroZoom 20s ease-in-out infinite alternate;
@@ -543,7 +615,7 @@ nav .nav-list li a:visited {
     line-height: 1.05;
     margin: 0;
     padding: 0;
-    color: #ffffff;
+    color: var(--hero-name-color);
     letter-spacing: var(--letter-spacing-tight);
 }
 
@@ -554,7 +626,7 @@ nav .nav-list li a:visited {
     margin-top: var(--space-lg);
     max-width: 50ch;
     font-size: var(--font-size-md);
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--hero-tagline-color);
     z-index: 1;
     line-height: var(--line-height-base);
 }
@@ -564,7 +636,7 @@ nav .nav-list li a:visited {
     display: block;
     width: 60px;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.35);
+    background-color: var(--hero-tagline-underline);
     margin-top: var(--space-md);
 }
 
@@ -589,7 +661,7 @@ nav .nav-list li a:visited {
     display: block;
     width: 24px;
     height: 1px;
-    background-color: #ffffff;
+    background-color: var(--scroll-indicator-color);
 }
 
 @keyframes scrollPulse {
@@ -950,7 +1022,7 @@ section[id][data-section]::before {
     font-family: 'Geist Mono', monospace;
     font-size: 5rem;
     font-weight: var(--font-weight-bold);
-    color: rgba(255, 255, 255, 0.035);
+    color: var(--section-marker-color);
     line-height: 1;
     pointer-events: none;
     user-select: none;

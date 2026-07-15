@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+    var supported = ['en', 'es'];
+    var defaultLang = 'en';
+    var savedLang = localStorage.getItem('lang');
+    var lang = savedLang && supported.includes(savedLang) ? savedLang : defaultLang;
+    if (!savedLang) {
+        var browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
+        if (supported.includes(browserLang)) lang = browserLang;
+    }
+    document.documentElement.lang = lang;
+})();
+</script>
 
 <meta name="google-site-verification" content="7tAbK2WB9Cx4uF76izgXcrBdBXVeqDfUd9A97KrLewU" />
 
@@ -24,7 +37,7 @@
 <meta name="keywords" content="web enthusiast, portfolio, Barcelona, JavaScript, React, Next.js, HTML, CSS, web design, UX, personal projects, web experiments">
 <meta name="author" content="Mikel Aramendia">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="canonical" href="https://mendiak.github.io/portfolio/">
 
 <!-- Alternate languages (if applicable) -->
@@ -122,6 +135,11 @@
                         <span id="lang-button-text" data-i18n="lang_switcher.button">ES</span>
                     </button>
                 </li>
+                <li>
+                    <button id="theme-toggle" aria-label="Toggle light and dark mode" data-i18n-attr-aria="aria-label|aria.theme_toggle">
+                        <i id="theme-toggle-icon" class="bi bi-sun-fill"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
         <button id="hamburger-btn" aria-label="Open menu" data-i18n-attr="aria-label|aria.open_menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -138,6 +156,9 @@
                 <div class="mobile-menu-utilities">
                     <button id="lang-toggle-mobile" aria-label="Switch to Spanish" data-i18n-attr="aria-label|lang_switcher.label">
                         <span id="lang-button-text-mobile" data-i18n="lang_switcher.button">ES</span>
+                    </button>
+                    <button id="theme-toggle-mobile" aria-label="Toggle light and dark mode" data-i18n-attr-aria="aria-label|aria.theme_toggle">
+                        <i id="theme-toggle-icon-mobile" class="bi bi-sun-fill"></i>
                     </button>
                 </div>
             </div>
