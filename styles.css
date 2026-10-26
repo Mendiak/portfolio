@@ -15,6 +15,8 @@
    ======================================== */
 
 :root {
+    color-scheme: dark;
+
     /* ── Base Colors (Dark / Monochrome + Orange) ── */
     --color-bg-primary: #0a0a0a;
     --color-bg-surface: #1a1a1a;
@@ -134,6 +136,7 @@
 
 /* ── Light Theme Overrides ── */
 [data-theme="light"] {
+    color-scheme: light;
     --color-bg-primary: #f8f8f8;
     --color-bg-surface: #ffffff;
     --color-bg-elevated: #f0f0f0;
@@ -283,6 +286,31 @@ img {
     max-width: 100%; 
     height: auto; 
     display: block; 
+}
+
+/* Inline SVG sprite (replaces the Bootstrap Icons webfont) */
+.svg-sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -0.125em;
+    flex: none;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 button, input, textarea { 
@@ -572,11 +600,14 @@ nav .nav-list li a:visited {
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     overflow: hidden;
+    padding-top: calc(var(--nav-height) + var(--space-xl));
+    padding-bottom: var(--space-3xl);
 }
 
 .hero::before {
@@ -600,14 +631,15 @@ nav .nav-list li a:visited {
 /* Hero layout: natural flow, no absolute positioning */
 .hero-text {
     position: relative;
+    align-self: stretch;
     margin-left: var(--margin-page-desktop);
+    margin-right: var(--margin-page-desktop);
     z-index: 1;
     text-align: left;
-    width: 100%;
-    max-width: var(--max-width-narrow);
+    max-width: var(--max-width-wide);
 }
 
-/* Hero name — bold editorial statement */
+/* Hero name - bold editorial statement */
 .hero-name {
     font-family: 'Inter', sans-serif;
     font-weight: var(--font-weight-bold);
@@ -617,9 +649,10 @@ nav .nav-list li a:visited {
     padding: 0;
     color: var(--hero-name-color);
     letter-spacing: var(--letter-spacing-tight);
+    text-wrap: balance;
 }
 
-/* Tagline — directly below name */
+/* Tagline - directly below name */
 .hero-tagline {
     position: relative;
     margin-left: var(--margin-page-desktop);
@@ -746,9 +779,9 @@ div.contact-text h2 {
     color: var(--color-spotlight);
 }
 
-.about-links a[target="_blank"] i {
+.about-links a .icon {
     margin-left: 0.35rem;
-    font-size: 0.75em;
+    font-size: 0.9em;
     vertical-align: middle;
 }
 
@@ -1107,12 +1140,12 @@ section[id][data-section]::before {
     }
 
     #cross-field {
-        width: 100vw;
+        width: 100%;
         position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+        left: auto;
+        right: auto;
+        margin-left: 0;
+        margin-right: 0;
         padding: 0;
         background-color: var(--color-bg-surface);
         overflow: hidden;
@@ -1166,7 +1199,7 @@ section[id][data-section]::before {
     }
 }
 
-/* Card hero — typographic treatment replacing screenshots */
+/* Card hero - typographic treatment replacing screenshots */
 .card-hero {
     aspect-ratio: 16 / 9;
     display: flex;
@@ -1203,7 +1236,7 @@ section[id][data-section]::before {
     user-select: none;
 }
 
-/* Card body — padded content area */
+/* Card body - padded content area */
 .card-body {
     padding: var(--space-lg);
     display: flex;
@@ -1456,16 +1489,29 @@ footer .github-link:hover {
     animation: fadeIn 0.5s ease forwards;
 }
 
-.form-success-message i {
+.form-success-message .icon {
     font-size: var(--font-size-xxxl);
     color: var(--text-accent);
     margin-bottom: var(--space-md);
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .form-success-message h3,
 .form-success-message p {
     color: var(--text-secondary);
+}
+
+.form-status {
+    margin: var(--space-sm) 0 0;
+    max-width: none;
+    font-size: var(--font-size-sm);
+    color: var(--text-error);
+}
+
+.form-status:empty {
+    display: none;
 }
 
 @keyframes fadeIn {
@@ -1494,5 +1540,31 @@ footer .github-link:hover {
 
 .card:nth-child(even) .card-hero {
     background-color: var(--color-bg-elevated);
+}
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero::before {
+        animation: none;
+    }
+
+    .scroll-indicator {
+        animation: none;
+    }
 }
 

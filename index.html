@@ -4,16 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
-(function() {
+(function () {
     var supported = ['en', 'es'];
-    var defaultLang = 'en';
     var savedLang = localStorage.getItem('lang');
-    var lang = savedLang && supported.includes(savedLang) ? savedLang : defaultLang;
-    if (!savedLang) {
-        var browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
-        if (supported.includes(browserLang)) lang = browserLang;
-    }
+    var browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
+    var lang = savedLang && supported.indexOf(savedLang) !== -1
+        ? savedLang
+        : (supported.indexOf(browserLang) !== -1 ? browserLang : 'en');
     document.documentElement.lang = lang;
+
+    var savedTheme = localStorage.getItem('theme');
+    var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    var theme = savedTheme === 'light' || savedTheme === 'dark'
+        ? savedTheme
+        : (prefersLight ? 'light' : 'dark');
+    if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
 })();
 </script>
 
@@ -32,49 +39,45 @@
 
 
 <!-- SEO Meta Tags -->
-<title data-i18n="meta.title">Mikel Aramendia · Web Enthusiast Portfolio</title>
-<meta name="description" data-i18n-attr="content|meta.description" content="Portfolio of Mikel Aramendia, a web enthusiast from Barcelona who loves building websites for the fun and challenge of it. Open to collaborations and projects.">
-<meta name="keywords" content="web enthusiast, portfolio, Barcelona, JavaScript, React, Next.js, HTML, CSS, web design, UX, personal projects, web experiments">
+<title data-i18n="meta.title">Mikel Aramendia · Frontend Developer &amp; UX Designer in Barcelona</title>
+<meta name="description" content="Portfolio of Mikel Aramendia, frontend developer and UX designer in Barcelona. Projects, case studies and web experiments built with React, Next.js and TypeScript.">
+<meta name="keywords" content="web enthusiast, portfolio, Barcelona, JavaScript, TypeScript, React, Next.js, Astro, HTML, CSS, web design, UX, personal projects, web experiments">
 <meta name="author" content="Mikel Aramendia">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="canonical" href="https://mendiak.github.io/portfolio/">
-
-<!-- Alternate languages (if applicable) -->
-<link rel="alternate" hreflang="en" href="https://mendiak.github.io/portfolio/">
-<link rel="alternate" hreflang="es" href="https://mendiak.github.io/portfolio/">
-<link rel="alternate" hreflang="x-default" href="https://mendiak.github.io/portfolio/">
+<link rel="sitemap" type="application/xml" href="./sitemap.xml">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:locale" content="en_US" data-i18n-attr="content|og.locale">
+<meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mendiak.github.io/portfolio/">
 <meta property="og:site_name" content="Mikel Aramendia Portfolio">
-<meta property="og:title" data-i18n-attr="content|meta.og_title" content="Mikel Aramendia · Web Enthusiast Portfolio">
-<meta property="og:description" data-i18n-attr="content|meta.og_description" content="I'm Mikel, a web enthusiast from Barcelona. I love building websites for the fun and challenge of it. Open to collaborations — explore my projects and experiments.">
-<meta property="og:image" content="https://mendiak.github.io/portfolio/assets/images/og.png">
+<meta property="og:title" data-i18n-attr="content|meta.og_title" content="Mikel Aramendia · Frontend Developer &amp; UX Designer in Barcelona">
+<meta property="og:description" data-i18n-attr="content|meta.og_description" content="Portfolio of Mikel Aramendia, frontend developer and UX designer in Barcelona. Projects, case studies and web experiments built with React, Next.js and TypeScript.">
+<meta property="og:image" content="https://mendiak.github.io/portfolio/assets/images/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Mikel Aramendia Portfolio - Web Enthusiast">
+<meta property="og:image:alt" content="Mikel Aramendia Portfolio - Frontend Developer &amp; UX Designer">
 
 <!-- Twitter -->
 <meta name="twitter:site" content="@mendiak">
 <meta name="twitter:creator" content="@mendiak">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://mendiak.github.io/portfolio/">
-<meta property="twitter:title" data-i18n-attr="content|meta.twitter_title" content="Mikel Aramendia · Web Enthusiast Portfolio">
-<meta property="twitter:description" data-i18n-attr="content|meta.twitter_description" content="I'm Mikel, a web enthusiast from Barcelona. I love building websites for the fun and challenge of it. Open to collaborations — explore my projects and experiments.">
-<meta property="twitter:image" content="https://mendiak.github.io/portfolio/assets/images/og.png">
-<meta property="twitter:image:alt" content="Mikel Aramendia Portfolio - Web Enthusiast">
+<meta property="twitter:title" data-i18n-attr="content|meta.twitter_title" content="Mikel Aramendia · Frontend Developer &amp; UX Designer in Barcelona">
+<meta property="twitter:description" data-i18n-attr="content|meta.twitter_description" content="Portfolio of Mikel Aramendia, frontend developer and UX designer in Barcelona. Projects, case studies and web experiments built with React, Next.js and TypeScript.">
+<meta property="twitter:image" content="https://mendiak.github.io/portfolio/assets/images/og.jpg">
+<meta property="twitter:image:alt" content="Mikel Aramendia Portfolio - Frontend Developer &amp; UX Designer">
 
 <!-- Styles and Fonts -->
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono&family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./assets/images/favicon.png">
+<link rel="apple-touch-icon" href="./assets/images/favicon.png">
 
 <!-- Preload the LCP image for faster rendering -->
 <link rel="preload" fetchpriority="high" as="image" href="./assets/images/banner.webp" type="image/webp">
@@ -87,10 +90,11 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Mikel Aramendia",
+      "jobTitle": "Frontend Developer & UX Designer",
       "alternateName": "Mendiak",
       "url": "https://mendiak.github.io/portfolio/",
       "image": "https://mendiak.github.io/portfolio/assets/images/profile_picture.webp",
-      "description": "Web enthusiast from Barcelona who loves building websites for the fun and challenge of it. Open to collaborations and projects.",
+      "description": "Frontend developer and UX designer in Barcelona, building web projects with React, Next.js and TypeScript. Open to collaborations and projects.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "El Maresme",
@@ -122,6 +126,42 @@
 </head>
 <body>
 
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="icon-external" viewBox="0 0 24 24">
+        <path d="M7 7h10v10"/>
+        <path d="M7 17 17 7"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24">
+        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+        <path d="M9 18c-4.51 2-5-2-7-2"/>
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2"/>
+        <path d="M12 20v2"/>
+        <path d="m4.93 4.93 1.41 1.41"/>
+        <path d="m17.66 17.66 1.41 1.41"/>
+        <path d="M2 12h2"/>
+        <path d="M20 12h2"/>
+        <path d="m6.34 17.66-1.41 1.41"/>
+        <path d="m19.07 4.93-1.41 1.41"/>
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/>
+        <path d="M20 3v4"/>
+        <path d="M22 5h-4"/>
+    </symbol>
+    <symbol id="icon-cup" viewBox="0 0 24 24">
+        <path d="M10 2v2"/>
+        <path d="M14 2v2"/>
+        <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/>
+        <path d="M6 2v2"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="m9 12 2 2 4-4"/>
+    </symbol>
+</svg>
 
     <header>
 
@@ -137,7 +177,7 @@
                 </li>
                 <li>
                     <button id="theme-toggle" aria-label="Toggle light and dark mode" data-i18n-attr-aria="aria-label|aria.theme_toggle">
-                        <i id="theme-toggle-icon" class="bi bi-sun-fill"></i>
+                        <svg id="theme-toggle-icon" class="icon" aria-hidden="true" focusable="false"><use href="#icon-sun"></use></svg>
                     </button>
                 </li>
             </ul>
@@ -146,7 +186,7 @@
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
         </button>
-        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
             <div class="mobile-menu-content">
                 <ul class="mobile-nav-links">
                     <li><a href="#about" data-index="01" data-i18n="nav.about">ABOUT ME</a></li>
@@ -158,7 +198,7 @@
                         <span id="lang-button-text-mobile" data-i18n="lang_switcher.button">ES</span>
                     </button>
                     <button id="theme-toggle-mobile" aria-label="Toggle light and dark mode" data-i18n-attr-aria="aria-label|aria.theme_toggle">
-                        <i id="theme-toggle-icon-mobile" class="bi bi-sun-fill"></i>
+                        <svg id="theme-toggle-icon-mobile" class="icon" aria-hidden="true" focusable="false"><use href="#icon-sun"></use></svg>
                     </button>
                 </div>
             </div>
@@ -167,10 +207,10 @@
 
 <main>
             <div class="hero">
-                        <section class="hero-text" aria-label="Introduction">
-                                <h1 class="hero-name" data-i18n="hero.text">I build for the web</h1>
+                        <section class="hero-text" aria-label="Introduction" data-i18n-attr-aria="aria-label|aria.intro">
+                                <h1 class="hero-name" data-i18n="hero.text">I design and develop for the web</h1>
                         </section>
-                        <p class="hero-tagline"><span data-i18n="hero.tagline">Simple, useful, and built with care</span></p>
+                        <p class="hero-tagline"><span data-i18n="hero.tagline">Personal projects, built with care</span></p>
                         <div class="scroll-indicator" aria-hidden="true">
                             <span></span>
                             <span></span>
@@ -190,13 +230,13 @@
                 </div>
             </div>
             <div class="about-content">
-                <p data-i18n="about.paragraph1">Hi, I'm Mikel. My path to the web wasn't a straight line — I came from business studies, and before code there was graffiti, skateboarding, photography, electronic music, and watercolor.</p>
+                <p data-i18n="about.paragraph1">Hi, I'm Mikel. My path to the web wasn't a straight line: I came from business studies, and before code there was graffiti, skateboarding, photography, electronic music, and watercolor.</p>
                 <p data-i18n="about.paragraph2">Today I design and develop web projects focused on simplicity, usability, and a clear experience.</p>
                 <p data-i18n="about.paragraph3">I also hold the Google UX Design Certificate, which reinforced my human-centered approach. This portfolio brings together personal projects, experiments, and continuous learning.</p>
                 <div class="about-links">
-                    <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" target="_blank" rel="noopener noreferrer"><span data-i18n="about.linkedin">LinkedIn</span><i class="bi bi-box-arrow-up-right"></i></a>
-                    <a href="https://github.com/Mendiak" target="_blank" rel="noopener noreferrer"><span data-i18n="about.github">GitHub</span><i class="bi bi-box-arrow-up-right"></i></a>
-                    <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer"><span data-i18n="about.buymeacoffee">Buy me a coffee</span><i class="bi bi-box-arrow-up-right"></i></a>
+                    <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" target="_blank" rel="noopener noreferrer"><span data-i18n="about.linkedin">LinkedIn</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"></use></svg></a>
+                    <a href="https://github.com/Mendiak" target="_blank" rel="noopener noreferrer"><span data-i18n="about.github">GitHub</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"></use></svg></a>
+                    <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer"><span data-i18n="about.buymeacoffee">Buy me a coffee</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"></use></svg></a>
                 </div>
             </div>
         </div>
@@ -225,20 +265,6 @@
             <div class="card">
                 <div class="card-hero">
                     <span class="card-hero-number">02</span>
-                    <span class="card-hero-text">CONFESSIO</span>
-                    <span class="card-hero-meta">Next.js · TypeScript · Google Genkit · Firebase</span>
-                </div>
-                <div class="card-body">
-                    <h3 data-i18n="projects.confessio.title">Confessio: AI Digital Sanctuary</h3>
-                    <p data-i18n="projects.confessio.paragraph1">A quiet digital sanctuary for anonymous reflection and AI-guided spiritual support. Built with Next.js 15, TypeScript, and Google Genkit.</p>
-                    <p data-i18n="projects.confessio.paragraph2">Features multilingual support, smart content categorization, an interactive Wall of Intentions, and Firebase-powered data persistence. Styled with Tailwind CSS and Radix UI.</p>
-                    <a href="https://confessio-ai.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.confessio.link">View Project</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-hero">
-                    <span class="card-hero-number">03</span>
                     <span class="card-hero-text">BITCOIN</span>
                     <span class="card-hero-meta">D3.js · Vite · Tailwind CSS</span>
                 </div>
@@ -249,7 +275,7 @@
                     <div class="card-links">
                         <a href="https://bitcoin-history.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.bitcoin.link">View Project</a>
                         <a href="https://github.com/Mendiak/bitcoin.history" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg> <span data-i18n="projects.open_source">Open Source</span>
                         </a>
                     </div>
                 </div>
@@ -258,7 +284,7 @@
             
             <div class="card">
                 <div class="card-hero">
-                    <span class="card-hero-number">04</span>
+                    <span class="card-hero-number">03</span>
                     <span class="card-hero-text">LAMBO</span>
                     <span class="card-hero-meta">Vanilla JS · CoinDesk API</span>
                 </div>
@@ -272,7 +298,7 @@
 
             <div class="card">
                 <div class="card-hero">
-                    <span class="card-hero-number">05</span>
+                    <span class="card-hero-number">04</span>
                     <span class="card-hero-text">PULSEROOTS</span>
                     <span class="card-hero-meta">Astro · D3.js · TypeScript · Spotify API</span>
                 </div>
@@ -283,7 +309,7 @@
                     <div class="card-links">
                         <a href="https://mendiak.github.io/pulse.roots/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.pulse_roots.link">View Project</a>
                         <a href="https://github.com/Mendiak/pulse.roots" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg> <span data-i18n="projects.open_source">Open Source</span>
                         </a>
                     </div>
                 </div>
@@ -291,7 +317,7 @@
 
             <div class="card">
                 <div class="card-hero">
-                    <span class="card-hero-number">06</span>
+                    <span class="card-hero-number">05</span>
                     <span class="card-hero-text">NCP</span>
                     <span class="card-hero-meta">Vanilla JS · Flickr API</span>
                 </div>
@@ -302,7 +328,7 @@
                     <div class="card-links">
                         <a href="https://new-contemporary-photography.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.new_contemporary_photography.link">View Project</a>
                         <a href="https://github.com/Mendiak/new-contemporary-photography" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg> <span data-i18n="projects.open_source">Open Source</span>
                         </a>
                     </div>
                 </div>
@@ -310,7 +336,7 @@
 
             <div class="card">
                 <div class="card-hero">
-                    <span class="card-hero-number">07</span>
+                    <span class="card-hero-number">06</span>
                     <span class="card-hero-text">DRAKE</span>
                     <span class="card-hero-meta">Three.js · Chart.js · Vanilla JS</span>
                 </div>
@@ -321,7 +347,7 @@
                     <div class="card-links">
                         <a href="https://mendiak.github.io/drake.equation/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.drake.link">View Project</a>
                         <a href="https://github.com/Mendiak/drake.equation" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg> <span data-i18n="projects.open_source">Open Source</span>
                         </a>
                     </div>
                 </div>
@@ -329,7 +355,7 @@
 
             <div class="card">
                 <div class="card-hero">
-                    <span class="card-hero-number">08</span>
+                    <span class="card-hero-number">07</span>
                     <span class="card-hero-text">PLAINTEXT</span>
                     <span class="card-hero-meta">Vanilla JS · HTML5 Canvas</span>
                 </div>
@@ -340,7 +366,7 @@
                     <div class="card-links">
                         <a href="https://mendiak.github.io/plaintext/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.plaintext.link">View Project</a>
                         <a href="https://github.com/Mendiak/plaintext" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg> <span data-i18n="projects.open_source">Open Source</span>
                         </a>
                     </div>
                 </div>
@@ -348,18 +374,18 @@
 
             <div class="card">
                 <div class="card-hero">
-                    <span class="card-hero-number">09</span>
+                    <span class="card-hero-number">08</span>
                     <span class="card-hero-text">ONLY 3 LEFT</span>
                     <span class="card-hero-meta">Next.js · React · TypeScript · Tailwind CSS</span>
                 </div>
                 <div class="card-body">
                     <h3 data-i18n="projects.only3left.title">Only 3 Left: Deceptive UX Patterns</h3>
-                    <p data-i18n="projects.only3left.paragraph1">An interactive catalogue of deceptive UX patterns — dark patterns, manipulative interfaces, and persuasive mechanisms used to influence decisions online. Built with Next.js 16, TypeScript, and Tailwind CSS.</p>
+                    <p data-i18n="projects.only3left.paragraph1">An interactive catalogue of deceptive UX patterns: dark patterns, manipulative interfaces, and persuasive mechanisms used to influence decisions online. Built with Next.js 16, TypeScript, and Tailwind CSS.</p>
                     <p data-i18n="projects.only3left.paragraph2">Features 40 documented patterns across 10 categories, interactive live specimens (fake countdowns, cookie simulators, pricing traps), severity ratings, psychological breakdowns, and ethical alternatives. Fully bilingual (EN/ES).</p>
                     <div class="card-links">
                         <a href="https://only3left.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer" data-i18n="projects.only3left.link">View Project</a>
                         <a href="https://github.com/Mendiak/only3left" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg> <span data-i18n="projects.open_source">Open Source</span>
                         </a>
                     </div>
                 </div>
@@ -379,10 +405,10 @@
                     <p data-i18n="the_lab.less_is_more.description">An extensible skill for AI agents that enforces modernist design constraints during frontend generation. By integrating architectural principles and minimalist anti-patterns, it ensures that AI-generated interfaces remain timeless, structured, and user-centric.</p>
                     <div class="card-links">
                         <a href="https://github.com/Mendiak/less-is-more-ui" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github"></i> <span data-i18n="projects.open_source">Open Source</span>
+                            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg> <span data-i18n="projects.open_source">Open Source</span>
                         </a>
                         <a href="https://mendiak.github.io/less-is-more-ui/" class="github-link" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="the_lab.less_is_more.live_example">Live Example</span>
+                            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"></use></svg> <span data-i18n="the_lab.less_is_more.live_example">Live Example</span>
                         </a>
                     </div>
                 </div>
@@ -441,18 +467,19 @@
         <div class="contact-wrapper">
             <div class="contact-text">
                 <h2 data-i18n="contact.title">Contact</h2>
-                <p data-i18n="contact.intro">Thank you for visiting my portfolio. I look forward to the opportunity to collaborate with you.</p>
+                <p data-i18n="contact.intro">Like what you see? Drop me a line. Tell me about your project or just say hello.</p>
             </div>
             <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="41398cfd-0efd-45fa-859e-50b9e66d6f31">
                 <label for="name" data-i18n="contact.name_label">Name</label>
-                <input type="text" id="name" placeholder="Your name" data-i18n-attr="placeholder|contact.name_placeholder" name="name" required>
+                <input type="text" id="name" placeholder="Your name" data-i18n-attr="placeholder|contact.name_placeholder" name="name" autocomplete="name" required>
                 <label for="email" data-i18n="contact.email_label">Email</label>
-                <input type="email" id="email" placeholder="Your email" data-i18n-attr="placeholder|contact.email_placeholder" name="email" required>
+                <input type="email" id="email" placeholder="Your email" data-i18n-attr="placeholder|contact.email_placeholder" name="email" autocomplete="email" required>
                 <label for="message" data-i18n="contact.message_label">Message</label>
-                <textarea id="message" name="message" rows="6" cols="50" placeholder="Your message" data-i18n-attr="placeholder|contact.message_placeholder" required></textarea>
+                <textarea id="message" name="message" rows="6" cols="50" placeholder="Your message" data-i18n-attr="placeholder|contact.message_placeholder" autocomplete="off" required></textarea>
                 <input type="hidden" name="redirect" value="https://web3forms.com/success">
                 <button type="submit" class="btn" id="submit-button" data-i18n="contact.submit_button">Send Message</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             </form>
         </div>
     </section>
@@ -485,7 +512,7 @@
                 <a href="https://www.linkedin.com/in/mikel-aramendia-lacalle/" target="_blank" rel="noopener noreferrer" data-i18n-attr-aria="aria-label|aria.linkedin">LinkedIn</a>
                 <a href="https://github.com/Mendiak" target="_blank" rel="noopener noreferrer" data-i18n-attr-aria="aria-label|aria.github">GitHub</a>
                 <a href="https://www.buymeacoffee.com/Mendiak" target="_blank" rel="noopener noreferrer" class="github-link">
-                    <i class="bi bi-cup-hot-fill"></i> <span data-i18n="footer.buy_me_a_coffee">Buy me a coffee</span>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-cup"></use></svg> <span data-i18n="footer.buy_me_a_coffee">Buy me a coffee</span>
                 </a>
             </div>
         </div>

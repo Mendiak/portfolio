@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Mikel Aramendia · Web Enthusiast Portfolio",
-    "description": "Portfolio of Mikel Aramendia, a web enthusiast from Barcelona who loves building websites for the fun and challenge of it. Open to collaborations and projects.",
-    "og_title": "Mikel Aramendia · Web Enthusiast Portfolio",
-    "og_description": "I'm Mikel, a web enthusiast from Barcelona. I love building websites for the fun and challenge of it. Open to collaborations — explore my projects and experiments.",
-    "twitter_title": "Mikel Aramendia · Web Enthusiast Portfolio",
-    "twitter_description": "I'm Mikel, a web enthusiast from Barcelona. I love building websites for the fun and challenge of it. Open to collaborations — explore my projects and experiments."
+    "title": "Mikel Aramendia · Frontend Developer & UX Designer in Barcelona",
+    "description": "Portfolio of Mikel Aramendia, frontend developer and UX designer in Barcelona. Projects, case studies and web experiments built with React, Next.js and TypeScript.",
+    "og_title": "Mikel Aramendia · Frontend Developer & UX Designer in Barcelona",
+    "og_description": "Portfolio of Mikel Aramendia, frontend developer and UX designer in Barcelona. Projects, case studies and web experiments built with React, Next.js and TypeScript.",
+    "twitter_title": "Mikel Aramendia · Frontend Developer & UX Designer in Barcelona",
+    "twitter_description": "Portfolio of Mikel Aramendia, frontend developer and UX designer in Barcelona. Projects, case studies and web experiments built with React, Next.js and TypeScript."
   },
   "nav": {
     "about": "ABOUT ME",
@@ -13,7 +13,6 @@
     "contact": "CONTACT"
   },
   "hero": {
-    "greeting": "Hi, I'm Mikel",
     "text": "I design and develop for the web",
     "tagline": "Personal projects, built with care"
   },
@@ -22,85 +21,63 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "buymeacoffee": "Buy me a coffee",
-    "profile_pic_alt": "Mikel Aramendia, web enthusiast from Barcelona",
+    "profile_pic_alt": "Mikel Aramendia, frontend developer and UX designer in Barcelona",
     "location": "El Maresme, Barcelona",
-    "paragraph1": "Hi, I'm Mikel. My path to the web wasn't a straight line — I came from business studies, and before code there was graffiti, skateboarding, photography, electronic music, and watercolor. Each one taught me something about composition and the craft of making things.",
+    "paragraph1": "Hi, I'm Mikel. My path to the web wasn't a straight line: I came from business studies, and before code there was graffiti, skateboarding, photography, electronic music, and watercolor. Each one taught me something about composition and the craft of making things.",
     "paragraph2": "Today I design and develop web projects focused on simplicity, usability, and a clear experience. I care about how visual design, interaction, and small details shape the way people use a product.",
     "paragraph3": "I also hold the Google UX Design Certificate, which reinforced my human-centered approach. This portfolio brings together personal projects, experiments, and continuous learning."
   },
   "projects": {
     "title": "Projects",
     "intro": "These are some of the web projects I've built for fun, learning, or just to see if I could. Each one taught me something new and gave me a chance to experiment with different ideas and technologies.",
-    "github_link": "View Source",
     "open_source": "Open Source",
     "socratika": {
       "title": "Socratika: Chat With History's Greatest Minds",
-      "alt": "Socratika - AI-powered platform for conversations with historical figures",
       "paragraph1": "A full-stack digital Agora that brings history's greatest minds to life through AI conversation. Built with Next.js 15, TypeScript, and Google Genkit.",
       "paragraph2": "Features multilingual support, user accounts, Stripe subscriptions, real-time streaming chat via Firebase, automated minipaper generation, and a comprehensive admin dashboard with usage analytics.",
       "link": "View Project"
     },
-    "confessio": {
-      "title": "Confessio: AI Digital Sanctuary",
-      "alt": "Confessio - AI-powered digital sanctuary for anonymous reflections",
-      "paragraph1": "A quiet digital sanctuary for anonymous reflection and AI-guided spiritual support. Built with Next.js 15, TypeScript, and Google Genkit.",
-      "paragraph2": "Features multilingual support, AI-powered content categorization, a shared Candle Wall of community intentions, and persistent conversation history.",
-      "link": "View Project"
-    },
     "bitcoin": {
       "title": "Bitcoin History",
-      "alt": "Bitcoin History - Interactive data visualization of Bitcoin price history",
       "paragraph1": "An interactive D3.js visualization chronicling Bitcoin's price history with key events. Features logarithmic/linear scaling, zoom, event markers, and light/dark themes.",
       "paragraph2": "Built with Vite and D3.js v7. Features a narrative-driven timeline with 30+ curated events, a linked context brush for zooming, an educational halving explainer, and full bilingual EN/ES support.",
-      "link": "View Project",
-      "github": "https://github.com/Mendiak/bitcoin.history"
+      "link": "View Project"
     },
     "when_lambo": {
       "title": "When Lambo",
-      "alt": "When Lambo - Interactive Bitcoin-to-Lambo calculator web application",
       "paragraph1": "A humorous Bitcoin-to-Lamborghini calculator that tells you how close you are to owning a supercar based on your crypto holdings.",
       "paragraph2": "Features multi-source Bitcoin price API with automatic failover, live fiat exchange rates, Canvas-generated share images per car model, shareable URL presets, and the Crypto Fear & Greed Index.",
       "link": "View Project"
     },
     "pulse_roots": {
       "title": "PulseRoots: Interactive Electronic Music Genre Explorer",
-      "alt": "PulseRoots - Interactive electronic music genre explorer with D3.js visualization",
       "paragraph1": "An interactive visualization of electronic music's evolution. Built with Astro and D3.js v6, it maps the complex web of genres and subgenres into an explorable hierarchical tree.",
       "paragraph2": "Features three visualization modes (tree, radial, and history timeline), embedded Spotify track previews, 107 curated music history milestones from 1897 to 2024, and bilingual EN/ES support.",
-      "link": "View Project",
-      "github": "https://github.com/Mendiak/pulse.roots"
+      "link": "View Project"
     },
     "new_contemporary_photography": {
       "title": "New Contemporary Photography",
-      "alt": "New Contemporary Photography - Flickr API photo gallery with responsive design",
-"paragraph1": "A single-page application that fetches random photographs from a Flickr photography group via a two-step API pipeline with intelligent image prefetching.",
-        "paragraph2": "Features progressive image preloading, auto-play slideshow mode, photo download and clipboard sharing, and a high-contrast brutalist aesthetic.",
-      "link": "View Project",
-      "github": "https://github.com/Mendiak/new-contemporary-photography"
+      "paragraph1": "A single-page application that fetches random photographs from a Flickr photography group via a two-step API pipeline with intelligent image prefetching.",
+      "paragraph2": "Features progressive image preloading, auto-play slideshow mode, photo download and clipboard sharing, and a high-contrast brutalist aesthetic.",
+      "link": "View Project"
     },
     "drake": {
       "title": "Drake Equation Visualizer",
-      "alt": "Drake Equation Visualizer - Interactive tool for estimating extraterrestrial civilizations",
       "paragraph1": "An interactive 3D visualization of the Drake Equation that estimates the number of extraterrestrial civilizations in the Milky Way. Built with Three.js, Chart.js, and vanilla JavaScript.",
       "paragraph2": "Adjust each parameter with real-time sliders and watch how it influences the final estimate. Features a procedural 3D Milky Way with 15K–50K stars, sensitivity analysis charts, live NASA exoplanet data, and shareable preset URLs.",
-      "link": "View Project",
-      "github": "https://github.com/Mendiak/drake.equation"
+      "link": "View Project"
     },
     "plaintext": {
       "title": "Plaintext: Typography-Driven Wallpaper Generator",
-      "alt": "Plaintext - Typography-driven wallpaper generator with Swiss design layouts",
       "paragraph1": "A vanilla JavaScript and HTML5 Canvas wallpaper generator that transforms curated quotes into high-resolution typographic posters with Swiss design-inspired layouts.",
       "paragraph2": "Features three Swiss-inspired layout algorithms (Editorial, Ruled, Offset), a vibe-based color system, custom typeface selection, multi-resolution export up to 4K, and a bilingual EN/ES interface.",
-      "link": "View Project",
-      "github": "https://github.com/Mendiak/plaintext"
+      "link": "View Project"
     },
     "only3left": {
       "title": "Only 3 Left: Deceptive UX Patterns",
-      "alt": "Only 3 Left - Interactive catalogue of deceptive UX patterns and dark patterns",
-      "paragraph1": "An interactive catalogue of deceptive UX patterns — dark patterns, manipulative interfaces, and persuasive mechanisms used to influence decisions online. Built with Next.js 16, TypeScript, and Tailwind CSS.",
+      "paragraph1": "An interactive catalogue of deceptive UX patterns: dark patterns, manipulative interfaces, and persuasive mechanisms used to influence decisions online. Built with Next.js 16, TypeScript, and Tailwind CSS.",
       "paragraph2": "Features 42 documented patterns across 10 categories with interactive live specimens and a TrapRevealer overlay, toxicity ratings, psychological breakdowns, ethical alternatives per pattern, search and category filtering, and a MetaToast educational overlay. Fully bilingual (EN/ES).",
-      "link": "View Project",
-      "github": "https://github.com/Mendiak/only3left"
+      "link": "View Project"
     }
   },
   "the_lab": {
@@ -115,19 +92,16 @@
     "title": "UX Case Studies",
     "marsconnect": {
       "title": "UX Case Study: MarsConnect",
-      "alt": "MarsConnect UX Case Study - Onboarding app design for Mars colonists",
       "description": "This project focuses on designing an onboarding app for future Mars colonists, aiming to guide users through essential procedures to adapt to their new life on the planet. The app also offers personalized recommendations and events to foster integration into the first Martian colony.",
       "link": "View More"
     },
     "design_forward_summit": {
       "title": "UX Case Study: Design Forward Summit",
-      "alt": "Design Forward Summit UX Case Study - Web platform for design conference nominations",
       "description": "This project involves designing a web platform to facilitate the nomination process for a design conference, making it more intuitive and accessible. The goal was to simplify navigation, improve submission confirmations, and ensure a smooth user experience.",
       "link": "View More"
     },
     "guardians_polecat": {
       "title": "UX Case Study: Guardians of the Polecat",
-      "alt": "Guardians of the Polecat UX Case Study - Platform for European polecat conservation awareness",
       "description": "The 'Guardians of the Polecat' project is an interactive platform designed to raise awareness about the conservation of the European polecat. Through a mobile app and a responsive website, it allows users to report sightings, participate in volunteer events, and symbolically adopt this endangered species.",
       "link": "View More"
     }
@@ -135,17 +109,20 @@
   "contact": {
     "title": "Contact",
     "intro": "Like what you see? Drop me a line. Tell me about your project or just say hello.",
+    "name_label": "Name",
     "name_placeholder": "Your name",
     "email_label": "Email",
     "email_placeholder": "Your email",
     "message_label": "Message",
     "message_placeholder": "Your message",
-    "submit_button": "Send Message"
+    "submit_button": "Send Message",
+    "sending": "Sending...",
+    "success_title": "Message sent!",
+    "success_body": "Mikel will get back to you soon.",
+    "error": "The message could not be sent. Please try again."
   },
   "footer": {
-    "note": "This portfolio is a personal space for learning, experimenting, and sharing what I enjoy about the web.",
     "view_source": "View source on GitHub",
-    "icon_credits": "Icon credits",
     "image_credits": "Image credits",
     "buy_me_a_coffee": "Buy me a coffee",
     "manifesto_prefix": "Crafted under the",
@@ -155,10 +132,10 @@
     "main_nav": "Main navigation",
     "theme_toggle": "Toggle light and dark mode",
     "open_menu": "Open menu",
+    "close_menu": "Close menu",
+    "intro": "Introduction",
     "linkedin": "LinkedIn",
-    "github": "Github",
-    "my_linkedin": "My LinkedIn profile",
-    "my_github": "My Github profile"
+    "github": "Github"
   },
   "lang_switcher": {
     "label": "Switch to Spanish",

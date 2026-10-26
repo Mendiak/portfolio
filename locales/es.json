@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Mikel Aramendia · Portfolio de Entusiasta Web",
-    "description": "Portfolio de Mikel Aramendia, un entusiasta web de Barcelona que disfruta construyendo sitios web por diversión y desafío. Abierto a colaboraciones y proyectos.",
-    "og_title": "Mikel Aramendia · Portfolio de Entusiasta Web",
-    "og_description": "Soy Mikel, un entusiasta web de Barcelona. Me encanta construir sitios web por diversión y desafío. Abierto a colaboraciones — explora mis proyectos y experimentos.",
-    "twitter_title": "Mikel Aramendia · Portfolio de Entusiasta Web",
-    "twitter_description": "Soy Mikel, un entusiasta web de Barcelona. Me encanta construir sitios web por diversión y desafío. Abierto a colaboraciones — explora mis proyectos y experimentos."
+    "title": "Mikel Aramendia · Desarrollador Frontend y UX en Barcelona",
+    "description": "Portfolio de Mikel Aramendia, desarrollador frontend y diseñador UX en Barcelona. Proyectos, casos de estudio y experimentos web con React, Next.js y TypeScript.",
+    "og_title": "Mikel Aramendia · Desarrollador Frontend y UX en Barcelona",
+    "og_description": "Portfolio de Mikel Aramendia, desarrollador frontend y diseñador UX en Barcelona. Proyectos, casos de estudio y experimentos web con React, Next.js y TypeScript.",
+    "twitter_title": "Mikel Aramendia · Desarrollador Frontend y UX en Barcelona",
+    "twitter_description": "Portfolio de Mikel Aramendia, desarrollador frontend y diseñador UX en Barcelona. Proyectos, casos de estudio y experimentos web con React, Next.js y TypeScript."
   },
   "nav": {
     "about": "SOBRE MI",
@@ -13,7 +13,6 @@
     "contact": "CONTACTO"
   },
   "hero": {
-    "greeting": "Hola, soy Mikel",
     "text": "Diseño y desarrollo para la web",
     "tagline": "Proyectos personales, hechos con mimo"
   },
@@ -22,85 +21,63 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "buymeacoffee": "Invítame a un café",
-    "profile_pic_alt": "Mikel Aramendia, entusiasta web de Barcelona",
+    "profile_pic_alt": "Mikel Aramendia, desarrollador frontend y diseñador UX en Barcelona",
     "location": "El Maresme, Barcelona",
-    "paragraph1": "Hola, soy Mikel. Mi camino hasta la web no fue lineal — vengo de empresariales, y antes de escribir código pasé por el graffiti, el skate, la fotografía, la música electrónica y la acuarela. De cada uno aprendí algo sobre composición y el oficio de crear.",
+    "paragraph1": "Hola, soy Mikel. Mi camino hasta la web no fue lineal: vengo de empresariales, y antes de escribir código pasé por el graffiti, el skate, la fotografía, la música electrónica y la acuarela. De cada uno aprendí algo sobre composición y el oficio de crear.",
     "paragraph2": "Ahora diseño y desarrollo proyectos web donde la prioridad es la simplicidad y que las cosas funcionen con naturalidad. Me importa cómo el diseño, la interacción y los detalles pequeños condicionan la experiencia de quien usa un producto.",
     "paragraph3": "Tengo el Certificado de Diseño UX de Google, que terminó de dar forma a mi enfoque centrado en las personas. Este portfolio es una recopilación de proyectos personales, experimentos y lo que he aprendido por el camino."
   },
   "projects": {
     "title": "Proyectos",
     "intro": "Estos son algunos de los proyectos web que he construido por diversión, aprendizaje, o simplemente para ver si podía. Cada uno me enseñó algo nuevo y me dio la oportunidad de experimentar con diferentes ideas y tecnologías.",
-    "github_link": "Ver Código",
     "open_source": "Código Abierto",
     "socratika": {
       "title": "Socratika: chatea con las grandes mentes de la historia",
-      "alt": "Socratika - plataforma impulsada por IA para conversaciones con figuras históricas",
-      "paragraph1": "A full-stack digital Ágora que da vida a las grandes mentes de la historia a través de conversaciones con IA. Construido con Next.js 15, TypeScript y Google Genkit.",
+      "paragraph1": "Un Ágora digital full-stack que da vida a las grandes mentes de la historia a través de conversaciones con IA. Construido con Next.js 15, TypeScript y Google Genkit.",
       "paragraph2": "Incluye soporte multilingüe, cuentas de usuario, suscripciones con Stripe, chat en tiempo real con streaming mediante Firebase, generación automatizada de minipapers y un panel de administración con analíticas de uso.",
-      "link": "Ver Proyecto"
-    },
-    "confessio": {
-      "title": "Confessio: santuario digital de IA",
-      "alt": "Confessio - santuario digital impulsado por IA para reflexiones anónimas",
-      "paragraph1": "Un santuario digital anónimo para la reflexión y el apoyo espiritual guiado por IA. Construido con Next.js 15, TypeScript y Google Genkit.",
-      "paragraph2": "Incluye soporte multilingüe, categorización de contenido impulsada por IA, un Muro de Velas comunitario con intenciones compartidas e historial de conversaciones persistente.",
       "link": "Ver Proyecto"
     },
     "bitcoin": {
       "title": "Historia de Bitcoin",
-      "alt": "Historia de Bitcoin - Visualización interactiva de datos del precio de Bitcoin",
       "paragraph1": "Una visualización interactiva con D3.js que narra la historia del precio de Bitcoin con eventos clave. Incluye escalado logarítmico/lineal, zoom, marcadores y temas claro/oscuro.",
       "paragraph2": "Construido con Vite y D3.js v7. Incluye una línea temporal narrativa con más de 30 eventos históricos, un brush contextual para zoom, un explicador educativo sobre el halving y soporte completo bilingüe EN/ES.",
-      "link": "Ver Proyecto",
-      "github": "https://github.com/Mendiak/bitcoin.history"
+      "link": "Ver Proyecto"
     },
     "when_lambo": {
       "title": "When Lambo",
-      "alt": "When Lambo - Aplicación web interactiva calculadora de Bitcoin a Lambo",
       "paragraph1": "Una divertida calculadora de Bitcoin a Lamborghini que te dice lo cerca que estás de tener un superdeportivo según tus criptoactivos.",
       "paragraph2": "Incluye API de precio de Bitcoin con múltiples fuentes y failover automático, tasas de cambio en vivo, imágenes compartibles generadas con Canvas por modelo, URLs con parámetros compartibles y el índice de Miedo y Codicia.",
       "link": "Ver Proyecto"
     },
     "pulse_roots": {
       "title": "PulseRoots: explorador interactivo de géneros de música electrónica",
-      "alt": "PulseRoots - explorador interactivo de géneros de música electrónica con visualización D3.js",
       "paragraph1": "Una visualización interactiva de la evolución de la música electrónica. Construido con Astro y D3.js v6, mapea la compleja red de géneros y subgéneros en un árbol jerárquico explorable.",
       "paragraph2": "Incluye tres modos de visualización (árbol, radial y línea temporal histórica), vistas previas integradas de Spotify, 107 hitos musicales desde 1897 hasta 2024 y soporte bilingüe EN/ES.",
-      "link": "Ver Proyecto",
-      "github": "https://github.com/Mendiak/pulse.roots"
+      "link": "Ver Proyecto"
     },
     "new_contemporary_photography": {
       "title": "Nueva fotografía contemporánea",
-      "alt": "Nueva fotografía contemporánea - galería de fotos con API de Flickr y diseño responsivo",
-"paragraph1": "Una aplicación de una sola página que obtiene fotografías aleatorias de un grupo de Flickr mediante un pipeline de API de dos pasos con precarga inteligente de imágenes.",
-        "paragraph2": "Incluye precarga progresiva de imágenes, modo de presentación automática, descarga y compartición de fotos, y una estética brutalista de alto contraste.",
-      "link": "Ver Proyecto",
-      "github": "https://github.com/Mendiak/new-contemporary-photography"
+      "paragraph1": "Una aplicación de una sola página que obtiene fotografías aleatorias de un grupo de Flickr mediante un pipeline de API de dos pasos con precarga inteligente de imágenes.",
+      "paragraph2": "Incluye precarga progresiva de imágenes, modo de presentación automática, descarga y compartición de fotos, y una estética brutalista de alto contraste.",
+      "link": "Ver Proyecto"
     },
     "drake": {
       "title": "Visualizador de la Ecuación de Drake",
-      "alt": "Visualizador de la Ecuación de Drake - Herramienta interactiva para estimar civilizaciones extraterrestres",
       "paragraph1": "Una visualización 3D interactiva de la Ecuación de Drake que estima el número de civilizaciones extraterrestres en la Vía Láctea. Construido con Three.js, Chart.js y JavaScript vanilla.",
       "paragraph2": "Ajusta cada parámetro con controles deslizantes en tiempo real y observa cómo influye en el resultado final. Incluye una Vía Láctea procedural en 3D, gráficos de análisis de sensibilidad, datos en vivo de exoplanetas de la NASA y URLs de preset compartibles.",
-      "link": "Ver Proyecto",
-      "github": "https://github.com/Mendiak/drake.equation"
+      "link": "Ver Proyecto"
     },
     "plaintext": {
       "title": "Plaintext: generador de fondos de pantalla tipográfico",
-      "alt": "Plaintext - generador de fondos de pantalla impulsado por tipografía con diseños de estilo suizo",
       "paragraph1": "Un generador de fondos de pantalla con JavaScript vanilla y HTML5 Canvas que transforma citas curadas en pósters tipográficos de alta resolución con diseños inspirados en el diseño gráfico suizo.",
       "paragraph2": "Incluye tres algoritmos de maquetación inspirados en el diseño suizo (Editorial, Ruled, Offset), un sistema de color basado en vibras, selección de tipografías, exportación multiresolución hasta 4K y una interfaz bilingüe EN/ES.",
-      "link": "Ver Proyecto",
-      "github": "https://github.com/Mendiak/plaintext"
+      "link": "Ver Proyecto"
     },
     "only3left": {
       "title": "Only 3 Left: Patrones UX Engañosos",
-      "alt": "Only 3 Left - Catálogo interactivo de patrones UX engañosos y dark patterns",
-      "paragraph1": "Un catálogo interactivo de patrones UX engañosos — dark patterns, interfaces manipuladoras y mecanismos persuasivos usados para influir en decisiones online. Construido con Next.js 16, TypeScript y Tailwind CSS.",
+      "paragraph1": "Un catálogo interactivo de patrones UX engañosos: dark patterns, interfaces manipuladoras y mecanismos persuasivos usados para influir en decisiones online. Construido con Next.js 16, TypeScript y Tailwind CSS.",
       "paragraph2": "Incluye 42 patrones documentados en 10 categorías con especímenes interactivos y un TrapRevealer, niveles de toxicidad, desgloses psicológicos, alternativas éticas por patrón, búsqueda y filtrado por categorías, y un MetaToast educativo. Completamente bilingüe (EN/ES).",
-      "link": "Ver Proyecto",
-      "github": "https://github.com/Mendiak/only3left"
+      "link": "Ver Proyecto"
     }
   },
   "the_lab": {
@@ -115,37 +92,37 @@
     "title": "Estudios de caso UX",
     "marsconnect": {
       "title": "Estudio de caso UX: MarsConnect",
-      "alt": "Estudio de caso UX de MarsConnect - diseño de app de onboarding para colonos de Marte",
       "description": "Este proyecto se centra en diseñar una aplicación de onboarding para futuros colonos de Marte, con el objetivo de guiar a los usuarios a través de procedimientos esenciales para adaptarse a su nueva vida en el planeta. La aplicación también ofrece recomendaciones y eventos personalizados para fomentar la integración en la primera colonia marciana.",
       "link": "Ver Más"
     },
     "design_forward_summit": {
       "title": "Estudio de caso UX: Design Forward Summit",
-      "alt": "Estudio de caso UX de Design Forward Summit - plataforma web para nominaciones de conferencias de diseño",
       "description": "Este proyecto implica diseñar una plataforma web para facilitar el proceso de nominación para una conferencia de diseño, haciéndolo más intuitivo y accesible. El objetivo fue simplificar la navegación, mejorar las confirmaciones de envío y garantizar una experiencia de usuario fluida.",
       "link": "Ver Más"
     },
     "guardians_polecat": {
       "title": "Estudio de caso UX: Guardianes del Turón",
-      "alt": "Estudio de caso UX de Guardianes del Turón - plataforma para la concienciación sobre la conservación del turón europeo",
-      "description": "El proyecto 'Guardianes del Turón' es una plataforma interactiva diseñada para crear conciencia sobre la conservación del turón europeo. A través de una aplicación móvil y un sitio web responsivo, permite a los usuarios reportar avistamientos, participar en eventos de voluntariado y adoptar simbólicamente esta especie en peligro de extinción.",
+      "description": "El proyecto 'Guardianes del Turón' es una plataforma interactiva diseñada para concienciar sobre la conservación del turón europeo. A través de una aplicación móvil y un sitio web responsivo, permite a los usuarios reportar avistamientos, participar en eventos de voluntariado y adoptar simbólicamente esta especie en peligro de extinción.",
       "link": "Ver Más"
     }
   },
   "contact": {
     "title": "Contacto",
     "intro": "Si te gusta lo que ves, escríbeme. Cuéntame tu proyecto o simplemente di hola.",
+    "name_label": "Nombre",
     "name_placeholder": "Tu nombre",
     "email_label": "Email",
     "email_placeholder": "Tu email",
     "message_label": "Mensaje",
     "message_placeholder": "Tu mensaje",
-    "submit_button": "Enviar mensaje"
+    "submit_button": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success_title": "¡Mensaje enviado!",
+    "success_body": "Mikel te responderá lo antes posible.",
+    "error": "No se pudo enviar el mensaje. Inténtalo de nuevo."
   },
   "footer": {
-    "note": "Este portfolio es un espacio personal para aprender, experimentar y compartir lo que disfruto de la web.",
     "view_source": "Ver código fuente en GitHub",
-    "icon_credits": "Créditos de iconos",
     "image_credits": "Créditos de imágenes",
     "buy_me_a_coffee": "Invítame a un café",
     "manifesto_prefix": "Creado bajo los principios de",
@@ -155,10 +132,10 @@
     "main_nav": "Navegación principal",
     "theme_toggle": "Alternar modo claro y oscuro",
     "open_menu": "Abrir menú",
+    "close_menu": "Cerrar menú",
+    "intro": "Introducción",
     "linkedin": "LinkedIn",
-    "github": "Github",
-    "my_linkedin": "Mi perfil de LinkedIn",
-    "my_github": "Mi perfil de Github"
+    "github": "Github"
   },
   "lang_switcher": {
     "label": "Cambiar a inglés",

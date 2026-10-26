@@ -141,34 +141,34 @@
         }
 
         // Update meta description
-        const descEl = document.querySelector('meta[name="description"][data-i18n-attr]');
+        const descEl = document.querySelector('meta[name="description"]');
         if (descEl) {
             descEl.setAttribute('content', meta.description);
         }
 
         // Update OG tags
-        const ogTitle = document.querySelector('meta[property="og:title"][data-i18n-attr]');
+        const ogTitle = document.querySelector('meta[property="og:title"]');
         if (ogTitle) {
             ogTitle.setAttribute('content', meta.og_title);
         }
 
-        const ogDesc = document.querySelector('meta[property="og:description"][data-i18n-attr]');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
         if (ogDesc) {
             ogDesc.setAttribute('content', meta.og_description);
         }
 
-        const ogLocale = document.querySelector('meta[property="og:locale"][data-i18n-attr]');
+        const ogLocale = document.querySelector('meta[property="og:locale"]');
         if (ogLocale) {
             ogLocale.setAttribute('content', lang === 'es' ? 'es_ES' : 'en_US');
         }
 
         // Update Twitter tags
-        const twitterTitle = document.querySelector('meta[property="twitter:title"][data-i18n-attr]');
+        const twitterTitle = document.querySelector('meta[property="twitter:title"]');
         if (twitterTitle) {
             twitterTitle.setAttribute('content', meta.twitter_title);
         }
 
-        const twitterDesc = document.querySelector('meta[property="twitter:description"][data-i18n-attr]');
+        const twitterDesc = document.querySelector('meta[property="twitter:description"]');
         if (twitterDesc) {
             twitterDesc.setAttribute('content', meta.twitter_description);
         }
@@ -279,7 +279,8 @@
         switchLanguage,
         getCurrentLang: () => currentLang,
         getSupportedLangs: () => [...SUPPORTED_LANGS],
-        getTranslations: () => translations[currentLang] || {}
+        getTranslations: () => translations[currentLang] || {},
+        t: (key) => getNestedValue(translations[currentLang] || {}, key)
     };
 
 })();
