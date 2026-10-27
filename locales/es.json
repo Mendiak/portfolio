@@ -31,6 +31,18 @@
     "title": "Proyectos",
     "intro": "Estos son algunos de los proyectos web que he construido por diversión, aprendizaje, o simplemente para ver si podía. Cada uno me enseñó algo nuevo y me dio la oportunidad de experimentar con diferentes ideas y tecnologías.",
     "open_source": "Código Abierto",
+    "pulse_roots": {
+      "title": "PulseRoots: explorador interactivo de géneros de música electrónica",
+      "paragraph1": "Una visualización interactiva de la evolución de la música electrónica. Construido con Astro y D3.js v6, mapea la compleja red de géneros y subgéneros en un árbol jerárquico explorable.",
+      "paragraph2": "Incluye tres modos de visualización (árbol, radial y línea temporal histórica), vistas previas integradas de Spotify, 107 hitos musicales desde 1897 hasta 2024 y soporte bilingüe EN/ES.",
+      "link": "Ver Proyecto"
+    },
+    "drake": {
+      "title": "Visualizador de la Ecuación de Drake",
+      "paragraph1": "Una visualización 3D interactiva de la Ecuación de Drake que estima el número de civilizaciones extraterrestres en la Vía Láctea. Construido con Three.js, Chart.js y JavaScript vanilla.",
+      "paragraph2": "Ajusta cada parámetro con controles deslizantes en tiempo real y observa cómo influye en el resultado final. Incluye una Vía Láctea procedural en 3D, gráficos de análisis de sensibilidad, datos en vivo de exoplanetas de la NASA y URLs de preset compartibles.",
+      "link": "Ver Proyecto"
+    },
     "socratika": {
       "title": "Socratika: chatea con las grandes mentes de la historia",
       "paragraph1": "Un Ágora digital full-stack que da vida a las grandes mentes de la historia a través de conversaciones con IA. Construido con Next.js 15, TypeScript y Google Genkit.",
@@ -43,22 +55,10 @@
       "paragraph2": "Construido con Vite y D3.js v7. Incluye una línea temporal narrativa con más de 30 eventos históricos, un brush contextual para zoom, un explicador educativo sobre el halving y soporte completo bilingüe EN/ES.",
       "link": "Ver Proyecto"
     },
-    "pulse_roots": {
-      "title": "PulseRoots: explorador interactivo de géneros de música electrónica",
-      "paragraph1": "Una visualización interactiva de la evolución de la música electrónica. Construido con Astro y D3.js v6, mapea la compleja red de géneros y subgéneros en un árbol jerárquico explorable.",
-      "paragraph2": "Incluye tres modos de visualización (árbol, radial y línea temporal histórica), vistas previas integradas de Spotify, 107 hitos musicales desde 1897 hasta 2024 y soporte bilingüe EN/ES.",
-      "link": "Ver Proyecto"
-    },
     "new_contemporary_photography": {
       "title": "Nueva fotografía contemporánea",
       "paragraph1": "Una aplicación de una sola página que obtiene fotografías aleatorias de un grupo de Flickr mediante un pipeline de API de dos pasos con precarga inteligente de imágenes.",
       "paragraph2": "Incluye precarga progresiva de imágenes, modo de presentación automática, descarga y compartición de fotos, y una estética brutalista de alto contraste.",
-      "link": "Ver Proyecto"
-    },
-    "drake": {
-      "title": "Visualizador de la Ecuación de Drake",
-      "paragraph1": "Una visualización 3D interactiva de la Ecuación de Drake que estima el número de civilizaciones extraterrestres en la Vía Láctea. Construido con Three.js, Chart.js y JavaScript vanilla.",
-      "paragraph2": "Ajusta cada parámetro con controles deslizantes en tiempo real y observa cómo influye en el resultado final. Incluye una Vía Láctea procedural en 3D, gráficos de análisis de sensibilidad, datos en vivo de exoplanetas de la NASA y URLs de preset compartibles.",
       "link": "Ver Proyecto"
     },
     "plaintext": {
