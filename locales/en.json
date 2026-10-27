@@ -43,12 +43,6 @@
       "paragraph2": "Built with Vite and D3.js v7. Features a narrative-driven timeline with 30+ curated events, a linked context brush for zooming, an educational halving explainer, and full bilingual EN/ES support.",
       "link": "View Project"
     },
-    "when_lambo": {
-      "title": "When Lambo",
-      "paragraph1": "A humorous Bitcoin-to-Lamborghini calculator that tells you how close you are to owning a supercar based on your crypto holdings.",
-      "paragraph2": "Features multi-source Bitcoin price API with automatic failover, live fiat exchange rates, Canvas-generated share images per car model, shareable URL presets, and the Crypto Fear & Greed Index.",
-      "link": "View Project"
-    },
     "pulse_roots": {
       "title": "PulseRoots: Interactive Electronic Music Genre Explorer",
       "paragraph1": "An interactive visualization of electronic music's evolution. Built with Astro and D3.js v6, it maps the complex web of genres and subgenres into an explorable hierarchical tree.",
